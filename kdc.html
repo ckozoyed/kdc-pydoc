@@ -21,22 +21,28 @@
             <input type="search" placeholder="Search..." role="searchbox" aria-label="search"
                    pattern=".+" required>
 
+            <h2>Contents</h2>
+            <ul>
+  <li><a href="#kristen-data-comms-kdc">Kristen Data Comms (KDC)</a>
+  <ul>
+    <li><a href="#python-api-reference">Python API Reference</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#core-api">Core API</a></li>
+    <li><a href="#supported-capabilities">Supported Capabilities</a></li>
+    <li><a href="#additional-resources">Additional Resources</a></li>
+    <li><a href="#about-this-documentation">About This Documentation</a></li>
+  </ul></li>
+</ul>
+
 
             <h2>Submodules</h2>
             <ul>
                     <li><a href="kdc/agent.html">agent</a></li>
-                    <li><a href="kdc/agent_packet_v1.html">agent_packet_v1</a></li>
-                    <li><a href="kdc/agent_registry.html">agent_registry</a></li>
                     <li><a href="kdc/agent_serializer.html">agent_serializer</a></li>
                     <li><a href="kdc/client_parameters.html">client_parameters</a></li>
                     <li><a href="kdc/client_parameters_builder.html">client_parameters_builder</a></li>
                     <li><a href="kdc/client_type.html">client_type</a></li>
                     <li><a href="kdc/constants.html">constants</a></li>
-                    <li><a href="kdc/crc32.html">crc32</a></li>
-                    <li><a href="kdc/kristen_object_serializer.html">kristen_object_serializer</a></li>
-                    <li><a href="kdc/latency_context.html">latency_context</a></li>
-                    <li><a href="kdc/latency_metric.html">latency_metric</a></li>
-                    <li><a href="kdc/latency_record.html">latency_record</a></li>
                     <li><a href="kdc/parameters.html">parameters</a></li>
                     <li><a href="kdc/parameters_builder.html">parameters_builder</a></li>
                     <li><a href="kdc/reply.html">reply</a></li>
@@ -60,12 +66,163 @@
                     <h1 class="modulename">
 kdc    </h1>
 
-                
+                        <div class="docstring"><h1 id="kristen-data-comms-kdc">Kristen Data Comms (KDC)</h1>
+
+<h2 id="python-api-reference">Python API Reference</h2>
+
+<p>Kristen Data Comms (KDC) is a distributed communications framework
+that enables applications to exchange serialized software Agents
+across networks.</p>
+
+<p>The KDC Python client allows Python applications to communicate with
+KDC servers using a straightforward, object-oriented programming
+interface. KDC handles Agent serialization, network communication,
+and Reply processing so developers can focus on application logic.</p>
+
+<p>KDC is designed for interoperability across Java, JavaScript, and
+Python applications.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>A typical KDC Python application follows these steps:</p>
+
+<ol>
+<li>Define an Agent containing the data to transmit.</li>
+<li>Configure a TCP client using TcpClientParametersBuilder.</li>
+<li>Create a TcpClient and establish a connection.</li>
+<li>Send an Agent using synchronous or asynchronous communication.</li>
+<li>Process Replies or incoming Agents as appropriate.</li>
+</ol>
+
+<h2 id="core-api">Core API</h2>
+
+<h3 id="agents-and-replies">Agents and Replies</h3>
+
+<ul>
+<li><strong>Agent</strong> — Represents a software Agent whose serialized state
+is transmitted across the network.</li>
+<li><strong>Reply</strong> — Represents a response to an Agent.</li>
+</ul>
+
+<h3 id="tcp-communication">TCP Communication</h3>
+
+<ul>
+<li><strong>TcpClient</strong> — Manages TCP communication with a KDC server.</li>
+<li><strong>TcpClientParameters</strong> — Holds TCP client configuration.</li>
+<li><strong>TcpClientParametersBuilder</strong> — Configures TCP client parameters.</li>
+<li><strong>TcpClientEventHandler</strong> — Provides connection and message callbacks.</li>
+</ul>
+
+<h3 id="serialization">Serialization</h3>
+
+<ul>
+<li><strong>AgentSerializer</strong> — Serializes and deserializes Agents and Replies.</li>
+</ul>
+
+<h2 id="supported-capabilities">Supported Capabilities</h2>
+
+<ul>
+<li>TCP client communication</li>
+<li>Synchronous and asynchronous Agent transmission</li>
+<li>Agent and Reply serialization</li>
+<li>Optional CRC integrity checking</li>
+<li>Optional compression</li>
+<li>Optional AES-GCM encryption</li>
+<li>Compatibility with the KDC-Java wire protocol</li>
+</ul>
+
+<h2 id="additional-resources">Additional Resources</h2>
+
+<ul>
+<li><a href="https://kristensoft.com/">Kristen Software</a></li>
+<li><a href="https://ckozoyed.github.io/kdc-javadoc/">KDC Java API</a></li>
+<li><a href="https://github.com/ckozoyed/kdc-pydoc/">KDC Python API on GitHub</a></li>
+</ul>
+
+<h2 id="about-this-documentation">About This Documentation</h2>
+
+<p>This reference describes the public Python API for Kristen Data Comms.
+It is intended for developers integrating Python applications with
+KDC-based distributed systems.</p>
+
+<p>For complete application examples and tutorials, consult the KDC
+User's Manual when available.</p>
+</div>
+
                         <input id="mod-kdc-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 
                         <label class="view-source-button" for="mod-kdc-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="sd"># Kristen Data Comms (KDC)</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="sd">## Python API Reference</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="sd">Kristen Data Comms (KDC) is a distributed communications framework</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="sd">that enables applications to exchange serialized software Agents</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="sd">across networks.</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a><span class="sd">The KDC Python client allows Python applications to communicate with</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="sd">KDC servers using a straightforward, object-oriented programming</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a><span class="sd">interface. KDC handles Agent serialization, network communication,</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="sd">and Reply processing so developers can focus on application logic.</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="sd">KDC is designed for interoperability across Java, JavaScript, and</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a><span class="sd">Python applications.</span>
+</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a>
+</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a><span class="sd">## Getting Started</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>
+</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a><span class="sd">A typical KDC Python application follows these steps:</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a><span class="sd">1. Define an Agent containing the data to transmit.</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a><span class="sd">2. Configure a TCP client using TcpClientParametersBuilder.</span>
+</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a><span class="sd">3. Create a TcpClient and establish a connection.</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a><span class="sd">4. Send an Agent using synchronous or asynchronous communication.</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a><span class="sd">5. Process Replies or incoming Agents as appropriate.</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a>
+</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a><span class="sd">## Core API</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a>
+</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a><span class="sd">### Agents and Replies</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos">30</span></a>
+</span><span id="L-31"><a href="#L-31"><span class="linenos">31</span></a><span class="sd">- **Agent** — Represents a software Agent whose serialized state</span>
+</span><span id="L-32"><a href="#L-32"><span class="linenos">32</span></a><span class="sd">  is transmitted across the network.</span>
+</span><span id="L-33"><a href="#L-33"><span class="linenos">33</span></a><span class="sd">- **Reply** — Represents a response to an Agent.</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos">34</span></a>
+</span><span id="L-35"><a href="#L-35"><span class="linenos">35</span></a><span class="sd">### TCP Communication</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos">36</span></a>
+</span><span id="L-37"><a href="#L-37"><span class="linenos">37</span></a><span class="sd">- **TcpClient** — Manages TCP communication with a KDC server.</span>
+</span><span id="L-38"><a href="#L-38"><span class="linenos">38</span></a><span class="sd">- **TcpClientParameters** — Holds TCP client configuration.</span>
+</span><span id="L-39"><a href="#L-39"><span class="linenos">39</span></a><span class="sd">- **TcpClientParametersBuilder** — Configures TCP client parameters.</span>
+</span><span id="L-40"><a href="#L-40"><span class="linenos">40</span></a><span class="sd">- **TcpClientEventHandler** — Provides connection and message callbacks.</span>
+</span><span id="L-41"><a href="#L-41"><span class="linenos">41</span></a>
+</span><span id="L-42"><a href="#L-42"><span class="linenos">42</span></a><span class="sd">### Serialization</span>
+</span><span id="L-43"><a href="#L-43"><span class="linenos">43</span></a>
+</span><span id="L-44"><a href="#L-44"><span class="linenos">44</span></a><span class="sd">- **AgentSerializer** — Serializes and deserializes Agents and Replies.</span>
+</span><span id="L-45"><a href="#L-45"><span class="linenos">45</span></a>
+</span><span id="L-46"><a href="#L-46"><span class="linenos">46</span></a><span class="sd">## Supported Capabilities</span>
+</span><span id="L-47"><a href="#L-47"><span class="linenos">47</span></a>
+</span><span id="L-48"><a href="#L-48"><span class="linenos">48</span></a><span class="sd">- TCP client communication</span>
+</span><span id="L-49"><a href="#L-49"><span class="linenos">49</span></a><span class="sd">- Synchronous and asynchronous Agent transmission</span>
+</span><span id="L-50"><a href="#L-50"><span class="linenos">50</span></a><span class="sd">- Agent and Reply serialization</span>
+</span><span id="L-51"><a href="#L-51"><span class="linenos">51</span></a><span class="sd">- Optional CRC integrity checking</span>
+</span><span id="L-52"><a href="#L-52"><span class="linenos">52</span></a><span class="sd">- Optional compression</span>
+</span><span id="L-53"><a href="#L-53"><span class="linenos">53</span></a><span class="sd">- Optional AES-GCM encryption</span>
+</span><span id="L-54"><a href="#L-54"><span class="linenos">54</span></a><span class="sd">- Compatibility with the KDC-Java wire protocol</span>
+</span><span id="L-55"><a href="#L-55"><span class="linenos">55</span></a>
+</span><span id="L-56"><a href="#L-56"><span class="linenos">56</span></a><span class="sd">## Additional Resources</span>
+</span><span id="L-57"><a href="#L-57"><span class="linenos">57</span></a>
+</span><span id="L-58"><a href="#L-58"><span class="linenos">58</span></a><span class="sd">- [Kristen Software](https://kristensoft.com/)</span>
+</span><span id="L-59"><a href="#L-59"><span class="linenos">59</span></a><span class="sd">- [KDC Java API](https://ckozoyed.github.io/kdc-javadoc/)</span>
+</span><span id="L-60"><a href="#L-60"><span class="linenos">60</span></a><span class="sd">- [KDC Python API on GitHub](https://github.com/ckozoyed/kdc-pydoc/)</span>
+</span><span id="L-61"><a href="#L-61"><span class="linenos">61</span></a>
+</span><span id="L-62"><a href="#L-62"><span class="linenos">62</span></a><span class="sd">## About This Documentation</span>
+</span><span id="L-63"><a href="#L-63"><span class="linenos">63</span></a>
+</span><span id="L-64"><a href="#L-64"><span class="linenos">64</span></a><span class="sd">This reference describes the public Python API for Kristen Data Comms.</span>
+</span><span id="L-65"><a href="#L-65"><span class="linenos">65</span></a><span class="sd">It is intended for developers integrating Python applications with</span>
+</span><span id="L-66"><a href="#L-66"><span class="linenos">66</span></a><span class="sd">KDC-based distributed systems.</span>
+</span><span id="L-67"><a href="#L-67"><span class="linenos">67</span></a>
+</span><span id="L-68"><a href="#L-68"><span class="linenos">68</span></a><span class="sd">For complete application examples and tutorials, consult the KDC</span>
+</span><span id="L-69"><a href="#L-69"><span class="linenos">69</span></a><span class="sd">User&#39;s Manual when available.</span>
+</span><span id="L-70"><a href="#L-70"><span class="linenos">70</span></a><span class="sd">&quot;&quot;&quot;</span>
 </span></pre></div>
 
 
