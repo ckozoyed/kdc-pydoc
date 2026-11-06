@@ -57,6 +57,7 @@
     </ul>
 
 
+            <footer>Copyright © 2026 Kristen Software LLC. All rights reserved.</footer>
 
         <a class="attribution" title="pdoc: Python API documentation generator" href="https://pdoc.dev" target="_blank">
             built with <span class="visually-hidden">pdoc</span><img
@@ -75,119 +76,127 @@
 
                         <label class="view-source-button" for="mod-tcp_client_event_handler-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">  1</span></a><span class="k">class</span><span class="w"> </span><span class="nc">TcpClientEventHandler</span><span class="p">:</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos">  2</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos">  3</span></a><span class="sd">    Base event handler for KDC TCP client events.</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos">  4</span></a>
-</span><span id="L-5"><a href="#L-5"><span class="linenos">  5</span></a><span class="sd">    Applications may subclass TcpClientEventHandler to</span>
-</span><span id="L-6"><a href="#L-6"><span class="linenos">  6</span></a><span class="sd">    receive notifications about TCP connection activity,</span>
-</span><span id="L-7"><a href="#L-7"><span class="linenos">  7</span></a><span class="sd">    incoming messages, and outgoing Agents.</span>
-</span><span id="L-8"><a href="#L-8"><span class="linenos">  8</span></a>
-</span><span id="L-9"><a href="#L-9"><span class="linenos">  9</span></a><span class="sd">    All callback methods have empty default implementations.</span>
-</span><span id="L-10"><a href="#L-10"><span class="linenos"> 10</span></a><span class="sd">    Applications only need to override the callbacks they</span>
-</span><span id="L-11"><a href="#L-11"><span class="linenos"> 11</span></a><span class="sd">    are interested in.</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">  1</span></a><span class="c1">#</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos">  2</span></a><span class="c1"># Copyright (c) 2026 Kristen Software LLC.</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos">  3</span></a><span class="c1"># All rights reserved.</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos">  4</span></a><span class="c1">#</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos">  5</span></a><span class="c1"># This software is proprietary and confidential.</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos">  6</span></a><span class="c1"># Unauthorized copying, modification, distribution,</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos">  7</span></a><span class="c1"># or use is prohibited without prior written permission.ArithmeticError</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos">  8</span></a><span class="c1">#</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos">  9</span></a><span class="k">class</span><span class="w"> </span><span class="nc">TcpClientEventHandler</span><span class="p">:</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos"> 10</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos"> 11</span></a><span class="sd">    Base event handler for KDC TCP client events.</span>
 </span><span id="L-12"><a href="#L-12"><span class="linenos"> 12</span></a>
-</span><span id="L-13"><a href="#L-13"><span class="linenos"> 13</span></a><span class="sd">    Event handlers are registered through</span>
-</span><span id="L-14"><a href="#L-14"><span class="linenos"> 14</span></a><span class="sd">    TcpClientParametersBuilder and are invoked by TcpClient.</span>
-</span><span id="L-15"><a href="#L-15"><span class="linenos"> 15</span></a>
-</span><span id="L-16"><a href="#L-16"><span class="linenos"> 16</span></a><span class="sd">    Example:</span>
-</span><span id="L-17"><a href="#L-17"><span class="linenos"> 17</span></a><span class="sd">        Define a custom event handler::</span>
-</span><span id="L-18"><a href="#L-18"><span class="linenos"> 18</span></a>
-</span><span id="L-19"><a href="#L-19"><span class="linenos"> 19</span></a><span class="sd">            class MyEventHandler(TcpClientEventHandler):</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos"> 13</span></a><span class="sd">    Applications may subclass TcpClientEventHandler to</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos"> 14</span></a><span class="sd">    receive notifications about TCP connection activity,</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos"> 15</span></a><span class="sd">    incoming messages, and outgoing Agents.</span>
+</span><span id="L-16"><a href="#L-16"><span class="linenos"> 16</span></a>
+</span><span id="L-17"><a href="#L-17"><span class="linenos"> 17</span></a><span class="sd">    All callback methods have empty default implementations.</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos"> 18</span></a><span class="sd">    Applications only need to override the callbacks they</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos"> 19</span></a><span class="sd">    are interested in.</span>
 </span><span id="L-20"><a href="#L-20"><span class="linenos"> 20</span></a>
-</span><span id="L-21"><a href="#L-21"><span class="linenos"> 21</span></a><span class="sd">                def on_connection_established(self, client):</span>
-</span><span id="L-22"><a href="#L-22"><span class="linenos"> 22</span></a><span class="sd">                    print(&quot;Connected to KDC server&quot;)</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos"> 21</span></a><span class="sd">    Event handlers are registered through</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos"> 22</span></a><span class="sd">    TcpClientParametersBuilder and are invoked by TcpClient.</span>
 </span><span id="L-23"><a href="#L-23"><span class="linenos"> 23</span></a>
-</span><span id="L-24"><a href="#L-24"><span class="linenos"> 24</span></a><span class="sd">                def on_connection_closed(self, client):</span>
-</span><span id="L-25"><a href="#L-25"><span class="linenos"> 25</span></a><span class="sd">                    print(&quot;Disconnected from KDC server&quot;)</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos"> 24</span></a><span class="sd">    Example:</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos"> 25</span></a><span class="sd">        Define a custom event handler::</span>
 </span><span id="L-26"><a href="#L-26"><span class="linenos"> 26</span></a>
-</span><span id="L-27"><a href="#L-27"><span class="linenos"> 27</span></a><span class="sd">                def on_received_reply(self, reply):</span>
-</span><span id="L-28"><a href="#L-28"><span class="linenos"> 28</span></a><span class="sd">                    print(&quot;Received reply:&quot;, reply.message)</span>
-</span><span id="L-29"><a href="#L-29"><span class="linenos"> 29</span></a>
-</span><span id="L-30"><a href="#L-30"><span class="linenos"> 30</span></a><span class="sd">        Register the handler with the TCP client parameters::</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos"> 27</span></a><span class="sd">            class MyEventHandler(TcpClientEventHandler):</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos"> 28</span></a>
+</span><span id="L-29"><a href="#L-29"><span class="linenos"> 29</span></a><span class="sd">                def on_connection_established(self, client):</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos"> 30</span></a><span class="sd">                    print(&quot;Connected to KDC server&quot;)</span>
 </span><span id="L-31"><a href="#L-31"><span class="linenos"> 31</span></a>
-</span><span id="L-32"><a href="#L-32"><span class="linenos"> 32</span></a><span class="sd">            parameters = (</span>
-</span><span id="L-33"><a href="#L-33"><span class="linenos"> 33</span></a><span class="sd">                TcpClientParametersBuilder()</span>
-</span><span id="L-34"><a href="#L-34"><span class="linenos"> 34</span></a><span class="sd">                .with_remote_address(&quot;localhost&quot;, 8001)</span>
-</span><span id="L-35"><a href="#L-35"><span class="linenos"> 35</span></a><span class="sd">                .with_event_handler(MyEventHandler())</span>
-</span><span id="L-36"><a href="#L-36"><span class="linenos"> 36</span></a><span class="sd">                .build()</span>
-</span><span id="L-37"><a href="#L-37"><span class="linenos"> 37</span></a><span class="sd">            )</span>
-</span><span id="L-38"><a href="#L-38"><span class="linenos"> 38</span></a>
-</span><span id="L-39"><a href="#L-39"><span class="linenos"> 39</span></a><span class="sd">    Note:</span>
-</span><span id="L-40"><a href="#L-40"><span class="linenos"> 40</span></a><span class="sd">        Callbacks execute synchronously in the thread</span>
-</span><span id="L-41"><a href="#L-41"><span class="linenos"> 41</span></a><span class="sd">        performing the corresponding client operation.</span>
-</span><span id="L-42"><a href="#L-42"><span class="linenos"> 42</span></a>
-</span><span id="L-43"><a href="#L-43"><span class="linenos"> 43</span></a><span class="sd">        Callback methods should generally return promptly</span>
-</span><span id="L-44"><a href="#L-44"><span class="linenos"> 44</span></a><span class="sd">        to avoid delaying communication operations.</span>
-</span><span id="L-45"><a href="#L-45"><span class="linenos"> 45</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="L-32"><a href="#L-32"><span class="linenos"> 32</span></a><span class="sd">                def on_connection_closed(self, client):</span>
+</span><span id="L-33"><a href="#L-33"><span class="linenos"> 33</span></a><span class="sd">                    print(&quot;Disconnected from KDC server&quot;)</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos"> 34</span></a>
+</span><span id="L-35"><a href="#L-35"><span class="linenos"> 35</span></a><span class="sd">                def on_received_reply(self, reply):</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos"> 36</span></a><span class="sd">                    print(&quot;Received reply:&quot;, reply.message)</span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos"> 37</span></a>
+</span><span id="L-38"><a href="#L-38"><span class="linenos"> 38</span></a><span class="sd">        Register the handler with the TCP client parameters::</span>
+</span><span id="L-39"><a href="#L-39"><span class="linenos"> 39</span></a>
+</span><span id="L-40"><a href="#L-40"><span class="linenos"> 40</span></a><span class="sd">            parameters = (</span>
+</span><span id="L-41"><a href="#L-41"><span class="linenos"> 41</span></a><span class="sd">                TcpClientParametersBuilder()</span>
+</span><span id="L-42"><a href="#L-42"><span class="linenos"> 42</span></a><span class="sd">                .with_remote_address(&quot;localhost&quot;, 8001)</span>
+</span><span id="L-43"><a href="#L-43"><span class="linenos"> 43</span></a><span class="sd">                .with_event_handler(MyEventHandler())</span>
+</span><span id="L-44"><a href="#L-44"><span class="linenos"> 44</span></a><span class="sd">                .build()</span>
+</span><span id="L-45"><a href="#L-45"><span class="linenos"> 45</span></a><span class="sd">            )</span>
 </span><span id="L-46"><a href="#L-46"><span class="linenos"> 46</span></a>
-</span><span id="L-47"><a href="#L-47"><span class="linenos"> 47</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_connection_established</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
-</span><span id="L-48"><a href="#L-48"><span class="linenos"> 48</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-49"><a href="#L-49"><span class="linenos"> 49</span></a><span class="sd">        Called after a TCP connection is established.</span>
+</span><span id="L-47"><a href="#L-47"><span class="linenos"> 47</span></a><span class="sd">    Note:</span>
+</span><span id="L-48"><a href="#L-48"><span class="linenos"> 48</span></a><span class="sd">        Callbacks execute synchronously in the thread</span>
+</span><span id="L-49"><a href="#L-49"><span class="linenos"> 49</span></a><span class="sd">        performing the corresponding client operation.</span>
 </span><span id="L-50"><a href="#L-50"><span class="linenos"> 50</span></a>
-</span><span id="L-51"><a href="#L-51"><span class="linenos"> 51</span></a><span class="sd">        Args:</span>
-</span><span id="L-52"><a href="#L-52"><span class="linenos"> 52</span></a><span class="sd">            client (TcpClient):</span>
-</span><span id="L-53"><a href="#L-53"><span class="linenos"> 53</span></a><span class="sd">                Client that established the connection.</span>
-</span><span id="L-54"><a href="#L-54"><span class="linenos"> 54</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-55"><a href="#L-55"><span class="linenos"> 55</span></a>        <span class="k">pass</span>
-</span><span id="L-56"><a href="#L-56"><span class="linenos"> 56</span></a>
-</span><span id="L-57"><a href="#L-57"><span class="linenos"> 57</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_connection_closed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
-</span><span id="L-58"><a href="#L-58"><span class="linenos"> 58</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-59"><a href="#L-59"><span class="linenos"> 59</span></a><span class="sd">        Called when the TCP connection is closed.</span>
-</span><span id="L-60"><a href="#L-60"><span class="linenos"> 60</span></a>
-</span><span id="L-61"><a href="#L-61"><span class="linenos"> 61</span></a><span class="sd">        Args:</span>
-</span><span id="L-62"><a href="#L-62"><span class="linenos"> 62</span></a><span class="sd">            client (TcpClient):</span>
-</span><span id="L-63"><a href="#L-63"><span class="linenos"> 63</span></a><span class="sd">                Client whose connection was closed.</span>
-</span><span id="L-64"><a href="#L-64"><span class="linenos"> 64</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-65"><a href="#L-65"><span class="linenos"> 65</span></a>        <span class="k">pass</span>
-</span><span id="L-66"><a href="#L-66"><span class="linenos"> 66</span></a>
-</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_received_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
-</span><span id="L-68"><a href="#L-68"><span class="linenos"> 68</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-69"><a href="#L-69"><span class="linenos"> 69</span></a><span class="sd">        Called when an Agent is received from the server.</span>
-</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a>
-</span><span id="L-71"><a href="#L-71"><span class="linenos"> 71</span></a><span class="sd">        In the current TcpClient implementation, incoming</span>
-</span><span id="L-72"><a href="#L-72"><span class="linenos"> 72</span></a><span class="sd">        Agents are delivered while send_sync() is waiting</span>
-</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a><span class="sd">        for a final Reply.</span>
+</span><span id="L-51"><a href="#L-51"><span class="linenos"> 51</span></a><span class="sd">        Callback methods should generally return promptly</span>
+</span><span id="L-52"><a href="#L-52"><span class="linenos"> 52</span></a><span class="sd">        to avoid delaying communication operations.</span>
+</span><span id="L-53"><a href="#L-53"><span class="linenos"> 53</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="L-54"><a href="#L-54"><span class="linenos"> 54</span></a>
+</span><span id="L-55"><a href="#L-55"><span class="linenos"> 55</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_connection_established</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
+</span><span id="L-56"><a href="#L-56"><span class="linenos"> 56</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-57"><a href="#L-57"><span class="linenos"> 57</span></a><span class="sd">        Called after a TCP connection is established.</span>
+</span><span id="L-58"><a href="#L-58"><span class="linenos"> 58</span></a>
+</span><span id="L-59"><a href="#L-59"><span class="linenos"> 59</span></a><span class="sd">        Args:</span>
+</span><span id="L-60"><a href="#L-60"><span class="linenos"> 60</span></a><span class="sd">            client (TcpClient):</span>
+</span><span id="L-61"><a href="#L-61"><span class="linenos"> 61</span></a><span class="sd">                Client that established the connection.</span>
+</span><span id="L-62"><a href="#L-62"><span class="linenos"> 62</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-63"><a href="#L-63"><span class="linenos"> 63</span></a>        <span class="k">pass</span>
+</span><span id="L-64"><a href="#L-64"><span class="linenos"> 64</span></a>
+</span><span id="L-65"><a href="#L-65"><span class="linenos"> 65</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_connection_closed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
+</span><span id="L-66"><a href="#L-66"><span class="linenos"> 66</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a><span class="sd">        Called when the TCP connection is closed.</span>
+</span><span id="L-68"><a href="#L-68"><span class="linenos"> 68</span></a>
+</span><span id="L-69"><a href="#L-69"><span class="linenos"> 69</span></a><span class="sd">        Args:</span>
+</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a><span class="sd">            client (TcpClient):</span>
+</span><span id="L-71"><a href="#L-71"><span class="linenos"> 71</span></a><span class="sd">                Client whose connection was closed.</span>
+</span><span id="L-72"><a href="#L-72"><span class="linenos"> 72</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a>        <span class="k">pass</span>
 </span><span id="L-74"><a href="#L-74"><span class="linenos"> 74</span></a>
-</span><span id="L-75"><a href="#L-75"><span class="linenos"> 75</span></a><span class="sd">        Args:</span>
-</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a><span class="sd">            agent (Agent):</span>
-</span><span id="L-77"><a href="#L-77"><span class="linenos"> 77</span></a><span class="sd">                Received Agent.</span>
-</span><span id="L-78"><a href="#L-78"><span class="linenos"> 78</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a>        <span class="k">pass</span>
-</span><span id="L-80"><a href="#L-80"><span class="linenos"> 80</span></a>
-</span><span id="L-81"><a href="#L-81"><span class="linenos"> 81</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_received_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reply</span><span class="p">):</span>
-</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-83"><a href="#L-83"><span class="linenos"> 83</span></a><span class="sd">        Called when a Reply is received from the server.</span>
-</span><span id="L-84"><a href="#L-84"><span class="linenos"> 84</span></a>
-</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a><span class="sd">        This includes intermediate, unrelated, and final</span>
-</span><span id="L-86"><a href="#L-86"><span class="linenos"> 86</span></a><span class="sd">        Replies processed by send_sync().</span>
-</span><span id="L-87"><a href="#L-87"><span class="linenos"> 87</span></a>
-</span><span id="L-88"><a href="#L-88"><span class="linenos"> 88</span></a><span class="sd">        Args:</span>
-</span><span id="L-89"><a href="#L-89"><span class="linenos"> 89</span></a><span class="sd">            reply (Reply):</span>
-</span><span id="L-90"><a href="#L-90"><span class="linenos"> 90</span></a><span class="sd">                Received Reply.</span>
-</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-92"><a href="#L-92"><span class="linenos"> 92</span></a>        <span class="k">pass</span>
-</span><span id="L-93"><a href="#L-93"><span class="linenos"> 93</span></a>
-</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_sending_async_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
-</span><span id="L-95"><a href="#L-95"><span class="linenos"> 95</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-96"><a href="#L-96"><span class="linenos"> 96</span></a><span class="sd">        Called after an asynchronous Agent is transmitted.</span>
-</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a>
-</span><span id="L-98"><a href="#L-98"><span class="linenos"> 98</span></a><span class="sd">        Args:</span>
-</span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a><span class="sd">            agent (Agent):</span>
-</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a><span class="sd">                Agent that was sent asynchronously.</span>
-</span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-102"><a href="#L-102"><span class="linenos">102</span></a>        <span class="k">pass</span>
-</span><span id="L-103"><a href="#L-103"><span class="linenos">103</span></a>
-</span><span id="L-104"><a href="#L-104"><span class="linenos">104</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_sending_sync_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
-</span><span id="L-105"><a href="#L-105"><span class="linenos">105</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-106"><a href="#L-106"><span class="linenos">106</span></a><span class="sd">        Called after a synchronous Agent is transmitted,</span>
-</span><span id="L-107"><a href="#L-107"><span class="linenos">107</span></a><span class="sd">        before the client begins waiting for its Reply.</span>
-</span><span id="L-108"><a href="#L-108"><span class="linenos">108</span></a>
-</span><span id="L-109"><a href="#L-109"><span class="linenos">109</span></a><span class="sd">        Args:</span>
-</span><span id="L-110"><a href="#L-110"><span class="linenos">110</span></a><span class="sd">            agent (Agent):</span>
-</span><span id="L-111"><a href="#L-111"><span class="linenos">111</span></a><span class="sd">                Agent that was sent synchronously.</span>
-</span><span id="L-112"><a href="#L-112"><span class="linenos">112</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-113"><a href="#L-113"><span class="linenos">113</span></a>        <span class="k">pass</span>
+</span><span id="L-75"><a href="#L-75"><span class="linenos"> 75</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_received_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-77"><a href="#L-77"><span class="linenos"> 77</span></a><span class="sd">        Called when an Agent is received from the server.</span>
+</span><span id="L-78"><a href="#L-78"><span class="linenos"> 78</span></a>
+</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a><span class="sd">        In the current TcpClient implementation, incoming</span>
+</span><span id="L-80"><a href="#L-80"><span class="linenos"> 80</span></a><span class="sd">        Agents are delivered while send_sync() is waiting</span>
+</span><span id="L-81"><a href="#L-81"><span class="linenos"> 81</span></a><span class="sd">        for a final Reply.</span>
+</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a>
+</span><span id="L-83"><a href="#L-83"><span class="linenos"> 83</span></a><span class="sd">        Args:</span>
+</span><span id="L-84"><a href="#L-84"><span class="linenos"> 84</span></a><span class="sd">            agent (Agent):</span>
+</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a><span class="sd">                Received Agent.</span>
+</span><span id="L-86"><a href="#L-86"><span class="linenos"> 86</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-87"><a href="#L-87"><span class="linenos"> 87</span></a>        <span class="k">pass</span>
+</span><span id="L-88"><a href="#L-88"><span class="linenos"> 88</span></a>
+</span><span id="L-89"><a href="#L-89"><span class="linenos"> 89</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_received_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reply</span><span class="p">):</span>
+</span><span id="L-90"><a href="#L-90"><span class="linenos"> 90</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a><span class="sd">        Called when a Reply is received from the server.</span>
+</span><span id="L-92"><a href="#L-92"><span class="linenos"> 92</span></a>
+</span><span id="L-93"><a href="#L-93"><span class="linenos"> 93</span></a><span class="sd">        This includes intermediate, unrelated, and final</span>
+</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a><span class="sd">        Replies processed by send_sync().</span>
+</span><span id="L-95"><a href="#L-95"><span class="linenos"> 95</span></a>
+</span><span id="L-96"><a href="#L-96"><span class="linenos"> 96</span></a><span class="sd">        Args:</span>
+</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a><span class="sd">            reply (Reply):</span>
+</span><span id="L-98"><a href="#L-98"><span class="linenos"> 98</span></a><span class="sd">                Received Reply.</span>
+</span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a>        <span class="k">pass</span>
+</span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a>
+</span><span id="L-102"><a href="#L-102"><span class="linenos">102</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_sending_async_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+</span><span id="L-103"><a href="#L-103"><span class="linenos">103</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-104"><a href="#L-104"><span class="linenos">104</span></a><span class="sd">        Called after an asynchronous Agent is transmitted.</span>
+</span><span id="L-105"><a href="#L-105"><span class="linenos">105</span></a>
+</span><span id="L-106"><a href="#L-106"><span class="linenos">106</span></a><span class="sd">        Args:</span>
+</span><span id="L-107"><a href="#L-107"><span class="linenos">107</span></a><span class="sd">            agent (Agent):</span>
+</span><span id="L-108"><a href="#L-108"><span class="linenos">108</span></a><span class="sd">                Agent that was sent asynchronously.</span>
+</span><span id="L-109"><a href="#L-109"><span class="linenos">109</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-110"><a href="#L-110"><span class="linenos">110</span></a>        <span class="k">pass</span>
+</span><span id="L-111"><a href="#L-111"><span class="linenos">111</span></a>
+</span><span id="L-112"><a href="#L-112"><span class="linenos">112</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_sending_sync_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+</span><span id="L-113"><a href="#L-113"><span class="linenos">113</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-114"><a href="#L-114"><span class="linenos">114</span></a><span class="sd">        Called after a synchronous Agent is transmitted,</span>
+</span><span id="L-115"><a href="#L-115"><span class="linenos">115</span></a><span class="sd">        before the client begins waiting for its Reply.</span>
+</span><span id="L-116"><a href="#L-116"><span class="linenos">116</span></a>
+</span><span id="L-117"><a href="#L-117"><span class="linenos">117</span></a><span class="sd">        Args:</span>
+</span><span id="L-118"><a href="#L-118"><span class="linenos">118</span></a><span class="sd">            agent (Agent):</span>
+</span><span id="L-119"><a href="#L-119"><span class="linenos">119</span></a><span class="sd">                Agent that was sent synchronously.</span>
+</span><span id="L-120"><a href="#L-120"><span class="linenos">120</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-121"><a href="#L-121"><span class="linenos">121</span></a>        <span class="k">pass</span>
 </span></pre></div>
 
 
@@ -203,119 +212,119 @@
 
     </div>
     <a class="headerlink" href="#TcpClientEventHandler"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler-3"><a href="#TcpClientEventHandler-3"><span class="linenos">  3</span></a><span class="k">class</span><span class="w"> </span><span class="nc">TcpClientEventHandler</span><span class="p">:</span>
-</span><span id="TcpClientEventHandler-4"><a href="#TcpClientEventHandler-4"><span class="linenos">  4</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-5"><a href="#TcpClientEventHandler-5"><span class="linenos">  5</span></a><span class="sd">    Base event handler for KDC TCP client events.</span>
-</span><span id="TcpClientEventHandler-6"><a href="#TcpClientEventHandler-6"><span class="linenos">  6</span></a>
-</span><span id="TcpClientEventHandler-7"><a href="#TcpClientEventHandler-7"><span class="linenos">  7</span></a><span class="sd">    Applications may subclass TcpClientEventHandler to</span>
-</span><span id="TcpClientEventHandler-8"><a href="#TcpClientEventHandler-8"><span class="linenos">  8</span></a><span class="sd">    receive notifications about TCP connection activity,</span>
-</span><span id="TcpClientEventHandler-9"><a href="#TcpClientEventHandler-9"><span class="linenos">  9</span></a><span class="sd">    incoming messages, and outgoing Agents.</span>
-</span><span id="TcpClientEventHandler-10"><a href="#TcpClientEventHandler-10"><span class="linenos"> 10</span></a>
-</span><span id="TcpClientEventHandler-11"><a href="#TcpClientEventHandler-11"><span class="linenos"> 11</span></a><span class="sd">    All callback methods have empty default implementations.</span>
-</span><span id="TcpClientEventHandler-12"><a href="#TcpClientEventHandler-12"><span class="linenos"> 12</span></a><span class="sd">    Applications only need to override the callbacks they</span>
-</span><span id="TcpClientEventHandler-13"><a href="#TcpClientEventHandler-13"><span class="linenos"> 13</span></a><span class="sd">    are interested in.</span>
-</span><span id="TcpClientEventHandler-14"><a href="#TcpClientEventHandler-14"><span class="linenos"> 14</span></a>
-</span><span id="TcpClientEventHandler-15"><a href="#TcpClientEventHandler-15"><span class="linenos"> 15</span></a><span class="sd">    Event handlers are registered through</span>
-</span><span id="TcpClientEventHandler-16"><a href="#TcpClientEventHandler-16"><span class="linenos"> 16</span></a><span class="sd">    TcpClientParametersBuilder and are invoked by TcpClient.</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler-10"><a href="#TcpClientEventHandler-10"><span class="linenos"> 10</span></a><span class="k">class</span><span class="w"> </span><span class="nc">TcpClientEventHandler</span><span class="p">:</span>
+</span><span id="TcpClientEventHandler-11"><a href="#TcpClientEventHandler-11"><span class="linenos"> 11</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-12"><a href="#TcpClientEventHandler-12"><span class="linenos"> 12</span></a><span class="sd">    Base event handler for KDC TCP client events.</span>
+</span><span id="TcpClientEventHandler-13"><a href="#TcpClientEventHandler-13"><span class="linenos"> 13</span></a>
+</span><span id="TcpClientEventHandler-14"><a href="#TcpClientEventHandler-14"><span class="linenos"> 14</span></a><span class="sd">    Applications may subclass TcpClientEventHandler to</span>
+</span><span id="TcpClientEventHandler-15"><a href="#TcpClientEventHandler-15"><span class="linenos"> 15</span></a><span class="sd">    receive notifications about TCP connection activity,</span>
+</span><span id="TcpClientEventHandler-16"><a href="#TcpClientEventHandler-16"><span class="linenos"> 16</span></a><span class="sd">    incoming messages, and outgoing Agents.</span>
 </span><span id="TcpClientEventHandler-17"><a href="#TcpClientEventHandler-17"><span class="linenos"> 17</span></a>
-</span><span id="TcpClientEventHandler-18"><a href="#TcpClientEventHandler-18"><span class="linenos"> 18</span></a><span class="sd">    Example:</span>
-</span><span id="TcpClientEventHandler-19"><a href="#TcpClientEventHandler-19"><span class="linenos"> 19</span></a><span class="sd">        Define a custom event handler::</span>
-</span><span id="TcpClientEventHandler-20"><a href="#TcpClientEventHandler-20"><span class="linenos"> 20</span></a>
-</span><span id="TcpClientEventHandler-21"><a href="#TcpClientEventHandler-21"><span class="linenos"> 21</span></a><span class="sd">            class MyEventHandler(TcpClientEventHandler):</span>
-</span><span id="TcpClientEventHandler-22"><a href="#TcpClientEventHandler-22"><span class="linenos"> 22</span></a>
-</span><span id="TcpClientEventHandler-23"><a href="#TcpClientEventHandler-23"><span class="linenos"> 23</span></a><span class="sd">                def on_connection_established(self, client):</span>
-</span><span id="TcpClientEventHandler-24"><a href="#TcpClientEventHandler-24"><span class="linenos"> 24</span></a><span class="sd">                    print(&quot;Connected to KDC server&quot;)</span>
-</span><span id="TcpClientEventHandler-25"><a href="#TcpClientEventHandler-25"><span class="linenos"> 25</span></a>
-</span><span id="TcpClientEventHandler-26"><a href="#TcpClientEventHandler-26"><span class="linenos"> 26</span></a><span class="sd">                def on_connection_closed(self, client):</span>
-</span><span id="TcpClientEventHandler-27"><a href="#TcpClientEventHandler-27"><span class="linenos"> 27</span></a><span class="sd">                    print(&quot;Disconnected from KDC server&quot;)</span>
-</span><span id="TcpClientEventHandler-28"><a href="#TcpClientEventHandler-28"><span class="linenos"> 28</span></a>
-</span><span id="TcpClientEventHandler-29"><a href="#TcpClientEventHandler-29"><span class="linenos"> 29</span></a><span class="sd">                def on_received_reply(self, reply):</span>
-</span><span id="TcpClientEventHandler-30"><a href="#TcpClientEventHandler-30"><span class="linenos"> 30</span></a><span class="sd">                    print(&quot;Received reply:&quot;, reply.message)</span>
-</span><span id="TcpClientEventHandler-31"><a href="#TcpClientEventHandler-31"><span class="linenos"> 31</span></a>
-</span><span id="TcpClientEventHandler-32"><a href="#TcpClientEventHandler-32"><span class="linenos"> 32</span></a><span class="sd">        Register the handler with the TCP client parameters::</span>
-</span><span id="TcpClientEventHandler-33"><a href="#TcpClientEventHandler-33"><span class="linenos"> 33</span></a>
-</span><span id="TcpClientEventHandler-34"><a href="#TcpClientEventHandler-34"><span class="linenos"> 34</span></a><span class="sd">            parameters = (</span>
-</span><span id="TcpClientEventHandler-35"><a href="#TcpClientEventHandler-35"><span class="linenos"> 35</span></a><span class="sd">                TcpClientParametersBuilder()</span>
-</span><span id="TcpClientEventHandler-36"><a href="#TcpClientEventHandler-36"><span class="linenos"> 36</span></a><span class="sd">                .with_remote_address(&quot;localhost&quot;, 8001)</span>
-</span><span id="TcpClientEventHandler-37"><a href="#TcpClientEventHandler-37"><span class="linenos"> 37</span></a><span class="sd">                .with_event_handler(MyEventHandler())</span>
-</span><span id="TcpClientEventHandler-38"><a href="#TcpClientEventHandler-38"><span class="linenos"> 38</span></a><span class="sd">                .build()</span>
-</span><span id="TcpClientEventHandler-39"><a href="#TcpClientEventHandler-39"><span class="linenos"> 39</span></a><span class="sd">            )</span>
+</span><span id="TcpClientEventHandler-18"><a href="#TcpClientEventHandler-18"><span class="linenos"> 18</span></a><span class="sd">    All callback methods have empty default implementations.</span>
+</span><span id="TcpClientEventHandler-19"><a href="#TcpClientEventHandler-19"><span class="linenos"> 19</span></a><span class="sd">    Applications only need to override the callbacks they</span>
+</span><span id="TcpClientEventHandler-20"><a href="#TcpClientEventHandler-20"><span class="linenos"> 20</span></a><span class="sd">    are interested in.</span>
+</span><span id="TcpClientEventHandler-21"><a href="#TcpClientEventHandler-21"><span class="linenos"> 21</span></a>
+</span><span id="TcpClientEventHandler-22"><a href="#TcpClientEventHandler-22"><span class="linenos"> 22</span></a><span class="sd">    Event handlers are registered through</span>
+</span><span id="TcpClientEventHandler-23"><a href="#TcpClientEventHandler-23"><span class="linenos"> 23</span></a><span class="sd">    TcpClientParametersBuilder and are invoked by TcpClient.</span>
+</span><span id="TcpClientEventHandler-24"><a href="#TcpClientEventHandler-24"><span class="linenos"> 24</span></a>
+</span><span id="TcpClientEventHandler-25"><a href="#TcpClientEventHandler-25"><span class="linenos"> 25</span></a><span class="sd">    Example:</span>
+</span><span id="TcpClientEventHandler-26"><a href="#TcpClientEventHandler-26"><span class="linenos"> 26</span></a><span class="sd">        Define a custom event handler::</span>
+</span><span id="TcpClientEventHandler-27"><a href="#TcpClientEventHandler-27"><span class="linenos"> 27</span></a>
+</span><span id="TcpClientEventHandler-28"><a href="#TcpClientEventHandler-28"><span class="linenos"> 28</span></a><span class="sd">            class MyEventHandler(TcpClientEventHandler):</span>
+</span><span id="TcpClientEventHandler-29"><a href="#TcpClientEventHandler-29"><span class="linenos"> 29</span></a>
+</span><span id="TcpClientEventHandler-30"><a href="#TcpClientEventHandler-30"><span class="linenos"> 30</span></a><span class="sd">                def on_connection_established(self, client):</span>
+</span><span id="TcpClientEventHandler-31"><a href="#TcpClientEventHandler-31"><span class="linenos"> 31</span></a><span class="sd">                    print(&quot;Connected to KDC server&quot;)</span>
+</span><span id="TcpClientEventHandler-32"><a href="#TcpClientEventHandler-32"><span class="linenos"> 32</span></a>
+</span><span id="TcpClientEventHandler-33"><a href="#TcpClientEventHandler-33"><span class="linenos"> 33</span></a><span class="sd">                def on_connection_closed(self, client):</span>
+</span><span id="TcpClientEventHandler-34"><a href="#TcpClientEventHandler-34"><span class="linenos"> 34</span></a><span class="sd">                    print(&quot;Disconnected from KDC server&quot;)</span>
+</span><span id="TcpClientEventHandler-35"><a href="#TcpClientEventHandler-35"><span class="linenos"> 35</span></a>
+</span><span id="TcpClientEventHandler-36"><a href="#TcpClientEventHandler-36"><span class="linenos"> 36</span></a><span class="sd">                def on_received_reply(self, reply):</span>
+</span><span id="TcpClientEventHandler-37"><a href="#TcpClientEventHandler-37"><span class="linenos"> 37</span></a><span class="sd">                    print(&quot;Received reply:&quot;, reply.message)</span>
+</span><span id="TcpClientEventHandler-38"><a href="#TcpClientEventHandler-38"><span class="linenos"> 38</span></a>
+</span><span id="TcpClientEventHandler-39"><a href="#TcpClientEventHandler-39"><span class="linenos"> 39</span></a><span class="sd">        Register the handler with the TCP client parameters::</span>
 </span><span id="TcpClientEventHandler-40"><a href="#TcpClientEventHandler-40"><span class="linenos"> 40</span></a>
-</span><span id="TcpClientEventHandler-41"><a href="#TcpClientEventHandler-41"><span class="linenos"> 41</span></a><span class="sd">    Note:</span>
-</span><span id="TcpClientEventHandler-42"><a href="#TcpClientEventHandler-42"><span class="linenos"> 42</span></a><span class="sd">        Callbacks execute synchronously in the thread</span>
-</span><span id="TcpClientEventHandler-43"><a href="#TcpClientEventHandler-43"><span class="linenos"> 43</span></a><span class="sd">        performing the corresponding client operation.</span>
-</span><span id="TcpClientEventHandler-44"><a href="#TcpClientEventHandler-44"><span class="linenos"> 44</span></a>
-</span><span id="TcpClientEventHandler-45"><a href="#TcpClientEventHandler-45"><span class="linenos"> 45</span></a><span class="sd">        Callback methods should generally return promptly</span>
-</span><span id="TcpClientEventHandler-46"><a href="#TcpClientEventHandler-46"><span class="linenos"> 46</span></a><span class="sd">        to avoid delaying communication operations.</span>
-</span><span id="TcpClientEventHandler-47"><a href="#TcpClientEventHandler-47"><span class="linenos"> 47</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-48"><a href="#TcpClientEventHandler-48"><span class="linenos"> 48</span></a>
-</span><span id="TcpClientEventHandler-49"><a href="#TcpClientEventHandler-49"><span class="linenos"> 49</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_connection_established</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
-</span><span id="TcpClientEventHandler-50"><a href="#TcpClientEventHandler-50"><span class="linenos"> 50</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-51"><a href="#TcpClientEventHandler-51"><span class="linenos"> 51</span></a><span class="sd">        Called after a TCP connection is established.</span>
-</span><span id="TcpClientEventHandler-52"><a href="#TcpClientEventHandler-52"><span class="linenos"> 52</span></a>
-</span><span id="TcpClientEventHandler-53"><a href="#TcpClientEventHandler-53"><span class="linenos"> 53</span></a><span class="sd">        Args:</span>
-</span><span id="TcpClientEventHandler-54"><a href="#TcpClientEventHandler-54"><span class="linenos"> 54</span></a><span class="sd">            client (TcpClient):</span>
-</span><span id="TcpClientEventHandler-55"><a href="#TcpClientEventHandler-55"><span class="linenos"> 55</span></a><span class="sd">                Client that established the connection.</span>
-</span><span id="TcpClientEventHandler-56"><a href="#TcpClientEventHandler-56"><span class="linenos"> 56</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-57"><a href="#TcpClientEventHandler-57"><span class="linenos"> 57</span></a>        <span class="k">pass</span>
-</span><span id="TcpClientEventHandler-58"><a href="#TcpClientEventHandler-58"><span class="linenos"> 58</span></a>
-</span><span id="TcpClientEventHandler-59"><a href="#TcpClientEventHandler-59"><span class="linenos"> 59</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_connection_closed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
-</span><span id="TcpClientEventHandler-60"><a href="#TcpClientEventHandler-60"><span class="linenos"> 60</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-61"><a href="#TcpClientEventHandler-61"><span class="linenos"> 61</span></a><span class="sd">        Called when the TCP connection is closed.</span>
-</span><span id="TcpClientEventHandler-62"><a href="#TcpClientEventHandler-62"><span class="linenos"> 62</span></a>
-</span><span id="TcpClientEventHandler-63"><a href="#TcpClientEventHandler-63"><span class="linenos"> 63</span></a><span class="sd">        Args:</span>
-</span><span id="TcpClientEventHandler-64"><a href="#TcpClientEventHandler-64"><span class="linenos"> 64</span></a><span class="sd">            client (TcpClient):</span>
-</span><span id="TcpClientEventHandler-65"><a href="#TcpClientEventHandler-65"><span class="linenos"> 65</span></a><span class="sd">                Client whose connection was closed.</span>
-</span><span id="TcpClientEventHandler-66"><a href="#TcpClientEventHandler-66"><span class="linenos"> 66</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-67"><a href="#TcpClientEventHandler-67"><span class="linenos"> 67</span></a>        <span class="k">pass</span>
-</span><span id="TcpClientEventHandler-68"><a href="#TcpClientEventHandler-68"><span class="linenos"> 68</span></a>
-</span><span id="TcpClientEventHandler-69"><a href="#TcpClientEventHandler-69"><span class="linenos"> 69</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_received_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
-</span><span id="TcpClientEventHandler-70"><a href="#TcpClientEventHandler-70"><span class="linenos"> 70</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-71"><a href="#TcpClientEventHandler-71"><span class="linenos"> 71</span></a><span class="sd">        Called when an Agent is received from the server.</span>
-</span><span id="TcpClientEventHandler-72"><a href="#TcpClientEventHandler-72"><span class="linenos"> 72</span></a>
-</span><span id="TcpClientEventHandler-73"><a href="#TcpClientEventHandler-73"><span class="linenos"> 73</span></a><span class="sd">        In the current TcpClient implementation, incoming</span>
-</span><span id="TcpClientEventHandler-74"><a href="#TcpClientEventHandler-74"><span class="linenos"> 74</span></a><span class="sd">        Agents are delivered while send_sync() is waiting</span>
-</span><span id="TcpClientEventHandler-75"><a href="#TcpClientEventHandler-75"><span class="linenos"> 75</span></a><span class="sd">        for a final Reply.</span>
-</span><span id="TcpClientEventHandler-76"><a href="#TcpClientEventHandler-76"><span class="linenos"> 76</span></a>
-</span><span id="TcpClientEventHandler-77"><a href="#TcpClientEventHandler-77"><span class="linenos"> 77</span></a><span class="sd">        Args:</span>
-</span><span id="TcpClientEventHandler-78"><a href="#TcpClientEventHandler-78"><span class="linenos"> 78</span></a><span class="sd">            agent (Agent):</span>
-</span><span id="TcpClientEventHandler-79"><a href="#TcpClientEventHandler-79"><span class="linenos"> 79</span></a><span class="sd">                Received Agent.</span>
-</span><span id="TcpClientEventHandler-80"><a href="#TcpClientEventHandler-80"><span class="linenos"> 80</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-81"><a href="#TcpClientEventHandler-81"><span class="linenos"> 81</span></a>        <span class="k">pass</span>
-</span><span id="TcpClientEventHandler-82"><a href="#TcpClientEventHandler-82"><span class="linenos"> 82</span></a>
-</span><span id="TcpClientEventHandler-83"><a href="#TcpClientEventHandler-83"><span class="linenos"> 83</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_received_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reply</span><span class="p">):</span>
-</span><span id="TcpClientEventHandler-84"><a href="#TcpClientEventHandler-84"><span class="linenos"> 84</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-85"><a href="#TcpClientEventHandler-85"><span class="linenos"> 85</span></a><span class="sd">        Called when a Reply is received from the server.</span>
-</span><span id="TcpClientEventHandler-86"><a href="#TcpClientEventHandler-86"><span class="linenos"> 86</span></a>
-</span><span id="TcpClientEventHandler-87"><a href="#TcpClientEventHandler-87"><span class="linenos"> 87</span></a><span class="sd">        This includes intermediate, unrelated, and final</span>
-</span><span id="TcpClientEventHandler-88"><a href="#TcpClientEventHandler-88"><span class="linenos"> 88</span></a><span class="sd">        Replies processed by send_sync().</span>
+</span><span id="TcpClientEventHandler-41"><a href="#TcpClientEventHandler-41"><span class="linenos"> 41</span></a><span class="sd">            parameters = (</span>
+</span><span id="TcpClientEventHandler-42"><a href="#TcpClientEventHandler-42"><span class="linenos"> 42</span></a><span class="sd">                TcpClientParametersBuilder()</span>
+</span><span id="TcpClientEventHandler-43"><a href="#TcpClientEventHandler-43"><span class="linenos"> 43</span></a><span class="sd">                .with_remote_address(&quot;localhost&quot;, 8001)</span>
+</span><span id="TcpClientEventHandler-44"><a href="#TcpClientEventHandler-44"><span class="linenos"> 44</span></a><span class="sd">                .with_event_handler(MyEventHandler())</span>
+</span><span id="TcpClientEventHandler-45"><a href="#TcpClientEventHandler-45"><span class="linenos"> 45</span></a><span class="sd">                .build()</span>
+</span><span id="TcpClientEventHandler-46"><a href="#TcpClientEventHandler-46"><span class="linenos"> 46</span></a><span class="sd">            )</span>
+</span><span id="TcpClientEventHandler-47"><a href="#TcpClientEventHandler-47"><span class="linenos"> 47</span></a>
+</span><span id="TcpClientEventHandler-48"><a href="#TcpClientEventHandler-48"><span class="linenos"> 48</span></a><span class="sd">    Note:</span>
+</span><span id="TcpClientEventHandler-49"><a href="#TcpClientEventHandler-49"><span class="linenos"> 49</span></a><span class="sd">        Callbacks execute synchronously in the thread</span>
+</span><span id="TcpClientEventHandler-50"><a href="#TcpClientEventHandler-50"><span class="linenos"> 50</span></a><span class="sd">        performing the corresponding client operation.</span>
+</span><span id="TcpClientEventHandler-51"><a href="#TcpClientEventHandler-51"><span class="linenos"> 51</span></a>
+</span><span id="TcpClientEventHandler-52"><a href="#TcpClientEventHandler-52"><span class="linenos"> 52</span></a><span class="sd">        Callback methods should generally return promptly</span>
+</span><span id="TcpClientEventHandler-53"><a href="#TcpClientEventHandler-53"><span class="linenos"> 53</span></a><span class="sd">        to avoid delaying communication operations.</span>
+</span><span id="TcpClientEventHandler-54"><a href="#TcpClientEventHandler-54"><span class="linenos"> 54</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-55"><a href="#TcpClientEventHandler-55"><span class="linenos"> 55</span></a>
+</span><span id="TcpClientEventHandler-56"><a href="#TcpClientEventHandler-56"><span class="linenos"> 56</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_connection_established</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
+</span><span id="TcpClientEventHandler-57"><a href="#TcpClientEventHandler-57"><span class="linenos"> 57</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-58"><a href="#TcpClientEventHandler-58"><span class="linenos"> 58</span></a><span class="sd">        Called after a TCP connection is established.</span>
+</span><span id="TcpClientEventHandler-59"><a href="#TcpClientEventHandler-59"><span class="linenos"> 59</span></a>
+</span><span id="TcpClientEventHandler-60"><a href="#TcpClientEventHandler-60"><span class="linenos"> 60</span></a><span class="sd">        Args:</span>
+</span><span id="TcpClientEventHandler-61"><a href="#TcpClientEventHandler-61"><span class="linenos"> 61</span></a><span class="sd">            client (TcpClient):</span>
+</span><span id="TcpClientEventHandler-62"><a href="#TcpClientEventHandler-62"><span class="linenos"> 62</span></a><span class="sd">                Client that established the connection.</span>
+</span><span id="TcpClientEventHandler-63"><a href="#TcpClientEventHandler-63"><span class="linenos"> 63</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-64"><a href="#TcpClientEventHandler-64"><span class="linenos"> 64</span></a>        <span class="k">pass</span>
+</span><span id="TcpClientEventHandler-65"><a href="#TcpClientEventHandler-65"><span class="linenos"> 65</span></a>
+</span><span id="TcpClientEventHandler-66"><a href="#TcpClientEventHandler-66"><span class="linenos"> 66</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_connection_closed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
+</span><span id="TcpClientEventHandler-67"><a href="#TcpClientEventHandler-67"><span class="linenos"> 67</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-68"><a href="#TcpClientEventHandler-68"><span class="linenos"> 68</span></a><span class="sd">        Called when the TCP connection is closed.</span>
+</span><span id="TcpClientEventHandler-69"><a href="#TcpClientEventHandler-69"><span class="linenos"> 69</span></a>
+</span><span id="TcpClientEventHandler-70"><a href="#TcpClientEventHandler-70"><span class="linenos"> 70</span></a><span class="sd">        Args:</span>
+</span><span id="TcpClientEventHandler-71"><a href="#TcpClientEventHandler-71"><span class="linenos"> 71</span></a><span class="sd">            client (TcpClient):</span>
+</span><span id="TcpClientEventHandler-72"><a href="#TcpClientEventHandler-72"><span class="linenos"> 72</span></a><span class="sd">                Client whose connection was closed.</span>
+</span><span id="TcpClientEventHandler-73"><a href="#TcpClientEventHandler-73"><span class="linenos"> 73</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-74"><a href="#TcpClientEventHandler-74"><span class="linenos"> 74</span></a>        <span class="k">pass</span>
+</span><span id="TcpClientEventHandler-75"><a href="#TcpClientEventHandler-75"><span class="linenos"> 75</span></a>
+</span><span id="TcpClientEventHandler-76"><a href="#TcpClientEventHandler-76"><span class="linenos"> 76</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_received_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+</span><span id="TcpClientEventHandler-77"><a href="#TcpClientEventHandler-77"><span class="linenos"> 77</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-78"><a href="#TcpClientEventHandler-78"><span class="linenos"> 78</span></a><span class="sd">        Called when an Agent is received from the server.</span>
+</span><span id="TcpClientEventHandler-79"><a href="#TcpClientEventHandler-79"><span class="linenos"> 79</span></a>
+</span><span id="TcpClientEventHandler-80"><a href="#TcpClientEventHandler-80"><span class="linenos"> 80</span></a><span class="sd">        In the current TcpClient implementation, incoming</span>
+</span><span id="TcpClientEventHandler-81"><a href="#TcpClientEventHandler-81"><span class="linenos"> 81</span></a><span class="sd">        Agents are delivered while send_sync() is waiting</span>
+</span><span id="TcpClientEventHandler-82"><a href="#TcpClientEventHandler-82"><span class="linenos"> 82</span></a><span class="sd">        for a final Reply.</span>
+</span><span id="TcpClientEventHandler-83"><a href="#TcpClientEventHandler-83"><span class="linenos"> 83</span></a>
+</span><span id="TcpClientEventHandler-84"><a href="#TcpClientEventHandler-84"><span class="linenos"> 84</span></a><span class="sd">        Args:</span>
+</span><span id="TcpClientEventHandler-85"><a href="#TcpClientEventHandler-85"><span class="linenos"> 85</span></a><span class="sd">            agent (Agent):</span>
+</span><span id="TcpClientEventHandler-86"><a href="#TcpClientEventHandler-86"><span class="linenos"> 86</span></a><span class="sd">                Received Agent.</span>
+</span><span id="TcpClientEventHandler-87"><a href="#TcpClientEventHandler-87"><span class="linenos"> 87</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-88"><a href="#TcpClientEventHandler-88"><span class="linenos"> 88</span></a>        <span class="k">pass</span>
 </span><span id="TcpClientEventHandler-89"><a href="#TcpClientEventHandler-89"><span class="linenos"> 89</span></a>
-</span><span id="TcpClientEventHandler-90"><a href="#TcpClientEventHandler-90"><span class="linenos"> 90</span></a><span class="sd">        Args:</span>
-</span><span id="TcpClientEventHandler-91"><a href="#TcpClientEventHandler-91"><span class="linenos"> 91</span></a><span class="sd">            reply (Reply):</span>
-</span><span id="TcpClientEventHandler-92"><a href="#TcpClientEventHandler-92"><span class="linenos"> 92</span></a><span class="sd">                Received Reply.</span>
-</span><span id="TcpClientEventHandler-93"><a href="#TcpClientEventHandler-93"><span class="linenos"> 93</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-94"><a href="#TcpClientEventHandler-94"><span class="linenos"> 94</span></a>        <span class="k">pass</span>
-</span><span id="TcpClientEventHandler-95"><a href="#TcpClientEventHandler-95"><span class="linenos"> 95</span></a>
-</span><span id="TcpClientEventHandler-96"><a href="#TcpClientEventHandler-96"><span class="linenos"> 96</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_sending_async_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
-</span><span id="TcpClientEventHandler-97"><a href="#TcpClientEventHandler-97"><span class="linenos"> 97</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-98"><a href="#TcpClientEventHandler-98"><span class="linenos"> 98</span></a><span class="sd">        Called after an asynchronous Agent is transmitted.</span>
-</span><span id="TcpClientEventHandler-99"><a href="#TcpClientEventHandler-99"><span class="linenos"> 99</span></a>
-</span><span id="TcpClientEventHandler-100"><a href="#TcpClientEventHandler-100"><span class="linenos">100</span></a><span class="sd">        Args:</span>
-</span><span id="TcpClientEventHandler-101"><a href="#TcpClientEventHandler-101"><span class="linenos">101</span></a><span class="sd">            agent (Agent):</span>
-</span><span id="TcpClientEventHandler-102"><a href="#TcpClientEventHandler-102"><span class="linenos">102</span></a><span class="sd">                Agent that was sent asynchronously.</span>
-</span><span id="TcpClientEventHandler-103"><a href="#TcpClientEventHandler-103"><span class="linenos">103</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-104"><a href="#TcpClientEventHandler-104"><span class="linenos">104</span></a>        <span class="k">pass</span>
-</span><span id="TcpClientEventHandler-105"><a href="#TcpClientEventHandler-105"><span class="linenos">105</span></a>
-</span><span id="TcpClientEventHandler-106"><a href="#TcpClientEventHandler-106"><span class="linenos">106</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_sending_sync_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
-</span><span id="TcpClientEventHandler-107"><a href="#TcpClientEventHandler-107"><span class="linenos">107</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-108"><a href="#TcpClientEventHandler-108"><span class="linenos">108</span></a><span class="sd">        Called after a synchronous Agent is transmitted,</span>
-</span><span id="TcpClientEventHandler-109"><a href="#TcpClientEventHandler-109"><span class="linenos">109</span></a><span class="sd">        before the client begins waiting for its Reply.</span>
-</span><span id="TcpClientEventHandler-110"><a href="#TcpClientEventHandler-110"><span class="linenos">110</span></a>
-</span><span id="TcpClientEventHandler-111"><a href="#TcpClientEventHandler-111"><span class="linenos">111</span></a><span class="sd">        Args:</span>
-</span><span id="TcpClientEventHandler-112"><a href="#TcpClientEventHandler-112"><span class="linenos">112</span></a><span class="sd">            agent (Agent):</span>
-</span><span id="TcpClientEventHandler-113"><a href="#TcpClientEventHandler-113"><span class="linenos">113</span></a><span class="sd">                Agent that was sent synchronously.</span>
-</span><span id="TcpClientEventHandler-114"><a href="#TcpClientEventHandler-114"><span class="linenos">114</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler-115"><a href="#TcpClientEventHandler-115"><span class="linenos">115</span></a>        <span class="k">pass</span>
+</span><span id="TcpClientEventHandler-90"><a href="#TcpClientEventHandler-90"><span class="linenos"> 90</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_received_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reply</span><span class="p">):</span>
+</span><span id="TcpClientEventHandler-91"><a href="#TcpClientEventHandler-91"><span class="linenos"> 91</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-92"><a href="#TcpClientEventHandler-92"><span class="linenos"> 92</span></a><span class="sd">        Called when a Reply is received from the server.</span>
+</span><span id="TcpClientEventHandler-93"><a href="#TcpClientEventHandler-93"><span class="linenos"> 93</span></a>
+</span><span id="TcpClientEventHandler-94"><a href="#TcpClientEventHandler-94"><span class="linenos"> 94</span></a><span class="sd">        This includes intermediate, unrelated, and final</span>
+</span><span id="TcpClientEventHandler-95"><a href="#TcpClientEventHandler-95"><span class="linenos"> 95</span></a><span class="sd">        Replies processed by send_sync().</span>
+</span><span id="TcpClientEventHandler-96"><a href="#TcpClientEventHandler-96"><span class="linenos"> 96</span></a>
+</span><span id="TcpClientEventHandler-97"><a href="#TcpClientEventHandler-97"><span class="linenos"> 97</span></a><span class="sd">        Args:</span>
+</span><span id="TcpClientEventHandler-98"><a href="#TcpClientEventHandler-98"><span class="linenos"> 98</span></a><span class="sd">            reply (Reply):</span>
+</span><span id="TcpClientEventHandler-99"><a href="#TcpClientEventHandler-99"><span class="linenos"> 99</span></a><span class="sd">                Received Reply.</span>
+</span><span id="TcpClientEventHandler-100"><a href="#TcpClientEventHandler-100"><span class="linenos">100</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-101"><a href="#TcpClientEventHandler-101"><span class="linenos">101</span></a>        <span class="k">pass</span>
+</span><span id="TcpClientEventHandler-102"><a href="#TcpClientEventHandler-102"><span class="linenos">102</span></a>
+</span><span id="TcpClientEventHandler-103"><a href="#TcpClientEventHandler-103"><span class="linenos">103</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_sending_async_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+</span><span id="TcpClientEventHandler-104"><a href="#TcpClientEventHandler-104"><span class="linenos">104</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-105"><a href="#TcpClientEventHandler-105"><span class="linenos">105</span></a><span class="sd">        Called after an asynchronous Agent is transmitted.</span>
+</span><span id="TcpClientEventHandler-106"><a href="#TcpClientEventHandler-106"><span class="linenos">106</span></a>
+</span><span id="TcpClientEventHandler-107"><a href="#TcpClientEventHandler-107"><span class="linenos">107</span></a><span class="sd">        Args:</span>
+</span><span id="TcpClientEventHandler-108"><a href="#TcpClientEventHandler-108"><span class="linenos">108</span></a><span class="sd">            agent (Agent):</span>
+</span><span id="TcpClientEventHandler-109"><a href="#TcpClientEventHandler-109"><span class="linenos">109</span></a><span class="sd">                Agent that was sent asynchronously.</span>
+</span><span id="TcpClientEventHandler-110"><a href="#TcpClientEventHandler-110"><span class="linenos">110</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-111"><a href="#TcpClientEventHandler-111"><span class="linenos">111</span></a>        <span class="k">pass</span>
+</span><span id="TcpClientEventHandler-112"><a href="#TcpClientEventHandler-112"><span class="linenos">112</span></a>
+</span><span id="TcpClientEventHandler-113"><a href="#TcpClientEventHandler-113"><span class="linenos">113</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_sending_sync_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+</span><span id="TcpClientEventHandler-114"><a href="#TcpClientEventHandler-114"><span class="linenos">114</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-115"><a href="#TcpClientEventHandler-115"><span class="linenos">115</span></a><span class="sd">        Called after a synchronous Agent is transmitted,</span>
+</span><span id="TcpClientEventHandler-116"><a href="#TcpClientEventHandler-116"><span class="linenos">116</span></a><span class="sd">        before the client begins waiting for its Reply.</span>
+</span><span id="TcpClientEventHandler-117"><a href="#TcpClientEventHandler-117"><span class="linenos">117</span></a>
+</span><span id="TcpClientEventHandler-118"><a href="#TcpClientEventHandler-118"><span class="linenos">118</span></a><span class="sd">        Args:</span>
+</span><span id="TcpClientEventHandler-119"><a href="#TcpClientEventHandler-119"><span class="linenos">119</span></a><span class="sd">            agent (Agent):</span>
+</span><span id="TcpClientEventHandler-120"><a href="#TcpClientEventHandler-120"><span class="linenos">120</span></a><span class="sd">                Agent that was sent synchronously.</span>
+</span><span id="TcpClientEventHandler-121"><a href="#TcpClientEventHandler-121"><span class="linenos">121</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler-122"><a href="#TcpClientEventHandler-122"><span class="linenos">122</span></a>        <span class="k">pass</span>
 </span></pre></div>
 
 
@@ -377,15 +386,15 @@ to avoid delaying communication operations.
 
     </div>
     <a class="headerlink" href="#TcpClientEventHandler.on_connection_established"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler.on_connection_established-49"><a href="#TcpClientEventHandler.on_connection_established-49"><span class="linenos">49</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_connection_established</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
-</span><span id="TcpClientEventHandler.on_connection_established-50"><a href="#TcpClientEventHandler.on_connection_established-50"><span class="linenos">50</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler.on_connection_established-51"><a href="#TcpClientEventHandler.on_connection_established-51"><span class="linenos">51</span></a><span class="sd">        Called after a TCP connection is established.</span>
-</span><span id="TcpClientEventHandler.on_connection_established-52"><a href="#TcpClientEventHandler.on_connection_established-52"><span class="linenos">52</span></a>
-</span><span id="TcpClientEventHandler.on_connection_established-53"><a href="#TcpClientEventHandler.on_connection_established-53"><span class="linenos">53</span></a><span class="sd">        Args:</span>
-</span><span id="TcpClientEventHandler.on_connection_established-54"><a href="#TcpClientEventHandler.on_connection_established-54"><span class="linenos">54</span></a><span class="sd">            client (TcpClient):</span>
-</span><span id="TcpClientEventHandler.on_connection_established-55"><a href="#TcpClientEventHandler.on_connection_established-55"><span class="linenos">55</span></a><span class="sd">                Client that established the connection.</span>
-</span><span id="TcpClientEventHandler.on_connection_established-56"><a href="#TcpClientEventHandler.on_connection_established-56"><span class="linenos">56</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler.on_connection_established-57"><a href="#TcpClientEventHandler.on_connection_established-57"><span class="linenos">57</span></a>        <span class="k">pass</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler.on_connection_established-56"><a href="#TcpClientEventHandler.on_connection_established-56"><span class="linenos">56</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_connection_established</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
+</span><span id="TcpClientEventHandler.on_connection_established-57"><a href="#TcpClientEventHandler.on_connection_established-57"><span class="linenos">57</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler.on_connection_established-58"><a href="#TcpClientEventHandler.on_connection_established-58"><span class="linenos">58</span></a><span class="sd">        Called after a TCP connection is established.</span>
+</span><span id="TcpClientEventHandler.on_connection_established-59"><a href="#TcpClientEventHandler.on_connection_established-59"><span class="linenos">59</span></a>
+</span><span id="TcpClientEventHandler.on_connection_established-60"><a href="#TcpClientEventHandler.on_connection_established-60"><span class="linenos">60</span></a><span class="sd">        Args:</span>
+</span><span id="TcpClientEventHandler.on_connection_established-61"><a href="#TcpClientEventHandler.on_connection_established-61"><span class="linenos">61</span></a><span class="sd">            client (TcpClient):</span>
+</span><span id="TcpClientEventHandler.on_connection_established-62"><a href="#TcpClientEventHandler.on_connection_established-62"><span class="linenos">62</span></a><span class="sd">                Client that established the connection.</span>
+</span><span id="TcpClientEventHandler.on_connection_established-63"><a href="#TcpClientEventHandler.on_connection_established-63"><span class="linenos">63</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler.on_connection_established-64"><a href="#TcpClientEventHandler.on_connection_established-64"><span class="linenos">64</span></a>        <span class="k">pass</span>
 </span></pre></div>
 
 
@@ -409,15 +418,15 @@ to avoid delaying communication operations.
 
     </div>
     <a class="headerlink" href="#TcpClientEventHandler.on_connection_closed"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler.on_connection_closed-59"><a href="#TcpClientEventHandler.on_connection_closed-59"><span class="linenos">59</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_connection_closed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
-</span><span id="TcpClientEventHandler.on_connection_closed-60"><a href="#TcpClientEventHandler.on_connection_closed-60"><span class="linenos">60</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler.on_connection_closed-61"><a href="#TcpClientEventHandler.on_connection_closed-61"><span class="linenos">61</span></a><span class="sd">        Called when the TCP connection is closed.</span>
-</span><span id="TcpClientEventHandler.on_connection_closed-62"><a href="#TcpClientEventHandler.on_connection_closed-62"><span class="linenos">62</span></a>
-</span><span id="TcpClientEventHandler.on_connection_closed-63"><a href="#TcpClientEventHandler.on_connection_closed-63"><span class="linenos">63</span></a><span class="sd">        Args:</span>
-</span><span id="TcpClientEventHandler.on_connection_closed-64"><a href="#TcpClientEventHandler.on_connection_closed-64"><span class="linenos">64</span></a><span class="sd">            client (TcpClient):</span>
-</span><span id="TcpClientEventHandler.on_connection_closed-65"><a href="#TcpClientEventHandler.on_connection_closed-65"><span class="linenos">65</span></a><span class="sd">                Client whose connection was closed.</span>
-</span><span id="TcpClientEventHandler.on_connection_closed-66"><a href="#TcpClientEventHandler.on_connection_closed-66"><span class="linenos">66</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler.on_connection_closed-67"><a href="#TcpClientEventHandler.on_connection_closed-67"><span class="linenos">67</span></a>        <span class="k">pass</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler.on_connection_closed-66"><a href="#TcpClientEventHandler.on_connection_closed-66"><span class="linenos">66</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_connection_closed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
+</span><span id="TcpClientEventHandler.on_connection_closed-67"><a href="#TcpClientEventHandler.on_connection_closed-67"><span class="linenos">67</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler.on_connection_closed-68"><a href="#TcpClientEventHandler.on_connection_closed-68"><span class="linenos">68</span></a><span class="sd">        Called when the TCP connection is closed.</span>
+</span><span id="TcpClientEventHandler.on_connection_closed-69"><a href="#TcpClientEventHandler.on_connection_closed-69"><span class="linenos">69</span></a>
+</span><span id="TcpClientEventHandler.on_connection_closed-70"><a href="#TcpClientEventHandler.on_connection_closed-70"><span class="linenos">70</span></a><span class="sd">        Args:</span>
+</span><span id="TcpClientEventHandler.on_connection_closed-71"><a href="#TcpClientEventHandler.on_connection_closed-71"><span class="linenos">71</span></a><span class="sd">            client (TcpClient):</span>
+</span><span id="TcpClientEventHandler.on_connection_closed-72"><a href="#TcpClientEventHandler.on_connection_closed-72"><span class="linenos">72</span></a><span class="sd">                Client whose connection was closed.</span>
+</span><span id="TcpClientEventHandler.on_connection_closed-73"><a href="#TcpClientEventHandler.on_connection_closed-73"><span class="linenos">73</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler.on_connection_closed-74"><a href="#TcpClientEventHandler.on_connection_closed-74"><span class="linenos">74</span></a>        <span class="k">pass</span>
 </span></pre></div>
 
 
@@ -441,19 +450,19 @@ to avoid delaying communication operations.
 
     </div>
     <a class="headerlink" href="#TcpClientEventHandler.on_received_agent"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler.on_received_agent-69"><a href="#TcpClientEventHandler.on_received_agent-69"><span class="linenos">69</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_received_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
-</span><span id="TcpClientEventHandler.on_received_agent-70"><a href="#TcpClientEventHandler.on_received_agent-70"><span class="linenos">70</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler.on_received_agent-71"><a href="#TcpClientEventHandler.on_received_agent-71"><span class="linenos">71</span></a><span class="sd">        Called when an Agent is received from the server.</span>
-</span><span id="TcpClientEventHandler.on_received_agent-72"><a href="#TcpClientEventHandler.on_received_agent-72"><span class="linenos">72</span></a>
-</span><span id="TcpClientEventHandler.on_received_agent-73"><a href="#TcpClientEventHandler.on_received_agent-73"><span class="linenos">73</span></a><span class="sd">        In the current TcpClient implementation, incoming</span>
-</span><span id="TcpClientEventHandler.on_received_agent-74"><a href="#TcpClientEventHandler.on_received_agent-74"><span class="linenos">74</span></a><span class="sd">        Agents are delivered while send_sync() is waiting</span>
-</span><span id="TcpClientEventHandler.on_received_agent-75"><a href="#TcpClientEventHandler.on_received_agent-75"><span class="linenos">75</span></a><span class="sd">        for a final Reply.</span>
-</span><span id="TcpClientEventHandler.on_received_agent-76"><a href="#TcpClientEventHandler.on_received_agent-76"><span class="linenos">76</span></a>
-</span><span id="TcpClientEventHandler.on_received_agent-77"><a href="#TcpClientEventHandler.on_received_agent-77"><span class="linenos">77</span></a><span class="sd">        Args:</span>
-</span><span id="TcpClientEventHandler.on_received_agent-78"><a href="#TcpClientEventHandler.on_received_agent-78"><span class="linenos">78</span></a><span class="sd">            agent (Agent):</span>
-</span><span id="TcpClientEventHandler.on_received_agent-79"><a href="#TcpClientEventHandler.on_received_agent-79"><span class="linenos">79</span></a><span class="sd">                Received Agent.</span>
-</span><span id="TcpClientEventHandler.on_received_agent-80"><a href="#TcpClientEventHandler.on_received_agent-80"><span class="linenos">80</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler.on_received_agent-81"><a href="#TcpClientEventHandler.on_received_agent-81"><span class="linenos">81</span></a>        <span class="k">pass</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler.on_received_agent-76"><a href="#TcpClientEventHandler.on_received_agent-76"><span class="linenos">76</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_received_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+</span><span id="TcpClientEventHandler.on_received_agent-77"><a href="#TcpClientEventHandler.on_received_agent-77"><span class="linenos">77</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler.on_received_agent-78"><a href="#TcpClientEventHandler.on_received_agent-78"><span class="linenos">78</span></a><span class="sd">        Called when an Agent is received from the server.</span>
+</span><span id="TcpClientEventHandler.on_received_agent-79"><a href="#TcpClientEventHandler.on_received_agent-79"><span class="linenos">79</span></a>
+</span><span id="TcpClientEventHandler.on_received_agent-80"><a href="#TcpClientEventHandler.on_received_agent-80"><span class="linenos">80</span></a><span class="sd">        In the current TcpClient implementation, incoming</span>
+</span><span id="TcpClientEventHandler.on_received_agent-81"><a href="#TcpClientEventHandler.on_received_agent-81"><span class="linenos">81</span></a><span class="sd">        Agents are delivered while send_sync() is waiting</span>
+</span><span id="TcpClientEventHandler.on_received_agent-82"><a href="#TcpClientEventHandler.on_received_agent-82"><span class="linenos">82</span></a><span class="sd">        for a final Reply.</span>
+</span><span id="TcpClientEventHandler.on_received_agent-83"><a href="#TcpClientEventHandler.on_received_agent-83"><span class="linenos">83</span></a>
+</span><span id="TcpClientEventHandler.on_received_agent-84"><a href="#TcpClientEventHandler.on_received_agent-84"><span class="linenos">84</span></a><span class="sd">        Args:</span>
+</span><span id="TcpClientEventHandler.on_received_agent-85"><a href="#TcpClientEventHandler.on_received_agent-85"><span class="linenos">85</span></a><span class="sd">            agent (Agent):</span>
+</span><span id="TcpClientEventHandler.on_received_agent-86"><a href="#TcpClientEventHandler.on_received_agent-86"><span class="linenos">86</span></a><span class="sd">                Received Agent.</span>
+</span><span id="TcpClientEventHandler.on_received_agent-87"><a href="#TcpClientEventHandler.on_received_agent-87"><span class="linenos">87</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler.on_received_agent-88"><a href="#TcpClientEventHandler.on_received_agent-88"><span class="linenos">88</span></a>        <span class="k">pass</span>
 </span></pre></div>
 
 
@@ -481,18 +490,18 @@ for a final Reply.</p>
 
     </div>
     <a class="headerlink" href="#TcpClientEventHandler.on_received_reply"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler.on_received_reply-83"><a href="#TcpClientEventHandler.on_received_reply-83"><span class="linenos">83</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_received_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reply</span><span class="p">):</span>
-</span><span id="TcpClientEventHandler.on_received_reply-84"><a href="#TcpClientEventHandler.on_received_reply-84"><span class="linenos">84</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler.on_received_reply-85"><a href="#TcpClientEventHandler.on_received_reply-85"><span class="linenos">85</span></a><span class="sd">        Called when a Reply is received from the server.</span>
-</span><span id="TcpClientEventHandler.on_received_reply-86"><a href="#TcpClientEventHandler.on_received_reply-86"><span class="linenos">86</span></a>
-</span><span id="TcpClientEventHandler.on_received_reply-87"><a href="#TcpClientEventHandler.on_received_reply-87"><span class="linenos">87</span></a><span class="sd">        This includes intermediate, unrelated, and final</span>
-</span><span id="TcpClientEventHandler.on_received_reply-88"><a href="#TcpClientEventHandler.on_received_reply-88"><span class="linenos">88</span></a><span class="sd">        Replies processed by send_sync().</span>
-</span><span id="TcpClientEventHandler.on_received_reply-89"><a href="#TcpClientEventHandler.on_received_reply-89"><span class="linenos">89</span></a>
-</span><span id="TcpClientEventHandler.on_received_reply-90"><a href="#TcpClientEventHandler.on_received_reply-90"><span class="linenos">90</span></a><span class="sd">        Args:</span>
-</span><span id="TcpClientEventHandler.on_received_reply-91"><a href="#TcpClientEventHandler.on_received_reply-91"><span class="linenos">91</span></a><span class="sd">            reply (Reply):</span>
-</span><span id="TcpClientEventHandler.on_received_reply-92"><a href="#TcpClientEventHandler.on_received_reply-92"><span class="linenos">92</span></a><span class="sd">                Received Reply.</span>
-</span><span id="TcpClientEventHandler.on_received_reply-93"><a href="#TcpClientEventHandler.on_received_reply-93"><span class="linenos">93</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler.on_received_reply-94"><a href="#TcpClientEventHandler.on_received_reply-94"><span class="linenos">94</span></a>        <span class="k">pass</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler.on_received_reply-90"><a href="#TcpClientEventHandler.on_received_reply-90"><span class="linenos"> 90</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_received_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reply</span><span class="p">):</span>
+</span><span id="TcpClientEventHandler.on_received_reply-91"><a href="#TcpClientEventHandler.on_received_reply-91"><span class="linenos"> 91</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler.on_received_reply-92"><a href="#TcpClientEventHandler.on_received_reply-92"><span class="linenos"> 92</span></a><span class="sd">        Called when a Reply is received from the server.</span>
+</span><span id="TcpClientEventHandler.on_received_reply-93"><a href="#TcpClientEventHandler.on_received_reply-93"><span class="linenos"> 93</span></a>
+</span><span id="TcpClientEventHandler.on_received_reply-94"><a href="#TcpClientEventHandler.on_received_reply-94"><span class="linenos"> 94</span></a><span class="sd">        This includes intermediate, unrelated, and final</span>
+</span><span id="TcpClientEventHandler.on_received_reply-95"><a href="#TcpClientEventHandler.on_received_reply-95"><span class="linenos"> 95</span></a><span class="sd">        Replies processed by send_sync().</span>
+</span><span id="TcpClientEventHandler.on_received_reply-96"><a href="#TcpClientEventHandler.on_received_reply-96"><span class="linenos"> 96</span></a>
+</span><span id="TcpClientEventHandler.on_received_reply-97"><a href="#TcpClientEventHandler.on_received_reply-97"><span class="linenos"> 97</span></a><span class="sd">        Args:</span>
+</span><span id="TcpClientEventHandler.on_received_reply-98"><a href="#TcpClientEventHandler.on_received_reply-98"><span class="linenos"> 98</span></a><span class="sd">            reply (Reply):</span>
+</span><span id="TcpClientEventHandler.on_received_reply-99"><a href="#TcpClientEventHandler.on_received_reply-99"><span class="linenos"> 99</span></a><span class="sd">                Received Reply.</span>
+</span><span id="TcpClientEventHandler.on_received_reply-100"><a href="#TcpClientEventHandler.on_received_reply-100"><span class="linenos">100</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler.on_received_reply-101"><a href="#TcpClientEventHandler.on_received_reply-101"><span class="linenos">101</span></a>        <span class="k">pass</span>
 </span></pre></div>
 
 
@@ -519,15 +528,15 @@ Replies processed by send_sync().</p>
 
     </div>
     <a class="headerlink" href="#TcpClientEventHandler.on_sending_async_agent"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler.on_sending_async_agent-96"><a href="#TcpClientEventHandler.on_sending_async_agent-96"><span class="linenos"> 96</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_sending_async_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
-</span><span id="TcpClientEventHandler.on_sending_async_agent-97"><a href="#TcpClientEventHandler.on_sending_async_agent-97"><span class="linenos"> 97</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler.on_sending_async_agent-98"><a href="#TcpClientEventHandler.on_sending_async_agent-98"><span class="linenos"> 98</span></a><span class="sd">        Called after an asynchronous Agent is transmitted.</span>
-</span><span id="TcpClientEventHandler.on_sending_async_agent-99"><a href="#TcpClientEventHandler.on_sending_async_agent-99"><span class="linenos"> 99</span></a>
-</span><span id="TcpClientEventHandler.on_sending_async_agent-100"><a href="#TcpClientEventHandler.on_sending_async_agent-100"><span class="linenos">100</span></a><span class="sd">        Args:</span>
-</span><span id="TcpClientEventHandler.on_sending_async_agent-101"><a href="#TcpClientEventHandler.on_sending_async_agent-101"><span class="linenos">101</span></a><span class="sd">            agent (Agent):</span>
-</span><span id="TcpClientEventHandler.on_sending_async_agent-102"><a href="#TcpClientEventHandler.on_sending_async_agent-102"><span class="linenos">102</span></a><span class="sd">                Agent that was sent asynchronously.</span>
-</span><span id="TcpClientEventHandler.on_sending_async_agent-103"><a href="#TcpClientEventHandler.on_sending_async_agent-103"><span class="linenos">103</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler.on_sending_async_agent-104"><a href="#TcpClientEventHandler.on_sending_async_agent-104"><span class="linenos">104</span></a>        <span class="k">pass</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler.on_sending_async_agent-103"><a href="#TcpClientEventHandler.on_sending_async_agent-103"><span class="linenos">103</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_sending_async_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+</span><span id="TcpClientEventHandler.on_sending_async_agent-104"><a href="#TcpClientEventHandler.on_sending_async_agent-104"><span class="linenos">104</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler.on_sending_async_agent-105"><a href="#TcpClientEventHandler.on_sending_async_agent-105"><span class="linenos">105</span></a><span class="sd">        Called after an asynchronous Agent is transmitted.</span>
+</span><span id="TcpClientEventHandler.on_sending_async_agent-106"><a href="#TcpClientEventHandler.on_sending_async_agent-106"><span class="linenos">106</span></a>
+</span><span id="TcpClientEventHandler.on_sending_async_agent-107"><a href="#TcpClientEventHandler.on_sending_async_agent-107"><span class="linenos">107</span></a><span class="sd">        Args:</span>
+</span><span id="TcpClientEventHandler.on_sending_async_agent-108"><a href="#TcpClientEventHandler.on_sending_async_agent-108"><span class="linenos">108</span></a><span class="sd">            agent (Agent):</span>
+</span><span id="TcpClientEventHandler.on_sending_async_agent-109"><a href="#TcpClientEventHandler.on_sending_async_agent-109"><span class="linenos">109</span></a><span class="sd">                Agent that was sent asynchronously.</span>
+</span><span id="TcpClientEventHandler.on_sending_async_agent-110"><a href="#TcpClientEventHandler.on_sending_async_agent-110"><span class="linenos">110</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler.on_sending_async_agent-111"><a href="#TcpClientEventHandler.on_sending_async_agent-111"><span class="linenos">111</span></a>        <span class="k">pass</span>
 </span></pre></div>
 
 
@@ -551,16 +560,16 @@ Replies processed by send_sync().</p>
 
     </div>
     <a class="headerlink" href="#TcpClientEventHandler.on_sending_sync_agent"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler.on_sending_sync_agent-106"><a href="#TcpClientEventHandler.on_sending_sync_agent-106"><span class="linenos">106</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_sending_sync_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
-</span><span id="TcpClientEventHandler.on_sending_sync_agent-107"><a href="#TcpClientEventHandler.on_sending_sync_agent-107"><span class="linenos">107</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler.on_sending_sync_agent-108"><a href="#TcpClientEventHandler.on_sending_sync_agent-108"><span class="linenos">108</span></a><span class="sd">        Called after a synchronous Agent is transmitted,</span>
-</span><span id="TcpClientEventHandler.on_sending_sync_agent-109"><a href="#TcpClientEventHandler.on_sending_sync_agent-109"><span class="linenos">109</span></a><span class="sd">        before the client begins waiting for its Reply.</span>
-</span><span id="TcpClientEventHandler.on_sending_sync_agent-110"><a href="#TcpClientEventHandler.on_sending_sync_agent-110"><span class="linenos">110</span></a>
-</span><span id="TcpClientEventHandler.on_sending_sync_agent-111"><a href="#TcpClientEventHandler.on_sending_sync_agent-111"><span class="linenos">111</span></a><span class="sd">        Args:</span>
-</span><span id="TcpClientEventHandler.on_sending_sync_agent-112"><a href="#TcpClientEventHandler.on_sending_sync_agent-112"><span class="linenos">112</span></a><span class="sd">            agent (Agent):</span>
-</span><span id="TcpClientEventHandler.on_sending_sync_agent-113"><a href="#TcpClientEventHandler.on_sending_sync_agent-113"><span class="linenos">113</span></a><span class="sd">                Agent that was sent synchronously.</span>
-</span><span id="TcpClientEventHandler.on_sending_sync_agent-114"><a href="#TcpClientEventHandler.on_sending_sync_agent-114"><span class="linenos">114</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="TcpClientEventHandler.on_sending_sync_agent-115"><a href="#TcpClientEventHandler.on_sending_sync_agent-115"><span class="linenos">115</span></a>        <span class="k">pass</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="TcpClientEventHandler.on_sending_sync_agent-113"><a href="#TcpClientEventHandler.on_sending_sync_agent-113"><span class="linenos">113</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_sending_sync_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agent</span><span class="p">):</span>
+</span><span id="TcpClientEventHandler.on_sending_sync_agent-114"><a href="#TcpClientEventHandler.on_sending_sync_agent-114"><span class="linenos">114</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler.on_sending_sync_agent-115"><a href="#TcpClientEventHandler.on_sending_sync_agent-115"><span class="linenos">115</span></a><span class="sd">        Called after a synchronous Agent is transmitted,</span>
+</span><span id="TcpClientEventHandler.on_sending_sync_agent-116"><a href="#TcpClientEventHandler.on_sending_sync_agent-116"><span class="linenos">116</span></a><span class="sd">        before the client begins waiting for its Reply.</span>
+</span><span id="TcpClientEventHandler.on_sending_sync_agent-117"><a href="#TcpClientEventHandler.on_sending_sync_agent-117"><span class="linenos">117</span></a>
+</span><span id="TcpClientEventHandler.on_sending_sync_agent-118"><a href="#TcpClientEventHandler.on_sending_sync_agent-118"><span class="linenos">118</span></a><span class="sd">        Args:</span>
+</span><span id="TcpClientEventHandler.on_sending_sync_agent-119"><a href="#TcpClientEventHandler.on_sending_sync_agent-119"><span class="linenos">119</span></a><span class="sd">            agent (Agent):</span>
+</span><span id="TcpClientEventHandler.on_sending_sync_agent-120"><a href="#TcpClientEventHandler.on_sending_sync_agent-120"><span class="linenos">120</span></a><span class="sd">                Agent that was sent synchronously.</span>
+</span><span id="TcpClientEventHandler.on_sending_sync_agent-121"><a href="#TcpClientEventHandler.on_sending_sync_agent-121"><span class="linenos">121</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="TcpClientEventHandler.on_sending_sync_agent-122"><a href="#TcpClientEventHandler.on_sending_sync_agent-122"><span class="linenos">122</span></a>        <span class="k">pass</span>
 </span></pre></div>
 
 

@@ -87,6 +87,7 @@
     </ul>
 
 
+            <footer>Copyright © 2026 Kristen Software LLC. All rights reserved.</footer>
 
         <a class="attribution" title="pdoc: Python API documentation generator" href="https://pdoc.dev" target="_blank">
             built with <span class="visually-hidden">pdoc</span><img
@@ -105,223 +106,231 @@
 
                         <label class="view-source-button" for="mod-reply-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">  1</span></a><span class="c1"># kdc/reply.py</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos">  2</span></a>
-</span><span id="L-3"><a href="#L-3"><span class="linenos">  3</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">kdc.agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos">  4</span></a>
-</span><span id="L-5"><a href="#L-5"><span class="linenos">  5</span></a>
-</span><span id="L-6"><a href="#L-6"><span class="linenos">  6</span></a><span class="k">class</span><span class="w"> </span><span class="nc">Reply</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
-</span><span id="L-7"><a href="#L-7"><span class="linenos">  7</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-8"><a href="#L-8"><span class="linenos">  8</span></a><span class="sd">    Represents a response to an Agent sent through KDC.</span>
-</span><span id="L-9"><a href="#L-9"><span class="linenos">  9</span></a>
-</span><span id="L-10"><a href="#L-10"><span class="linenos"> 10</span></a><span class="sd">    A Reply extends Agent and provides information about the</span>
-</span><span id="L-11"><a href="#L-11"><span class="linenos"> 11</span></a><span class="sd">    outcome of an operation, including success status, an</span>
-</span><span id="L-12"><a href="#L-12"><span class="linenos"> 12</span></a><span class="sd">    optional exception, a message, response data, and a</span>
-</span><span id="L-13"><a href="#L-13"><span class="linenos"> 13</span></a><span class="sd">    response code.</span>
-</span><span id="L-14"><a href="#L-14"><span class="linenos"> 14</span></a>
-</span><span id="L-15"><a href="#L-15"><span class="linenos"> 15</span></a><span class="sd">    Replies may be used for synchronous responses or</span>
-</span><span id="L-16"><a href="#L-16"><span class="linenos"> 16</span></a><span class="sd">    asynchronous updates. The last_reply flag indicates</span>
-</span><span id="L-17"><a href="#L-17"><span class="linenos"> 17</span></a><span class="sd">    whether additional replies are expected.</span>
-</span><span id="L-18"><a href="#L-18"><span class="linenos"> 18</span></a>
-</span><span id="L-19"><a href="#L-19"><span class="linenos"> 19</span></a><span class="sd">    This class is designed for compatibility with the</span>
-</span><span id="L-20"><a href="#L-20"><span class="linenos"> 20</span></a><span class="sd">    KDC-Java Reply serialization contract.</span>
-</span><span id="L-21"><a href="#L-21"><span class="linenos"> 21</span></a>
-</span><span id="L-22"><a href="#L-22"><span class="linenos"> 22</span></a><span class="sd">    Attributes:</span>
-</span><span id="L-23"><a href="#L-23"><span class="linenos"> 23</span></a><span class="sd">        throwable (object | None):</span>
-</span><span id="L-24"><a href="#L-24"><span class="linenos"> 24</span></a><span class="sd">            Optional exception or error information.</span>
-</span><span id="L-25"><a href="#L-25"><span class="linenos"> 25</span></a>
-</span><span id="L-26"><a href="#L-26"><span class="linenos"> 26</span></a><span class="sd">        success (bool):</span>
-</span><span id="L-27"><a href="#L-27"><span class="linenos"> 27</span></a><span class="sd">            Indicates whether the operation succeeded.</span>
-</span><span id="L-28"><a href="#L-28"><span class="linenos"> 28</span></a><span class="sd">            Defaults to True.</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">  1</span></a><span class="c1">#</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos">  2</span></a><span class="c1"># Copyright (c) 2026 Kristen Software LLC.</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos">  3</span></a><span class="c1"># All rights reserved.</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos">  4</span></a><span class="c1">#</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos">  5</span></a><span class="c1"># This software is proprietary and confidential.</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos">  6</span></a><span class="c1"># Unauthorized copying, modification, distribution,</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos">  7</span></a><span class="c1"># or use is prohibited without prior written permission.</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos">  8</span></a><span class="c1">#</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos">  9</span></a><span class="c1"># kdc/reply.py</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos"> 10</span></a>
+</span><span id="L-11"><a href="#L-11"><span class="linenos"> 11</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">kdc.agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos"> 12</span></a>
+</span><span id="L-13"><a href="#L-13"><span class="linenos"> 13</span></a>
+</span><span id="L-14"><a href="#L-14"><span class="linenos"> 14</span></a><span class="k">class</span><span class="w"> </span><span class="nc">Reply</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos"> 15</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-16"><a href="#L-16"><span class="linenos"> 16</span></a><span class="sd">    Represents a response to an Agent sent through KDC.</span>
+</span><span id="L-17"><a href="#L-17"><span class="linenos"> 17</span></a>
+</span><span id="L-18"><a href="#L-18"><span class="linenos"> 18</span></a><span class="sd">    A Reply extends Agent and provides information about the</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos"> 19</span></a><span class="sd">    outcome of an operation, including success status, an</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos"> 20</span></a><span class="sd">    optional exception, a message, response data, and a</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos"> 21</span></a><span class="sd">    response code.</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos"> 22</span></a>
+</span><span id="L-23"><a href="#L-23"><span class="linenos"> 23</span></a><span class="sd">    Replies may be used for synchronous responses or</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos"> 24</span></a><span class="sd">    asynchronous updates. The last_reply flag indicates</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos"> 25</span></a><span class="sd">    whether additional replies are expected.</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos"> 26</span></a>
+</span><span id="L-27"><a href="#L-27"><span class="linenos"> 27</span></a><span class="sd">    This class is designed for compatibility with the</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos"> 28</span></a><span class="sd">    KDC-Java Reply serialization contract.</span>
 </span><span id="L-29"><a href="#L-29"><span class="linenos"> 29</span></a>
-</span><span id="L-30"><a href="#L-30"><span class="linenos"> 30</span></a><span class="sd">        last_reply (bool):</span>
-</span><span id="L-31"><a href="#L-31"><span class="linenos"> 31</span></a><span class="sd">            Indicates whether this is the final reply.</span>
-</span><span id="L-32"><a href="#L-32"><span class="linenos"> 32</span></a><span class="sd">            Defaults to True.</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos"> 30</span></a><span class="sd">    Attributes:</span>
+</span><span id="L-31"><a href="#L-31"><span class="linenos"> 31</span></a><span class="sd">        throwable (object | None):</span>
+</span><span id="L-32"><a href="#L-32"><span class="linenos"> 32</span></a><span class="sd">            Optional exception or error information.</span>
 </span><span id="L-33"><a href="#L-33"><span class="linenos"> 33</span></a>
-</span><span id="L-34"><a href="#L-34"><span class="linenos"> 34</span></a><span class="sd">        message (str):</span>
-</span><span id="L-35"><a href="#L-35"><span class="linenos"> 35</span></a><span class="sd">            Descriptive response message. Defaults to &quot;OK&quot;.</span>
-</span><span id="L-36"><a href="#L-36"><span class="linenos"> 36</span></a>
-</span><span id="L-37"><a href="#L-37"><span class="linenos"> 37</span></a><span class="sd">        response_code (int):</span>
-</span><span id="L-38"><a href="#L-38"><span class="linenos"> 38</span></a><span class="sd">            Response code associated with the operation.</span>
-</span><span id="L-39"><a href="#L-39"><span class="linenos"> 39</span></a><span class="sd">            Defaults to 200.</span>
-</span><span id="L-40"><a href="#L-40"><span class="linenos"> 40</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos"> 34</span></a><span class="sd">        success (bool):</span>
+</span><span id="L-35"><a href="#L-35"><span class="linenos"> 35</span></a><span class="sd">            Indicates whether the operation succeeded.</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos"> 36</span></a><span class="sd">            Defaults to True.</span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos"> 37</span></a>
+</span><span id="L-38"><a href="#L-38"><span class="linenos"> 38</span></a><span class="sd">        last_reply (bool):</span>
+</span><span id="L-39"><a href="#L-39"><span class="linenos"> 39</span></a><span class="sd">            Indicates whether this is the final reply.</span>
+</span><span id="L-40"><a href="#L-40"><span class="linenos"> 40</span></a><span class="sd">            Defaults to True.</span>
 </span><span id="L-41"><a href="#L-41"><span class="linenos"> 41</span></a>
-</span><span id="L-42"><a href="#L-42"><span class="linenos"> 42</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-43"><a href="#L-43"><span class="linenos"> 43</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-44"><a href="#L-44"><span class="linenos"> 44</span></a><span class="sd">        Initialize a Reply with default response values.</span>
-</span><span id="L-45"><a href="#L-45"><span class="linenos"> 45</span></a>
-</span><span id="L-46"><a href="#L-46"><span class="linenos"> 46</span></a><span class="sd">        Also initializes inherited Agent properties.</span>
-</span><span id="L-47"><a href="#L-47"><span class="linenos"> 47</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-48"><a href="#L-48"><span class="linenos"> 48</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span><span id="L-42"><a href="#L-42"><span class="linenos"> 42</span></a><span class="sd">        message (str):</span>
+</span><span id="L-43"><a href="#L-43"><span class="linenos"> 43</span></a><span class="sd">            Descriptive response message. Defaults to &quot;OK&quot;.</span>
+</span><span id="L-44"><a href="#L-44"><span class="linenos"> 44</span></a>
+</span><span id="L-45"><a href="#L-45"><span class="linenos"> 45</span></a><span class="sd">        response_code (int):</span>
+</span><span id="L-46"><a href="#L-46"><span class="linenos"> 46</span></a><span class="sd">            Response code associated with the operation.</span>
+</span><span id="L-47"><a href="#L-47"><span class="linenos"> 47</span></a><span class="sd">            Defaults to 200.</span>
+</span><span id="L-48"><a href="#L-48"><span class="linenos"> 48</span></a><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="L-49"><a href="#L-49"><span class="linenos"> 49</span></a>
-</span><span id="L-50"><a href="#L-50"><span class="linenos"> 50</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="L-51"><a href="#L-51"><span class="linenos"> 51</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="L-52"><a href="#L-52"><span class="linenos"> 52</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="L-53"><a href="#L-53"><span class="linenos"> 53</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;OK&quot;</span>
-</span><span id="L-54"><a href="#L-54"><span class="linenos"> 54</span></a>
-</span><span id="L-55"><a href="#L-55"><span class="linenos"> 55</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span> <span class="o">=</span> <span class="mi">200</span>
-</span><span id="L-56"><a href="#L-56"><span class="linenos"> 56</span></a>
-</span><span id="L-57"><a href="#L-57"><span class="linenos"> 57</span></a>    <span class="c1">#</span>
-</span><span id="L-58"><a href="#L-58"><span class="linenos"> 58</span></a>    <span class="c1"># Exception</span>
-</span><span id="L-59"><a href="#L-59"><span class="linenos"> 59</span></a>    <span class="c1">#</span>
-</span><span id="L-60"><a href="#L-60"><span class="linenos"> 60</span></a>
-</span><span id="L-61"><a href="#L-61"><span class="linenos"> 61</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">throwable</span><span class="p">):</span>
-</span><span id="L-62"><a href="#L-62"><span class="linenos"> 62</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-63"><a href="#L-63"><span class="linenos"> 63</span></a><span class="sd">        Associate exception information with this Reply.</span>
+</span><span id="L-50"><a href="#L-50"><span class="linenos"> 50</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-51"><a href="#L-51"><span class="linenos"> 51</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-52"><a href="#L-52"><span class="linenos"> 52</span></a><span class="sd">        Initialize a Reply with default response values.</span>
+</span><span id="L-53"><a href="#L-53"><span class="linenos"> 53</span></a>
+</span><span id="L-54"><a href="#L-54"><span class="linenos"> 54</span></a><span class="sd">        Also initializes inherited Agent properties.</span>
+</span><span id="L-55"><a href="#L-55"><span class="linenos"> 55</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-56"><a href="#L-56"><span class="linenos"> 56</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span><span id="L-57"><a href="#L-57"><span class="linenos"> 57</span></a>
+</span><span id="L-58"><a href="#L-58"><span class="linenos"> 58</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="L-59"><a href="#L-59"><span class="linenos"> 59</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="L-60"><a href="#L-60"><span class="linenos"> 60</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="L-61"><a href="#L-61"><span class="linenos"> 61</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;OK&quot;</span>
+</span><span id="L-62"><a href="#L-62"><span class="linenos"> 62</span></a>
+</span><span id="L-63"><a href="#L-63"><span class="linenos"> 63</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span> <span class="o">=</span> <span class="mi">200</span>
 </span><span id="L-64"><a href="#L-64"><span class="linenos"> 64</span></a>
-</span><span id="L-65"><a href="#L-65"><span class="linenos"> 65</span></a><span class="sd">        Args:</span>
-</span><span id="L-66"><a href="#L-66"><span class="linenos"> 66</span></a><span class="sd">            throwable:</span>
-</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a><span class="sd">                Exception or error information to store.</span>
-</span><span id="L-68"><a href="#L-68"><span class="linenos"> 68</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-69"><a href="#L-69"><span class="linenos"> 69</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span> <span class="o">=</span> <span class="n">throwable</span>
-</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a>
-</span><span id="L-71"><a href="#L-71"><span class="linenos"> 71</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-72"><a href="#L-72"><span class="linenos"> 72</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a><span class="sd">        Return the exception information associated with this Reply.</span>
-</span><span id="L-74"><a href="#L-74"><span class="linenos"> 74</span></a>
-</span><span id="L-75"><a href="#L-75"><span class="linenos"> 75</span></a><span class="sd">        Returns:</span>
-</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a><span class="sd">            object | None:</span>
-</span><span id="L-77"><a href="#L-77"><span class="linenos"> 77</span></a><span class="sd">                Stored exception information, or None if unset.</span>
-</span><span id="L-78"><a href="#L-78"><span class="linenos"> 78</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span>
-</span><span id="L-80"><a href="#L-80"><span class="linenos"> 80</span></a>
-</span><span id="L-81"><a href="#L-81"><span class="linenos"> 81</span></a>    <span class="c1">#</span>
-</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a>    <span class="c1"># Success</span>
-</span><span id="L-83"><a href="#L-83"><span class="linenos"> 83</span></a>    <span class="c1">#</span>
-</span><span id="L-84"><a href="#L-84"><span class="linenos"> 84</span></a>
-</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_success</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">success</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="L-86"><a href="#L-86"><span class="linenos"> 86</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-87"><a href="#L-87"><span class="linenos"> 87</span></a><span class="sd">        Set the success status of the operation.</span>
+</span><span id="L-65"><a href="#L-65"><span class="linenos"> 65</span></a>    <span class="c1">#</span>
+</span><span id="L-66"><a href="#L-66"><span class="linenos"> 66</span></a>    <span class="c1"># Exception</span>
+</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a>    <span class="c1">#</span>
+</span><span id="L-68"><a href="#L-68"><span class="linenos"> 68</span></a>
+</span><span id="L-69"><a href="#L-69"><span class="linenos"> 69</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">throwable</span><span class="p">):</span>
+</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-71"><a href="#L-71"><span class="linenos"> 71</span></a><span class="sd">        Associate exception information with this Reply.</span>
+</span><span id="L-72"><a href="#L-72"><span class="linenos"> 72</span></a>
+</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a><span class="sd">        Args:</span>
+</span><span id="L-74"><a href="#L-74"><span class="linenos"> 74</span></a><span class="sd">            throwable:</span>
+</span><span id="L-75"><a href="#L-75"><span class="linenos"> 75</span></a><span class="sd">                Exception or error information to store.</span>
+</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-77"><a href="#L-77"><span class="linenos"> 77</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span> <span class="o">=</span> <span class="n">throwable</span>
+</span><span id="L-78"><a href="#L-78"><span class="linenos"> 78</span></a>
+</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-80"><a href="#L-80"><span class="linenos"> 80</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-81"><a href="#L-81"><span class="linenos"> 81</span></a><span class="sd">        Return the exception information associated with this Reply.</span>
+</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a>
+</span><span id="L-83"><a href="#L-83"><span class="linenos"> 83</span></a><span class="sd">        Returns:</span>
+</span><span id="L-84"><a href="#L-84"><span class="linenos"> 84</span></a><span class="sd">            object | None:</span>
+</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a><span class="sd">                Stored exception information, or None if unset.</span>
+</span><span id="L-86"><a href="#L-86"><span class="linenos"> 86</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-87"><a href="#L-87"><span class="linenos"> 87</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span>
 </span><span id="L-88"><a href="#L-88"><span class="linenos"> 88</span></a>
-</span><span id="L-89"><a href="#L-89"><span class="linenos"> 89</span></a><span class="sd">        Args:</span>
-</span><span id="L-90"><a href="#L-90"><span class="linenos"> 90</span></a><span class="sd">            success (bool):</span>
-</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a><span class="sd">                True if the operation succeeded, otherwise False.</span>
+</span><span id="L-89"><a href="#L-89"><span class="linenos"> 89</span></a>    <span class="c1">#</span>
+</span><span id="L-90"><a href="#L-90"><span class="linenos"> 90</span></a>    <span class="c1"># Success</span>
+</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a>    <span class="c1">#</span>
 </span><span id="L-92"><a href="#L-92"><span class="linenos"> 92</span></a>
-</span><span id="L-93"><a href="#L-93"><span class="linenos"> 93</span></a><span class="sd">        Raises:</span>
-</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a><span class="sd">            TypeError:</span>
-</span><span id="L-95"><a href="#L-95"><span class="linenos"> 95</span></a><span class="sd">                If success is not a boolean.</span>
-</span><span id="L-96"><a href="#L-96"><span class="linenos"> 96</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="L-98"><a href="#L-98"><span class="linenos"> 98</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;success must be a boolean&quot;</span><span class="p">)</span>
-</span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a>
-</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="n">success</span>
-</span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a>
-</span><span id="L-102"><a href="#L-102"><span class="linenos">102</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-103"><a href="#L-103"><span class="linenos">103</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-104"><a href="#L-104"><span class="linenos">104</span></a><span class="sd">        Determine whether the operation succeeded.</span>
-</span><span id="L-105"><a href="#L-105"><span class="linenos">105</span></a>
-</span><span id="L-106"><a href="#L-106"><span class="linenos">106</span></a><span class="sd">        Returns:</span>
-</span><span id="L-107"><a href="#L-107"><span class="linenos">107</span></a><span class="sd">            bool:</span>
-</span><span id="L-108"><a href="#L-108"><span class="linenos">108</span></a><span class="sd">                True if successful, otherwise False.</span>
-</span><span id="L-109"><a href="#L-109"><span class="linenos">109</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-110"><a href="#L-110"><span class="linenos">110</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">success</span>
-</span><span id="L-111"><a href="#L-111"><span class="linenos">111</span></a>
-</span><span id="L-112"><a href="#L-112"><span class="linenos">112</span></a>    <span class="c1">#</span>
-</span><span id="L-113"><a href="#L-113"><span class="linenos">113</span></a>    <span class="c1"># Last reply</span>
-</span><span id="L-114"><a href="#L-114"><span class="linenos">114</span></a>    <span class="c1">#</span>
-</span><span id="L-115"><a href="#L-115"><span class="linenos">115</span></a>
-</span><span id="L-116"><a href="#L-116"><span class="linenos">116</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_last_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">last_reply</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="L-117"><a href="#L-117"><span class="linenos">117</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-118"><a href="#L-118"><span class="linenos">118</span></a><span class="sd">        Indicate whether this is the final reply.</span>
+</span><span id="L-93"><a href="#L-93"><span class="linenos"> 93</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_success</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">success</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-95"><a href="#L-95"><span class="linenos"> 95</span></a><span class="sd">        Set the success status of the operation.</span>
+</span><span id="L-96"><a href="#L-96"><span class="linenos"> 96</span></a>
+</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a><span class="sd">        Args:</span>
+</span><span id="L-98"><a href="#L-98"><span class="linenos"> 98</span></a><span class="sd">            success (bool):</span>
+</span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a><span class="sd">                True if the operation succeeded, otherwise False.</span>
+</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a>
+</span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a><span class="sd">        Raises:</span>
+</span><span id="L-102"><a href="#L-102"><span class="linenos">102</span></a><span class="sd">            TypeError:</span>
+</span><span id="L-103"><a href="#L-103"><span class="linenos">103</span></a><span class="sd">                If success is not a boolean.</span>
+</span><span id="L-104"><a href="#L-104"><span class="linenos">104</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-105"><a href="#L-105"><span class="linenos">105</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="L-106"><a href="#L-106"><span class="linenos">106</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;success must be a boolean&quot;</span><span class="p">)</span>
+</span><span id="L-107"><a href="#L-107"><span class="linenos">107</span></a>
+</span><span id="L-108"><a href="#L-108"><span class="linenos">108</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="n">success</span>
+</span><span id="L-109"><a href="#L-109"><span class="linenos">109</span></a>
+</span><span id="L-110"><a href="#L-110"><span class="linenos">110</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-111"><a href="#L-111"><span class="linenos">111</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-112"><a href="#L-112"><span class="linenos">112</span></a><span class="sd">        Determine whether the operation succeeded.</span>
+</span><span id="L-113"><a href="#L-113"><span class="linenos">113</span></a>
+</span><span id="L-114"><a href="#L-114"><span class="linenos">114</span></a><span class="sd">        Returns:</span>
+</span><span id="L-115"><a href="#L-115"><span class="linenos">115</span></a><span class="sd">            bool:</span>
+</span><span id="L-116"><a href="#L-116"><span class="linenos">116</span></a><span class="sd">                True if successful, otherwise False.</span>
+</span><span id="L-117"><a href="#L-117"><span class="linenos">117</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-118"><a href="#L-118"><span class="linenos">118</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">success</span>
 </span><span id="L-119"><a href="#L-119"><span class="linenos">119</span></a>
-</span><span id="L-120"><a href="#L-120"><span class="linenos">120</span></a><span class="sd">        When False, additional replies may follow.</span>
-</span><span id="L-121"><a href="#L-121"><span class="linenos">121</span></a><span class="sd">        When True, this Reply indicates completion of</span>
-</span><span id="L-122"><a href="#L-122"><span class="linenos">122</span></a><span class="sd">        the reply sequence.</span>
+</span><span id="L-120"><a href="#L-120"><span class="linenos">120</span></a>    <span class="c1">#</span>
+</span><span id="L-121"><a href="#L-121"><span class="linenos">121</span></a>    <span class="c1"># Last reply</span>
+</span><span id="L-122"><a href="#L-122"><span class="linenos">122</span></a>    <span class="c1">#</span>
 </span><span id="L-123"><a href="#L-123"><span class="linenos">123</span></a>
-</span><span id="L-124"><a href="#L-124"><span class="linenos">124</span></a><span class="sd">        Args:</span>
-</span><span id="L-125"><a href="#L-125"><span class="linenos">125</span></a><span class="sd">            last_reply (bool):</span>
-</span><span id="L-126"><a href="#L-126"><span class="linenos">126</span></a><span class="sd">                True if this is the final reply.</span>
+</span><span id="L-124"><a href="#L-124"><span class="linenos">124</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_last_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">last_reply</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="L-125"><a href="#L-125"><span class="linenos">125</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-126"><a href="#L-126"><span class="linenos">126</span></a><span class="sd">        Indicate whether this is the final reply.</span>
 </span><span id="L-127"><a href="#L-127"><span class="linenos">127</span></a>
-</span><span id="L-128"><a href="#L-128"><span class="linenos">128</span></a><span class="sd">        Raises:</span>
-</span><span id="L-129"><a href="#L-129"><span class="linenos">129</span></a><span class="sd">            TypeError:</span>
-</span><span id="L-130"><a href="#L-130"><span class="linenos">130</span></a><span class="sd">                If last_reply is not a boolean.</span>
-</span><span id="L-131"><a href="#L-131"><span class="linenos">131</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-132"><a href="#L-132"><span class="linenos">132</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">last_reply</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="L-133"><a href="#L-133"><span class="linenos">133</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;last_reply must be a boolean&quot;</span><span class="p">)</span>
-</span><span id="L-134"><a href="#L-134"><span class="linenos">134</span></a>
-</span><span id="L-135"><a href="#L-135"><span class="linenos">135</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span> <span class="o">=</span> <span class="n">last_reply</span>
-</span><span id="L-136"><a href="#L-136"><span class="linenos">136</span></a>
-</span><span id="L-137"><a href="#L-137"><span class="linenos">137</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_last_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-138"><a href="#L-138"><span class="linenos">138</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-139"><a href="#L-139"><span class="linenos">139</span></a><span class="sd">        Determine whether this is the final reply.</span>
-</span><span id="L-140"><a href="#L-140"><span class="linenos">140</span></a>
-</span><span id="L-141"><a href="#L-141"><span class="linenos">141</span></a><span class="sd">        Returns:</span>
-</span><span id="L-142"><a href="#L-142"><span class="linenos">142</span></a><span class="sd">            bool:</span>
-</span><span id="L-143"><a href="#L-143"><span class="linenos">143</span></a><span class="sd">                True if this is the final reply.</span>
-</span><span id="L-144"><a href="#L-144"><span class="linenos">144</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-145"><a href="#L-145"><span class="linenos">145</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span>
-</span><span id="L-146"><a href="#L-146"><span class="linenos">146</span></a>
-</span><span id="L-147"><a href="#L-147"><span class="linenos">147</span></a>    <span class="c1">#</span>
-</span><span id="L-148"><a href="#L-148"><span class="linenos">148</span></a>    <span class="c1"># Message</span>
-</span><span id="L-149"><a href="#L-149"><span class="linenos">149</span></a>    <span class="c1">#</span>
-</span><span id="L-150"><a href="#L-150"><span class="linenos">150</span></a>
-</span><span id="L-151"><a href="#L-151"><span class="linenos">151</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="L-152"><a href="#L-152"><span class="linenos">152</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-153"><a href="#L-153"><span class="linenos">153</span></a><span class="sd">        Set the descriptive response message.</span>
+</span><span id="L-128"><a href="#L-128"><span class="linenos">128</span></a><span class="sd">        When False, additional replies may follow.</span>
+</span><span id="L-129"><a href="#L-129"><span class="linenos">129</span></a><span class="sd">        When True, this Reply indicates completion of</span>
+</span><span id="L-130"><a href="#L-130"><span class="linenos">130</span></a><span class="sd">        the reply sequence.</span>
+</span><span id="L-131"><a href="#L-131"><span class="linenos">131</span></a>
+</span><span id="L-132"><a href="#L-132"><span class="linenos">132</span></a><span class="sd">        Args:</span>
+</span><span id="L-133"><a href="#L-133"><span class="linenos">133</span></a><span class="sd">            last_reply (bool):</span>
+</span><span id="L-134"><a href="#L-134"><span class="linenos">134</span></a><span class="sd">                True if this is the final reply.</span>
+</span><span id="L-135"><a href="#L-135"><span class="linenos">135</span></a>
+</span><span id="L-136"><a href="#L-136"><span class="linenos">136</span></a><span class="sd">        Raises:</span>
+</span><span id="L-137"><a href="#L-137"><span class="linenos">137</span></a><span class="sd">            TypeError:</span>
+</span><span id="L-138"><a href="#L-138"><span class="linenos">138</span></a><span class="sd">                If last_reply is not a boolean.</span>
+</span><span id="L-139"><a href="#L-139"><span class="linenos">139</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-140"><a href="#L-140"><span class="linenos">140</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">last_reply</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="L-141"><a href="#L-141"><span class="linenos">141</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;last_reply must be a boolean&quot;</span><span class="p">)</span>
+</span><span id="L-142"><a href="#L-142"><span class="linenos">142</span></a>
+</span><span id="L-143"><a href="#L-143"><span class="linenos">143</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span> <span class="o">=</span> <span class="n">last_reply</span>
+</span><span id="L-144"><a href="#L-144"><span class="linenos">144</span></a>
+</span><span id="L-145"><a href="#L-145"><span class="linenos">145</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_last_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-146"><a href="#L-146"><span class="linenos">146</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-147"><a href="#L-147"><span class="linenos">147</span></a><span class="sd">        Determine whether this is the final reply.</span>
+</span><span id="L-148"><a href="#L-148"><span class="linenos">148</span></a>
+</span><span id="L-149"><a href="#L-149"><span class="linenos">149</span></a><span class="sd">        Returns:</span>
+</span><span id="L-150"><a href="#L-150"><span class="linenos">150</span></a><span class="sd">            bool:</span>
+</span><span id="L-151"><a href="#L-151"><span class="linenos">151</span></a><span class="sd">                True if this is the final reply.</span>
+</span><span id="L-152"><a href="#L-152"><span class="linenos">152</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-153"><a href="#L-153"><span class="linenos">153</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span>
 </span><span id="L-154"><a href="#L-154"><span class="linenos">154</span></a>
-</span><span id="L-155"><a href="#L-155"><span class="linenos">155</span></a><span class="sd">        Args:</span>
-</span><span id="L-156"><a href="#L-156"><span class="linenos">156</span></a><span class="sd">            message (str):</span>
-</span><span id="L-157"><a href="#L-157"><span class="linenos">157</span></a><span class="sd">                Nonempty response message.</span>
+</span><span id="L-155"><a href="#L-155"><span class="linenos">155</span></a>    <span class="c1">#</span>
+</span><span id="L-156"><a href="#L-156"><span class="linenos">156</span></a>    <span class="c1"># Message</span>
+</span><span id="L-157"><a href="#L-157"><span class="linenos">157</span></a>    <span class="c1">#</span>
 </span><span id="L-158"><a href="#L-158"><span class="linenos">158</span></a>
-</span><span id="L-159"><a href="#L-159"><span class="linenos">159</span></a><span class="sd">        Raises:</span>
-</span><span id="L-160"><a href="#L-160"><span class="linenos">160</span></a><span class="sd">            ValueError:</span>
-</span><span id="L-161"><a href="#L-161"><span class="linenos">161</span></a><span class="sd">                If message is None or empty.</span>
+</span><span id="L-159"><a href="#L-159"><span class="linenos">159</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="L-160"><a href="#L-160"><span class="linenos">160</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-161"><a href="#L-161"><span class="linenos">161</span></a><span class="sd">        Set the descriptive response message.</span>
 </span><span id="L-162"><a href="#L-162"><span class="linenos">162</span></a>
-</span><span id="L-163"><a href="#L-163"><span class="linenos">163</span></a><span class="sd">        Note:</span>
-</span><span id="L-164"><a href="#L-164"><span class="linenos">164</span></a><span class="sd">            The message must support the strip() operation.</span>
-</span><span id="L-165"><a href="#L-165"><span class="linenos">165</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-166"><a href="#L-166"><span class="linenos">166</span></a>        <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="L-167"><a href="#L-167"><span class="linenos">167</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;message may not be None&quot;</span><span class="p">)</span>
-</span><span id="L-168"><a href="#L-168"><span class="linenos">168</span></a>
-</span><span id="L-169"><a href="#L-169"><span class="linenos">169</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">message</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
-</span><span id="L-170"><a href="#L-170"><span class="linenos">170</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;message may not be empty&quot;</span><span class="p">)</span>
-</span><span id="L-171"><a href="#L-171"><span class="linenos">171</span></a>
-</span><span id="L-172"><a href="#L-172"><span class="linenos">172</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span>
-</span><span id="L-173"><a href="#L-173"><span class="linenos">173</span></a>
-</span><span id="L-174"><a href="#L-174"><span class="linenos">174</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-175"><a href="#L-175"><span class="linenos">175</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-176"><a href="#L-176"><span class="linenos">176</span></a><span class="sd">        Return the descriptive response message.</span>
-</span><span id="L-177"><a href="#L-177"><span class="linenos">177</span></a>
-</span><span id="L-178"><a href="#L-178"><span class="linenos">178</span></a><span class="sd">        Returns:</span>
-</span><span id="L-179"><a href="#L-179"><span class="linenos">179</span></a><span class="sd">            str:</span>
-</span><span id="L-180"><a href="#L-180"><span class="linenos">180</span></a><span class="sd">                Current response message.</span>
-</span><span id="L-181"><a href="#L-181"><span class="linenos">181</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-182"><a href="#L-182"><span class="linenos">182</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span>
-</span><span id="L-183"><a href="#L-183"><span class="linenos">183</span></a>
-</span><span id="L-184"><a href="#L-184"><span class="linenos">184</span></a>    <span class="c1">#</span>
-</span><span id="L-185"><a href="#L-185"><span class="linenos">185</span></a>    <span class="c1"># HTTP response code</span>
-</span><span id="L-186"><a href="#L-186"><span class="linenos">186</span></a>    <span class="c1">#</span>
-</span><span id="L-187"><a href="#L-187"><span class="linenos">187</span></a>
-</span><span id="L-188"><a href="#L-188"><span class="linenos">188</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_http_response_code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-189"><a href="#L-189"><span class="linenos">189</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-190"><a href="#L-190"><span class="linenos">190</span></a><span class="sd">        Return the response code associated with this Reply.</span>
+</span><span id="L-163"><a href="#L-163"><span class="linenos">163</span></a><span class="sd">        Args:</span>
+</span><span id="L-164"><a href="#L-164"><span class="linenos">164</span></a><span class="sd">            message (str):</span>
+</span><span id="L-165"><a href="#L-165"><span class="linenos">165</span></a><span class="sd">                Nonempty response message.</span>
+</span><span id="L-166"><a href="#L-166"><span class="linenos">166</span></a>
+</span><span id="L-167"><a href="#L-167"><span class="linenos">167</span></a><span class="sd">        Raises:</span>
+</span><span id="L-168"><a href="#L-168"><span class="linenos">168</span></a><span class="sd">            ValueError:</span>
+</span><span id="L-169"><a href="#L-169"><span class="linenos">169</span></a><span class="sd">                If message is None or empty.</span>
+</span><span id="L-170"><a href="#L-170"><span class="linenos">170</span></a>
+</span><span id="L-171"><a href="#L-171"><span class="linenos">171</span></a><span class="sd">        Note:</span>
+</span><span id="L-172"><a href="#L-172"><span class="linenos">172</span></a><span class="sd">            The message must support the strip() operation.</span>
+</span><span id="L-173"><a href="#L-173"><span class="linenos">173</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-174"><a href="#L-174"><span class="linenos">174</span></a>        <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="L-175"><a href="#L-175"><span class="linenos">175</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;message may not be None&quot;</span><span class="p">)</span>
+</span><span id="L-176"><a href="#L-176"><span class="linenos">176</span></a>
+</span><span id="L-177"><a href="#L-177"><span class="linenos">177</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">message</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+</span><span id="L-178"><a href="#L-178"><span class="linenos">178</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;message may not be empty&quot;</span><span class="p">)</span>
+</span><span id="L-179"><a href="#L-179"><span class="linenos">179</span></a>
+</span><span id="L-180"><a href="#L-180"><span class="linenos">180</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span>
+</span><span id="L-181"><a href="#L-181"><span class="linenos">181</span></a>
+</span><span id="L-182"><a href="#L-182"><span class="linenos">182</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-183"><a href="#L-183"><span class="linenos">183</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-184"><a href="#L-184"><span class="linenos">184</span></a><span class="sd">        Return the descriptive response message.</span>
+</span><span id="L-185"><a href="#L-185"><span class="linenos">185</span></a>
+</span><span id="L-186"><a href="#L-186"><span class="linenos">186</span></a><span class="sd">        Returns:</span>
+</span><span id="L-187"><a href="#L-187"><span class="linenos">187</span></a><span class="sd">            str:</span>
+</span><span id="L-188"><a href="#L-188"><span class="linenos">188</span></a><span class="sd">                Current response message.</span>
+</span><span id="L-189"><a href="#L-189"><span class="linenos">189</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-190"><a href="#L-190"><span class="linenos">190</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span>
 </span><span id="L-191"><a href="#L-191"><span class="linenos">191</span></a>
-</span><span id="L-192"><a href="#L-192"><span class="linenos">192</span></a><span class="sd">        Returns:</span>
-</span><span id="L-193"><a href="#L-193"><span class="linenos">193</span></a><span class="sd">            int:</span>
-</span><span id="L-194"><a href="#L-194"><span class="linenos">194</span></a><span class="sd">                Response code, defaulting to 200.</span>
-</span><span id="L-195"><a href="#L-195"><span class="linenos">195</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-196"><a href="#L-196"><span class="linenos">196</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span>
-</span><span id="L-197"><a href="#L-197"><span class="linenos">197</span></a>
-</span><span id="L-198"><a href="#L-198"><span class="linenos">198</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_http_response_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-</span><span id="L-199"><a href="#L-199"><span class="linenos">199</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-200"><a href="#L-200"><span class="linenos">200</span></a><span class="sd">        Set the response code associated with this Reply.</span>
-</span><span id="L-201"><a href="#L-201"><span class="linenos">201</span></a>
-</span><span id="L-202"><a href="#L-202"><span class="linenos">202</span></a><span class="sd">        Args:</span>
-</span><span id="L-203"><a href="#L-203"><span class="linenos">203</span></a><span class="sd">            code (int):</span>
-</span><span id="L-204"><a href="#L-204"><span class="linenos">204</span></a><span class="sd">                Integer response code.</span>
+</span><span id="L-192"><a href="#L-192"><span class="linenos">192</span></a>    <span class="c1">#</span>
+</span><span id="L-193"><a href="#L-193"><span class="linenos">193</span></a>    <span class="c1"># HTTP response code</span>
+</span><span id="L-194"><a href="#L-194"><span class="linenos">194</span></a>    <span class="c1">#</span>
+</span><span id="L-195"><a href="#L-195"><span class="linenos">195</span></a>
+</span><span id="L-196"><a href="#L-196"><span class="linenos">196</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_http_response_code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-197"><a href="#L-197"><span class="linenos">197</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-198"><a href="#L-198"><span class="linenos">198</span></a><span class="sd">        Return the response code associated with this Reply.</span>
+</span><span id="L-199"><a href="#L-199"><span class="linenos">199</span></a>
+</span><span id="L-200"><a href="#L-200"><span class="linenos">200</span></a><span class="sd">        Returns:</span>
+</span><span id="L-201"><a href="#L-201"><span class="linenos">201</span></a><span class="sd">            int:</span>
+</span><span id="L-202"><a href="#L-202"><span class="linenos">202</span></a><span class="sd">                Response code, defaulting to 200.</span>
+</span><span id="L-203"><a href="#L-203"><span class="linenos">203</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-204"><a href="#L-204"><span class="linenos">204</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span>
 </span><span id="L-205"><a href="#L-205"><span class="linenos">205</span></a>
-</span><span id="L-206"><a href="#L-206"><span class="linenos">206</span></a><span class="sd">        Raises:</span>
-</span><span id="L-207"><a href="#L-207"><span class="linenos">207</span></a><span class="sd">            TypeError:</span>
-</span><span id="L-208"><a href="#L-208"><span class="linenos">208</span></a><span class="sd">                If code is not an integer or is a boolean.</span>
+</span><span id="L-206"><a href="#L-206"><span class="linenos">206</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_http_response_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+</span><span id="L-207"><a href="#L-207"><span class="linenos">207</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-208"><a href="#L-208"><span class="linenos">208</span></a><span class="sd">        Set the response code associated with this Reply.</span>
 </span><span id="L-209"><a href="#L-209"><span class="linenos">209</span></a>
-</span><span id="L-210"><a href="#L-210"><span class="linenos">210</span></a><span class="sd">        Note:</span>
-</span><span id="L-211"><a href="#L-211"><span class="linenos">211</span></a><span class="sd">            The method does not validate whether the code</span>
-</span><span id="L-212"><a href="#L-212"><span class="linenos">212</span></a><span class="sd">            is a recognized HTTP status code.</span>
-</span><span id="L-213"><a href="#L-213"><span class="linenos">213</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-214"><a href="#L-214"><span class="linenos">214</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="L-215"><a href="#L-215"><span class="linenos">215</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;code must be an integer&quot;</span><span class="p">)</span>
-</span><span id="L-216"><a href="#L-216"><span class="linenos">216</span></a>
-</span><span id="L-217"><a href="#L-217"><span class="linenos">217</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span> <span class="o">=</span> <span class="n">code</span>
+</span><span id="L-210"><a href="#L-210"><span class="linenos">210</span></a><span class="sd">        Args:</span>
+</span><span id="L-211"><a href="#L-211"><span class="linenos">211</span></a><span class="sd">            code (int):</span>
+</span><span id="L-212"><a href="#L-212"><span class="linenos">212</span></a><span class="sd">                Integer response code.</span>
+</span><span id="L-213"><a href="#L-213"><span class="linenos">213</span></a>
+</span><span id="L-214"><a href="#L-214"><span class="linenos">214</span></a><span class="sd">        Raises:</span>
+</span><span id="L-215"><a href="#L-215"><span class="linenos">215</span></a><span class="sd">            TypeError:</span>
+</span><span id="L-216"><a href="#L-216"><span class="linenos">216</span></a><span class="sd">                If code is not an integer or is a boolean.</span>
+</span><span id="L-217"><a href="#L-217"><span class="linenos">217</span></a>
+</span><span id="L-218"><a href="#L-218"><span class="linenos">218</span></a><span class="sd">        Note:</span>
+</span><span id="L-219"><a href="#L-219"><span class="linenos">219</span></a><span class="sd">            The method does not validate whether the code</span>
+</span><span id="L-220"><a href="#L-220"><span class="linenos">220</span></a><span class="sd">            is a recognized HTTP status code.</span>
+</span><span id="L-221"><a href="#L-221"><span class="linenos">221</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-222"><a href="#L-222"><span class="linenos">222</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="L-223"><a href="#L-223"><span class="linenos">223</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;code must be an integer&quot;</span><span class="p">)</span>
+</span><span id="L-224"><a href="#L-224"><span class="linenos">224</span></a>
+</span><span id="L-225"><a href="#L-225"><span class="linenos">225</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span> <span class="o">=</span> <span class="n">code</span>
 </span></pre></div>
 
 
@@ -337,218 +346,218 @@
 
     </div>
     <a class="headerlink" href="#Reply"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply-8"><a href="#Reply-8"><span class="linenos">  8</span></a><span class="k">class</span><span class="w"> </span><span class="nc">Reply</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
-</span><span id="Reply-9"><a href="#Reply-9"><span class="linenos">  9</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply-10"><a href="#Reply-10"><span class="linenos"> 10</span></a><span class="sd">    Represents a response to an Agent sent through KDC.</span>
-</span><span id="Reply-11"><a href="#Reply-11"><span class="linenos"> 11</span></a>
-</span><span id="Reply-12"><a href="#Reply-12"><span class="linenos"> 12</span></a><span class="sd">    A Reply extends Agent and provides information about the</span>
-</span><span id="Reply-13"><a href="#Reply-13"><span class="linenos"> 13</span></a><span class="sd">    outcome of an operation, including success status, an</span>
-</span><span id="Reply-14"><a href="#Reply-14"><span class="linenos"> 14</span></a><span class="sd">    optional exception, a message, response data, and a</span>
-</span><span id="Reply-15"><a href="#Reply-15"><span class="linenos"> 15</span></a><span class="sd">    response code.</span>
-</span><span id="Reply-16"><a href="#Reply-16"><span class="linenos"> 16</span></a>
-</span><span id="Reply-17"><a href="#Reply-17"><span class="linenos"> 17</span></a><span class="sd">    Replies may be used for synchronous responses or</span>
-</span><span id="Reply-18"><a href="#Reply-18"><span class="linenos"> 18</span></a><span class="sd">    asynchronous updates. The last_reply flag indicates</span>
-</span><span id="Reply-19"><a href="#Reply-19"><span class="linenos"> 19</span></a><span class="sd">    whether additional replies are expected.</span>
-</span><span id="Reply-20"><a href="#Reply-20"><span class="linenos"> 20</span></a>
-</span><span id="Reply-21"><a href="#Reply-21"><span class="linenos"> 21</span></a><span class="sd">    This class is designed for compatibility with the</span>
-</span><span id="Reply-22"><a href="#Reply-22"><span class="linenos"> 22</span></a><span class="sd">    KDC-Java Reply serialization contract.</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply-15"><a href="#Reply-15"><span class="linenos"> 15</span></a><span class="k">class</span><span class="w"> </span><span class="nc">Reply</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+</span><span id="Reply-16"><a href="#Reply-16"><span class="linenos"> 16</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply-17"><a href="#Reply-17"><span class="linenos"> 17</span></a><span class="sd">    Represents a response to an Agent sent through KDC.</span>
+</span><span id="Reply-18"><a href="#Reply-18"><span class="linenos"> 18</span></a>
+</span><span id="Reply-19"><a href="#Reply-19"><span class="linenos"> 19</span></a><span class="sd">    A Reply extends Agent and provides information about the</span>
+</span><span id="Reply-20"><a href="#Reply-20"><span class="linenos"> 20</span></a><span class="sd">    outcome of an operation, including success status, an</span>
+</span><span id="Reply-21"><a href="#Reply-21"><span class="linenos"> 21</span></a><span class="sd">    optional exception, a message, response data, and a</span>
+</span><span id="Reply-22"><a href="#Reply-22"><span class="linenos"> 22</span></a><span class="sd">    response code.</span>
 </span><span id="Reply-23"><a href="#Reply-23"><span class="linenos"> 23</span></a>
-</span><span id="Reply-24"><a href="#Reply-24"><span class="linenos"> 24</span></a><span class="sd">    Attributes:</span>
-</span><span id="Reply-25"><a href="#Reply-25"><span class="linenos"> 25</span></a><span class="sd">        throwable (object | None):</span>
-</span><span id="Reply-26"><a href="#Reply-26"><span class="linenos"> 26</span></a><span class="sd">            Optional exception or error information.</span>
+</span><span id="Reply-24"><a href="#Reply-24"><span class="linenos"> 24</span></a><span class="sd">    Replies may be used for synchronous responses or</span>
+</span><span id="Reply-25"><a href="#Reply-25"><span class="linenos"> 25</span></a><span class="sd">    asynchronous updates. The last_reply flag indicates</span>
+</span><span id="Reply-26"><a href="#Reply-26"><span class="linenos"> 26</span></a><span class="sd">    whether additional replies are expected.</span>
 </span><span id="Reply-27"><a href="#Reply-27"><span class="linenos"> 27</span></a>
-</span><span id="Reply-28"><a href="#Reply-28"><span class="linenos"> 28</span></a><span class="sd">        success (bool):</span>
-</span><span id="Reply-29"><a href="#Reply-29"><span class="linenos"> 29</span></a><span class="sd">            Indicates whether the operation succeeded.</span>
-</span><span id="Reply-30"><a href="#Reply-30"><span class="linenos"> 30</span></a><span class="sd">            Defaults to True.</span>
-</span><span id="Reply-31"><a href="#Reply-31"><span class="linenos"> 31</span></a>
-</span><span id="Reply-32"><a href="#Reply-32"><span class="linenos"> 32</span></a><span class="sd">        last_reply (bool):</span>
-</span><span id="Reply-33"><a href="#Reply-33"><span class="linenos"> 33</span></a><span class="sd">            Indicates whether this is the final reply.</span>
-</span><span id="Reply-34"><a href="#Reply-34"><span class="linenos"> 34</span></a><span class="sd">            Defaults to True.</span>
-</span><span id="Reply-35"><a href="#Reply-35"><span class="linenos"> 35</span></a>
-</span><span id="Reply-36"><a href="#Reply-36"><span class="linenos"> 36</span></a><span class="sd">        message (str):</span>
-</span><span id="Reply-37"><a href="#Reply-37"><span class="linenos"> 37</span></a><span class="sd">            Descriptive response message. Defaults to &quot;OK&quot;.</span>
+</span><span id="Reply-28"><a href="#Reply-28"><span class="linenos"> 28</span></a><span class="sd">    This class is designed for compatibility with the</span>
+</span><span id="Reply-29"><a href="#Reply-29"><span class="linenos"> 29</span></a><span class="sd">    KDC-Java Reply serialization contract.</span>
+</span><span id="Reply-30"><a href="#Reply-30"><span class="linenos"> 30</span></a>
+</span><span id="Reply-31"><a href="#Reply-31"><span class="linenos"> 31</span></a><span class="sd">    Attributes:</span>
+</span><span id="Reply-32"><a href="#Reply-32"><span class="linenos"> 32</span></a><span class="sd">        throwable (object | None):</span>
+</span><span id="Reply-33"><a href="#Reply-33"><span class="linenos"> 33</span></a><span class="sd">            Optional exception or error information.</span>
+</span><span id="Reply-34"><a href="#Reply-34"><span class="linenos"> 34</span></a>
+</span><span id="Reply-35"><a href="#Reply-35"><span class="linenos"> 35</span></a><span class="sd">        success (bool):</span>
+</span><span id="Reply-36"><a href="#Reply-36"><span class="linenos"> 36</span></a><span class="sd">            Indicates whether the operation succeeded.</span>
+</span><span id="Reply-37"><a href="#Reply-37"><span class="linenos"> 37</span></a><span class="sd">            Defaults to True.</span>
 </span><span id="Reply-38"><a href="#Reply-38"><span class="linenos"> 38</span></a>
-</span><span id="Reply-39"><a href="#Reply-39"><span class="linenos"> 39</span></a><span class="sd">        response_code (int):</span>
-</span><span id="Reply-40"><a href="#Reply-40"><span class="linenos"> 40</span></a><span class="sd">            Response code associated with the operation.</span>
-</span><span id="Reply-41"><a href="#Reply-41"><span class="linenos"> 41</span></a><span class="sd">            Defaults to 200.</span>
-</span><span id="Reply-42"><a href="#Reply-42"><span class="linenos"> 42</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="Reply-43"><a href="#Reply-43"><span class="linenos"> 43</span></a>
-</span><span id="Reply-44"><a href="#Reply-44"><span class="linenos"> 44</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Reply-45"><a href="#Reply-45"><span class="linenos"> 45</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply-46"><a href="#Reply-46"><span class="linenos"> 46</span></a><span class="sd">        Initialize a Reply with default response values.</span>
-</span><span id="Reply-47"><a href="#Reply-47"><span class="linenos"> 47</span></a>
-</span><span id="Reply-48"><a href="#Reply-48"><span class="linenos"> 48</span></a><span class="sd">        Also initializes inherited Agent properties.</span>
-</span><span id="Reply-49"><a href="#Reply-49"><span class="linenos"> 49</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply-50"><a href="#Reply-50"><span class="linenos"> 50</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-</span><span id="Reply-51"><a href="#Reply-51"><span class="linenos"> 51</span></a>
-</span><span id="Reply-52"><a href="#Reply-52"><span class="linenos"> 52</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="Reply-53"><a href="#Reply-53"><span class="linenos"> 53</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="Reply-54"><a href="#Reply-54"><span class="linenos"> 54</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="Reply-55"><a href="#Reply-55"><span class="linenos"> 55</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;OK&quot;</span>
-</span><span id="Reply-56"><a href="#Reply-56"><span class="linenos"> 56</span></a>
-</span><span id="Reply-57"><a href="#Reply-57"><span class="linenos"> 57</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span> <span class="o">=</span> <span class="mi">200</span>
+</span><span id="Reply-39"><a href="#Reply-39"><span class="linenos"> 39</span></a><span class="sd">        last_reply (bool):</span>
+</span><span id="Reply-40"><a href="#Reply-40"><span class="linenos"> 40</span></a><span class="sd">            Indicates whether this is the final reply.</span>
+</span><span id="Reply-41"><a href="#Reply-41"><span class="linenos"> 41</span></a><span class="sd">            Defaults to True.</span>
+</span><span id="Reply-42"><a href="#Reply-42"><span class="linenos"> 42</span></a>
+</span><span id="Reply-43"><a href="#Reply-43"><span class="linenos"> 43</span></a><span class="sd">        message (str):</span>
+</span><span id="Reply-44"><a href="#Reply-44"><span class="linenos"> 44</span></a><span class="sd">            Descriptive response message. Defaults to &quot;OK&quot;.</span>
+</span><span id="Reply-45"><a href="#Reply-45"><span class="linenos"> 45</span></a>
+</span><span id="Reply-46"><a href="#Reply-46"><span class="linenos"> 46</span></a><span class="sd">        response_code (int):</span>
+</span><span id="Reply-47"><a href="#Reply-47"><span class="linenos"> 47</span></a><span class="sd">            Response code associated with the operation.</span>
+</span><span id="Reply-48"><a href="#Reply-48"><span class="linenos"> 48</span></a><span class="sd">            Defaults to 200.</span>
+</span><span id="Reply-49"><a href="#Reply-49"><span class="linenos"> 49</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="Reply-50"><a href="#Reply-50"><span class="linenos"> 50</span></a>
+</span><span id="Reply-51"><a href="#Reply-51"><span class="linenos"> 51</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Reply-52"><a href="#Reply-52"><span class="linenos"> 52</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply-53"><a href="#Reply-53"><span class="linenos"> 53</span></a><span class="sd">        Initialize a Reply with default response values.</span>
+</span><span id="Reply-54"><a href="#Reply-54"><span class="linenos"> 54</span></a>
+</span><span id="Reply-55"><a href="#Reply-55"><span class="linenos"> 55</span></a><span class="sd">        Also initializes inherited Agent properties.</span>
+</span><span id="Reply-56"><a href="#Reply-56"><span class="linenos"> 56</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply-57"><a href="#Reply-57"><span class="linenos"> 57</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 </span><span id="Reply-58"><a href="#Reply-58"><span class="linenos"> 58</span></a>
-</span><span id="Reply-59"><a href="#Reply-59"><span class="linenos"> 59</span></a>    <span class="c1">#</span>
-</span><span id="Reply-60"><a href="#Reply-60"><span class="linenos"> 60</span></a>    <span class="c1"># Exception</span>
-</span><span id="Reply-61"><a href="#Reply-61"><span class="linenos"> 61</span></a>    <span class="c1">#</span>
-</span><span id="Reply-62"><a href="#Reply-62"><span class="linenos"> 62</span></a>
-</span><span id="Reply-63"><a href="#Reply-63"><span class="linenos"> 63</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">throwable</span><span class="p">):</span>
-</span><span id="Reply-64"><a href="#Reply-64"><span class="linenos"> 64</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply-65"><a href="#Reply-65"><span class="linenos"> 65</span></a><span class="sd">        Associate exception information with this Reply.</span>
-</span><span id="Reply-66"><a href="#Reply-66"><span class="linenos"> 66</span></a>
-</span><span id="Reply-67"><a href="#Reply-67"><span class="linenos"> 67</span></a><span class="sd">        Args:</span>
-</span><span id="Reply-68"><a href="#Reply-68"><span class="linenos"> 68</span></a><span class="sd">            throwable:</span>
-</span><span id="Reply-69"><a href="#Reply-69"><span class="linenos"> 69</span></a><span class="sd">                Exception or error information to store.</span>
-</span><span id="Reply-70"><a href="#Reply-70"><span class="linenos"> 70</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply-71"><a href="#Reply-71"><span class="linenos"> 71</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span> <span class="o">=</span> <span class="n">throwable</span>
-</span><span id="Reply-72"><a href="#Reply-72"><span class="linenos"> 72</span></a>
-</span><span id="Reply-73"><a href="#Reply-73"><span class="linenos"> 73</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Reply-74"><a href="#Reply-74"><span class="linenos"> 74</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply-75"><a href="#Reply-75"><span class="linenos"> 75</span></a><span class="sd">        Return the exception information associated with this Reply.</span>
-</span><span id="Reply-76"><a href="#Reply-76"><span class="linenos"> 76</span></a>
-</span><span id="Reply-77"><a href="#Reply-77"><span class="linenos"> 77</span></a><span class="sd">        Returns:</span>
-</span><span id="Reply-78"><a href="#Reply-78"><span class="linenos"> 78</span></a><span class="sd">            object | None:</span>
-</span><span id="Reply-79"><a href="#Reply-79"><span class="linenos"> 79</span></a><span class="sd">                Stored exception information, or None if unset.</span>
-</span><span id="Reply-80"><a href="#Reply-80"><span class="linenos"> 80</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply-81"><a href="#Reply-81"><span class="linenos"> 81</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span>
-</span><span id="Reply-82"><a href="#Reply-82"><span class="linenos"> 82</span></a>
-</span><span id="Reply-83"><a href="#Reply-83"><span class="linenos"> 83</span></a>    <span class="c1">#</span>
-</span><span id="Reply-84"><a href="#Reply-84"><span class="linenos"> 84</span></a>    <span class="c1"># Success</span>
-</span><span id="Reply-85"><a href="#Reply-85"><span class="linenos"> 85</span></a>    <span class="c1">#</span>
-</span><span id="Reply-86"><a href="#Reply-86"><span class="linenos"> 86</span></a>
-</span><span id="Reply-87"><a href="#Reply-87"><span class="linenos"> 87</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_success</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">success</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="Reply-88"><a href="#Reply-88"><span class="linenos"> 88</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply-89"><a href="#Reply-89"><span class="linenos"> 89</span></a><span class="sd">        Set the success status of the operation.</span>
-</span><span id="Reply-90"><a href="#Reply-90"><span class="linenos"> 90</span></a>
-</span><span id="Reply-91"><a href="#Reply-91"><span class="linenos"> 91</span></a><span class="sd">        Args:</span>
-</span><span id="Reply-92"><a href="#Reply-92"><span class="linenos"> 92</span></a><span class="sd">            success (bool):</span>
-</span><span id="Reply-93"><a href="#Reply-93"><span class="linenos"> 93</span></a><span class="sd">                True if the operation succeeded, otherwise False.</span>
-</span><span id="Reply-94"><a href="#Reply-94"><span class="linenos"> 94</span></a>
-</span><span id="Reply-95"><a href="#Reply-95"><span class="linenos"> 95</span></a><span class="sd">        Raises:</span>
-</span><span id="Reply-96"><a href="#Reply-96"><span class="linenos"> 96</span></a><span class="sd">            TypeError:</span>
-</span><span id="Reply-97"><a href="#Reply-97"><span class="linenos"> 97</span></a><span class="sd">                If success is not a boolean.</span>
-</span><span id="Reply-98"><a href="#Reply-98"><span class="linenos"> 98</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply-99"><a href="#Reply-99"><span class="linenos"> 99</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="Reply-100"><a href="#Reply-100"><span class="linenos">100</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;success must be a boolean&quot;</span><span class="p">)</span>
+</span><span id="Reply-59"><a href="#Reply-59"><span class="linenos"> 59</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="Reply-60"><a href="#Reply-60"><span class="linenos"> 60</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="Reply-61"><a href="#Reply-61"><span class="linenos"> 61</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="Reply-62"><a href="#Reply-62"><span class="linenos"> 62</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;OK&quot;</span>
+</span><span id="Reply-63"><a href="#Reply-63"><span class="linenos"> 63</span></a>
+</span><span id="Reply-64"><a href="#Reply-64"><span class="linenos"> 64</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span> <span class="o">=</span> <span class="mi">200</span>
+</span><span id="Reply-65"><a href="#Reply-65"><span class="linenos"> 65</span></a>
+</span><span id="Reply-66"><a href="#Reply-66"><span class="linenos"> 66</span></a>    <span class="c1">#</span>
+</span><span id="Reply-67"><a href="#Reply-67"><span class="linenos"> 67</span></a>    <span class="c1"># Exception</span>
+</span><span id="Reply-68"><a href="#Reply-68"><span class="linenos"> 68</span></a>    <span class="c1">#</span>
+</span><span id="Reply-69"><a href="#Reply-69"><span class="linenos"> 69</span></a>
+</span><span id="Reply-70"><a href="#Reply-70"><span class="linenos"> 70</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">throwable</span><span class="p">):</span>
+</span><span id="Reply-71"><a href="#Reply-71"><span class="linenos"> 71</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply-72"><a href="#Reply-72"><span class="linenos"> 72</span></a><span class="sd">        Associate exception information with this Reply.</span>
+</span><span id="Reply-73"><a href="#Reply-73"><span class="linenos"> 73</span></a>
+</span><span id="Reply-74"><a href="#Reply-74"><span class="linenos"> 74</span></a><span class="sd">        Args:</span>
+</span><span id="Reply-75"><a href="#Reply-75"><span class="linenos"> 75</span></a><span class="sd">            throwable:</span>
+</span><span id="Reply-76"><a href="#Reply-76"><span class="linenos"> 76</span></a><span class="sd">                Exception or error information to store.</span>
+</span><span id="Reply-77"><a href="#Reply-77"><span class="linenos"> 77</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply-78"><a href="#Reply-78"><span class="linenos"> 78</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span> <span class="o">=</span> <span class="n">throwable</span>
+</span><span id="Reply-79"><a href="#Reply-79"><span class="linenos"> 79</span></a>
+</span><span id="Reply-80"><a href="#Reply-80"><span class="linenos"> 80</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Reply-81"><a href="#Reply-81"><span class="linenos"> 81</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply-82"><a href="#Reply-82"><span class="linenos"> 82</span></a><span class="sd">        Return the exception information associated with this Reply.</span>
+</span><span id="Reply-83"><a href="#Reply-83"><span class="linenos"> 83</span></a>
+</span><span id="Reply-84"><a href="#Reply-84"><span class="linenos"> 84</span></a><span class="sd">        Returns:</span>
+</span><span id="Reply-85"><a href="#Reply-85"><span class="linenos"> 85</span></a><span class="sd">            object | None:</span>
+</span><span id="Reply-86"><a href="#Reply-86"><span class="linenos"> 86</span></a><span class="sd">                Stored exception information, or None if unset.</span>
+</span><span id="Reply-87"><a href="#Reply-87"><span class="linenos"> 87</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply-88"><a href="#Reply-88"><span class="linenos"> 88</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span>
+</span><span id="Reply-89"><a href="#Reply-89"><span class="linenos"> 89</span></a>
+</span><span id="Reply-90"><a href="#Reply-90"><span class="linenos"> 90</span></a>    <span class="c1">#</span>
+</span><span id="Reply-91"><a href="#Reply-91"><span class="linenos"> 91</span></a>    <span class="c1"># Success</span>
+</span><span id="Reply-92"><a href="#Reply-92"><span class="linenos"> 92</span></a>    <span class="c1">#</span>
+</span><span id="Reply-93"><a href="#Reply-93"><span class="linenos"> 93</span></a>
+</span><span id="Reply-94"><a href="#Reply-94"><span class="linenos"> 94</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_success</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">success</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="Reply-95"><a href="#Reply-95"><span class="linenos"> 95</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply-96"><a href="#Reply-96"><span class="linenos"> 96</span></a><span class="sd">        Set the success status of the operation.</span>
+</span><span id="Reply-97"><a href="#Reply-97"><span class="linenos"> 97</span></a>
+</span><span id="Reply-98"><a href="#Reply-98"><span class="linenos"> 98</span></a><span class="sd">        Args:</span>
+</span><span id="Reply-99"><a href="#Reply-99"><span class="linenos"> 99</span></a><span class="sd">            success (bool):</span>
+</span><span id="Reply-100"><a href="#Reply-100"><span class="linenos">100</span></a><span class="sd">                True if the operation succeeded, otherwise False.</span>
 </span><span id="Reply-101"><a href="#Reply-101"><span class="linenos">101</span></a>
-</span><span id="Reply-102"><a href="#Reply-102"><span class="linenos">102</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="n">success</span>
-</span><span id="Reply-103"><a href="#Reply-103"><span class="linenos">103</span></a>
-</span><span id="Reply-104"><a href="#Reply-104"><span class="linenos">104</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Reply-105"><a href="#Reply-105"><span class="linenos">105</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply-106"><a href="#Reply-106"><span class="linenos">106</span></a><span class="sd">        Determine whether the operation succeeded.</span>
-</span><span id="Reply-107"><a href="#Reply-107"><span class="linenos">107</span></a>
-</span><span id="Reply-108"><a href="#Reply-108"><span class="linenos">108</span></a><span class="sd">        Returns:</span>
-</span><span id="Reply-109"><a href="#Reply-109"><span class="linenos">109</span></a><span class="sd">            bool:</span>
-</span><span id="Reply-110"><a href="#Reply-110"><span class="linenos">110</span></a><span class="sd">                True if successful, otherwise False.</span>
-</span><span id="Reply-111"><a href="#Reply-111"><span class="linenos">111</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply-112"><a href="#Reply-112"><span class="linenos">112</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">success</span>
-</span><span id="Reply-113"><a href="#Reply-113"><span class="linenos">113</span></a>
-</span><span id="Reply-114"><a href="#Reply-114"><span class="linenos">114</span></a>    <span class="c1">#</span>
-</span><span id="Reply-115"><a href="#Reply-115"><span class="linenos">115</span></a>    <span class="c1"># Last reply</span>
-</span><span id="Reply-116"><a href="#Reply-116"><span class="linenos">116</span></a>    <span class="c1">#</span>
-</span><span id="Reply-117"><a href="#Reply-117"><span class="linenos">117</span></a>
-</span><span id="Reply-118"><a href="#Reply-118"><span class="linenos">118</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_last_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">last_reply</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="Reply-119"><a href="#Reply-119"><span class="linenos">119</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply-120"><a href="#Reply-120"><span class="linenos">120</span></a><span class="sd">        Indicate whether this is the final reply.</span>
-</span><span id="Reply-121"><a href="#Reply-121"><span class="linenos">121</span></a>
-</span><span id="Reply-122"><a href="#Reply-122"><span class="linenos">122</span></a><span class="sd">        When False, additional replies may follow.</span>
-</span><span id="Reply-123"><a href="#Reply-123"><span class="linenos">123</span></a><span class="sd">        When True, this Reply indicates completion of</span>
-</span><span id="Reply-124"><a href="#Reply-124"><span class="linenos">124</span></a><span class="sd">        the reply sequence.</span>
-</span><span id="Reply-125"><a href="#Reply-125"><span class="linenos">125</span></a>
-</span><span id="Reply-126"><a href="#Reply-126"><span class="linenos">126</span></a><span class="sd">        Args:</span>
-</span><span id="Reply-127"><a href="#Reply-127"><span class="linenos">127</span></a><span class="sd">            last_reply (bool):</span>
-</span><span id="Reply-128"><a href="#Reply-128"><span class="linenos">128</span></a><span class="sd">                True if this is the final reply.</span>
-</span><span id="Reply-129"><a href="#Reply-129"><span class="linenos">129</span></a>
-</span><span id="Reply-130"><a href="#Reply-130"><span class="linenos">130</span></a><span class="sd">        Raises:</span>
-</span><span id="Reply-131"><a href="#Reply-131"><span class="linenos">131</span></a><span class="sd">            TypeError:</span>
-</span><span id="Reply-132"><a href="#Reply-132"><span class="linenos">132</span></a><span class="sd">                If last_reply is not a boolean.</span>
-</span><span id="Reply-133"><a href="#Reply-133"><span class="linenos">133</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply-134"><a href="#Reply-134"><span class="linenos">134</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">last_reply</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="Reply-135"><a href="#Reply-135"><span class="linenos">135</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;last_reply must be a boolean&quot;</span><span class="p">)</span>
+</span><span id="Reply-102"><a href="#Reply-102"><span class="linenos">102</span></a><span class="sd">        Raises:</span>
+</span><span id="Reply-103"><a href="#Reply-103"><span class="linenos">103</span></a><span class="sd">            TypeError:</span>
+</span><span id="Reply-104"><a href="#Reply-104"><span class="linenos">104</span></a><span class="sd">                If success is not a boolean.</span>
+</span><span id="Reply-105"><a href="#Reply-105"><span class="linenos">105</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply-106"><a href="#Reply-106"><span class="linenos">106</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="Reply-107"><a href="#Reply-107"><span class="linenos">107</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;success must be a boolean&quot;</span><span class="p">)</span>
+</span><span id="Reply-108"><a href="#Reply-108"><span class="linenos">108</span></a>
+</span><span id="Reply-109"><a href="#Reply-109"><span class="linenos">109</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="n">success</span>
+</span><span id="Reply-110"><a href="#Reply-110"><span class="linenos">110</span></a>
+</span><span id="Reply-111"><a href="#Reply-111"><span class="linenos">111</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Reply-112"><a href="#Reply-112"><span class="linenos">112</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply-113"><a href="#Reply-113"><span class="linenos">113</span></a><span class="sd">        Determine whether the operation succeeded.</span>
+</span><span id="Reply-114"><a href="#Reply-114"><span class="linenos">114</span></a>
+</span><span id="Reply-115"><a href="#Reply-115"><span class="linenos">115</span></a><span class="sd">        Returns:</span>
+</span><span id="Reply-116"><a href="#Reply-116"><span class="linenos">116</span></a><span class="sd">            bool:</span>
+</span><span id="Reply-117"><a href="#Reply-117"><span class="linenos">117</span></a><span class="sd">                True if successful, otherwise False.</span>
+</span><span id="Reply-118"><a href="#Reply-118"><span class="linenos">118</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply-119"><a href="#Reply-119"><span class="linenos">119</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">success</span>
+</span><span id="Reply-120"><a href="#Reply-120"><span class="linenos">120</span></a>
+</span><span id="Reply-121"><a href="#Reply-121"><span class="linenos">121</span></a>    <span class="c1">#</span>
+</span><span id="Reply-122"><a href="#Reply-122"><span class="linenos">122</span></a>    <span class="c1"># Last reply</span>
+</span><span id="Reply-123"><a href="#Reply-123"><span class="linenos">123</span></a>    <span class="c1">#</span>
+</span><span id="Reply-124"><a href="#Reply-124"><span class="linenos">124</span></a>
+</span><span id="Reply-125"><a href="#Reply-125"><span class="linenos">125</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_last_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">last_reply</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="Reply-126"><a href="#Reply-126"><span class="linenos">126</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply-127"><a href="#Reply-127"><span class="linenos">127</span></a><span class="sd">        Indicate whether this is the final reply.</span>
+</span><span id="Reply-128"><a href="#Reply-128"><span class="linenos">128</span></a>
+</span><span id="Reply-129"><a href="#Reply-129"><span class="linenos">129</span></a><span class="sd">        When False, additional replies may follow.</span>
+</span><span id="Reply-130"><a href="#Reply-130"><span class="linenos">130</span></a><span class="sd">        When True, this Reply indicates completion of</span>
+</span><span id="Reply-131"><a href="#Reply-131"><span class="linenos">131</span></a><span class="sd">        the reply sequence.</span>
+</span><span id="Reply-132"><a href="#Reply-132"><span class="linenos">132</span></a>
+</span><span id="Reply-133"><a href="#Reply-133"><span class="linenos">133</span></a><span class="sd">        Args:</span>
+</span><span id="Reply-134"><a href="#Reply-134"><span class="linenos">134</span></a><span class="sd">            last_reply (bool):</span>
+</span><span id="Reply-135"><a href="#Reply-135"><span class="linenos">135</span></a><span class="sd">                True if this is the final reply.</span>
 </span><span id="Reply-136"><a href="#Reply-136"><span class="linenos">136</span></a>
-</span><span id="Reply-137"><a href="#Reply-137"><span class="linenos">137</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span> <span class="o">=</span> <span class="n">last_reply</span>
-</span><span id="Reply-138"><a href="#Reply-138"><span class="linenos">138</span></a>
-</span><span id="Reply-139"><a href="#Reply-139"><span class="linenos">139</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_last_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Reply-140"><a href="#Reply-140"><span class="linenos">140</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply-141"><a href="#Reply-141"><span class="linenos">141</span></a><span class="sd">        Determine whether this is the final reply.</span>
-</span><span id="Reply-142"><a href="#Reply-142"><span class="linenos">142</span></a>
-</span><span id="Reply-143"><a href="#Reply-143"><span class="linenos">143</span></a><span class="sd">        Returns:</span>
-</span><span id="Reply-144"><a href="#Reply-144"><span class="linenos">144</span></a><span class="sd">            bool:</span>
-</span><span id="Reply-145"><a href="#Reply-145"><span class="linenos">145</span></a><span class="sd">                True if this is the final reply.</span>
-</span><span id="Reply-146"><a href="#Reply-146"><span class="linenos">146</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply-147"><a href="#Reply-147"><span class="linenos">147</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span>
-</span><span id="Reply-148"><a href="#Reply-148"><span class="linenos">148</span></a>
-</span><span id="Reply-149"><a href="#Reply-149"><span class="linenos">149</span></a>    <span class="c1">#</span>
-</span><span id="Reply-150"><a href="#Reply-150"><span class="linenos">150</span></a>    <span class="c1"># Message</span>
-</span><span id="Reply-151"><a href="#Reply-151"><span class="linenos">151</span></a>    <span class="c1">#</span>
-</span><span id="Reply-152"><a href="#Reply-152"><span class="linenos">152</span></a>
-</span><span id="Reply-153"><a href="#Reply-153"><span class="linenos">153</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="Reply-154"><a href="#Reply-154"><span class="linenos">154</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply-155"><a href="#Reply-155"><span class="linenos">155</span></a><span class="sd">        Set the descriptive response message.</span>
-</span><span id="Reply-156"><a href="#Reply-156"><span class="linenos">156</span></a>
-</span><span id="Reply-157"><a href="#Reply-157"><span class="linenos">157</span></a><span class="sd">        Args:</span>
-</span><span id="Reply-158"><a href="#Reply-158"><span class="linenos">158</span></a><span class="sd">            message (str):</span>
-</span><span id="Reply-159"><a href="#Reply-159"><span class="linenos">159</span></a><span class="sd">                Nonempty response message.</span>
-</span><span id="Reply-160"><a href="#Reply-160"><span class="linenos">160</span></a>
-</span><span id="Reply-161"><a href="#Reply-161"><span class="linenos">161</span></a><span class="sd">        Raises:</span>
-</span><span id="Reply-162"><a href="#Reply-162"><span class="linenos">162</span></a><span class="sd">            ValueError:</span>
-</span><span id="Reply-163"><a href="#Reply-163"><span class="linenos">163</span></a><span class="sd">                If message is None or empty.</span>
-</span><span id="Reply-164"><a href="#Reply-164"><span class="linenos">164</span></a>
-</span><span id="Reply-165"><a href="#Reply-165"><span class="linenos">165</span></a><span class="sd">        Note:</span>
-</span><span id="Reply-166"><a href="#Reply-166"><span class="linenos">166</span></a><span class="sd">            The message must support the strip() operation.</span>
-</span><span id="Reply-167"><a href="#Reply-167"><span class="linenos">167</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply-168"><a href="#Reply-168"><span class="linenos">168</span></a>        <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Reply-169"><a href="#Reply-169"><span class="linenos">169</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;message may not be None&quot;</span><span class="p">)</span>
-</span><span id="Reply-170"><a href="#Reply-170"><span class="linenos">170</span></a>
-</span><span id="Reply-171"><a href="#Reply-171"><span class="linenos">171</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">message</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
-</span><span id="Reply-172"><a href="#Reply-172"><span class="linenos">172</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;message may not be empty&quot;</span><span class="p">)</span>
-</span><span id="Reply-173"><a href="#Reply-173"><span class="linenos">173</span></a>
-</span><span id="Reply-174"><a href="#Reply-174"><span class="linenos">174</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span>
-</span><span id="Reply-175"><a href="#Reply-175"><span class="linenos">175</span></a>
-</span><span id="Reply-176"><a href="#Reply-176"><span class="linenos">176</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Reply-177"><a href="#Reply-177"><span class="linenos">177</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply-178"><a href="#Reply-178"><span class="linenos">178</span></a><span class="sd">        Return the descriptive response message.</span>
-</span><span id="Reply-179"><a href="#Reply-179"><span class="linenos">179</span></a>
-</span><span id="Reply-180"><a href="#Reply-180"><span class="linenos">180</span></a><span class="sd">        Returns:</span>
-</span><span id="Reply-181"><a href="#Reply-181"><span class="linenos">181</span></a><span class="sd">            str:</span>
-</span><span id="Reply-182"><a href="#Reply-182"><span class="linenos">182</span></a><span class="sd">                Current response message.</span>
-</span><span id="Reply-183"><a href="#Reply-183"><span class="linenos">183</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply-184"><a href="#Reply-184"><span class="linenos">184</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span>
-</span><span id="Reply-185"><a href="#Reply-185"><span class="linenos">185</span></a>
-</span><span id="Reply-186"><a href="#Reply-186"><span class="linenos">186</span></a>    <span class="c1">#</span>
-</span><span id="Reply-187"><a href="#Reply-187"><span class="linenos">187</span></a>    <span class="c1"># HTTP response code</span>
-</span><span id="Reply-188"><a href="#Reply-188"><span class="linenos">188</span></a>    <span class="c1">#</span>
-</span><span id="Reply-189"><a href="#Reply-189"><span class="linenos">189</span></a>
-</span><span id="Reply-190"><a href="#Reply-190"><span class="linenos">190</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_http_response_code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Reply-191"><a href="#Reply-191"><span class="linenos">191</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply-192"><a href="#Reply-192"><span class="linenos">192</span></a><span class="sd">        Return the response code associated with this Reply.</span>
-</span><span id="Reply-193"><a href="#Reply-193"><span class="linenos">193</span></a>
-</span><span id="Reply-194"><a href="#Reply-194"><span class="linenos">194</span></a><span class="sd">        Returns:</span>
-</span><span id="Reply-195"><a href="#Reply-195"><span class="linenos">195</span></a><span class="sd">            int:</span>
-</span><span id="Reply-196"><a href="#Reply-196"><span class="linenos">196</span></a><span class="sd">                Response code, defaulting to 200.</span>
-</span><span id="Reply-197"><a href="#Reply-197"><span class="linenos">197</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply-198"><a href="#Reply-198"><span class="linenos">198</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span>
-</span><span id="Reply-199"><a href="#Reply-199"><span class="linenos">199</span></a>
-</span><span id="Reply-200"><a href="#Reply-200"><span class="linenos">200</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_http_response_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-</span><span id="Reply-201"><a href="#Reply-201"><span class="linenos">201</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply-202"><a href="#Reply-202"><span class="linenos">202</span></a><span class="sd">        Set the response code associated with this Reply.</span>
-</span><span id="Reply-203"><a href="#Reply-203"><span class="linenos">203</span></a>
-</span><span id="Reply-204"><a href="#Reply-204"><span class="linenos">204</span></a><span class="sd">        Args:</span>
-</span><span id="Reply-205"><a href="#Reply-205"><span class="linenos">205</span></a><span class="sd">            code (int):</span>
-</span><span id="Reply-206"><a href="#Reply-206"><span class="linenos">206</span></a><span class="sd">                Integer response code.</span>
-</span><span id="Reply-207"><a href="#Reply-207"><span class="linenos">207</span></a>
-</span><span id="Reply-208"><a href="#Reply-208"><span class="linenos">208</span></a><span class="sd">        Raises:</span>
-</span><span id="Reply-209"><a href="#Reply-209"><span class="linenos">209</span></a><span class="sd">            TypeError:</span>
-</span><span id="Reply-210"><a href="#Reply-210"><span class="linenos">210</span></a><span class="sd">                If code is not an integer or is a boolean.</span>
-</span><span id="Reply-211"><a href="#Reply-211"><span class="linenos">211</span></a>
-</span><span id="Reply-212"><a href="#Reply-212"><span class="linenos">212</span></a><span class="sd">        Note:</span>
-</span><span id="Reply-213"><a href="#Reply-213"><span class="linenos">213</span></a><span class="sd">            The method does not validate whether the code</span>
-</span><span id="Reply-214"><a href="#Reply-214"><span class="linenos">214</span></a><span class="sd">            is a recognized HTTP status code.</span>
-</span><span id="Reply-215"><a href="#Reply-215"><span class="linenos">215</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply-216"><a href="#Reply-216"><span class="linenos">216</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="Reply-217"><a href="#Reply-217"><span class="linenos">217</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;code must be an integer&quot;</span><span class="p">)</span>
+</span><span id="Reply-137"><a href="#Reply-137"><span class="linenos">137</span></a><span class="sd">        Raises:</span>
+</span><span id="Reply-138"><a href="#Reply-138"><span class="linenos">138</span></a><span class="sd">            TypeError:</span>
+</span><span id="Reply-139"><a href="#Reply-139"><span class="linenos">139</span></a><span class="sd">                If last_reply is not a boolean.</span>
+</span><span id="Reply-140"><a href="#Reply-140"><span class="linenos">140</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply-141"><a href="#Reply-141"><span class="linenos">141</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">last_reply</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="Reply-142"><a href="#Reply-142"><span class="linenos">142</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;last_reply must be a boolean&quot;</span><span class="p">)</span>
+</span><span id="Reply-143"><a href="#Reply-143"><span class="linenos">143</span></a>
+</span><span id="Reply-144"><a href="#Reply-144"><span class="linenos">144</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span> <span class="o">=</span> <span class="n">last_reply</span>
+</span><span id="Reply-145"><a href="#Reply-145"><span class="linenos">145</span></a>
+</span><span id="Reply-146"><a href="#Reply-146"><span class="linenos">146</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_last_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Reply-147"><a href="#Reply-147"><span class="linenos">147</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply-148"><a href="#Reply-148"><span class="linenos">148</span></a><span class="sd">        Determine whether this is the final reply.</span>
+</span><span id="Reply-149"><a href="#Reply-149"><span class="linenos">149</span></a>
+</span><span id="Reply-150"><a href="#Reply-150"><span class="linenos">150</span></a><span class="sd">        Returns:</span>
+</span><span id="Reply-151"><a href="#Reply-151"><span class="linenos">151</span></a><span class="sd">            bool:</span>
+</span><span id="Reply-152"><a href="#Reply-152"><span class="linenos">152</span></a><span class="sd">                True if this is the final reply.</span>
+</span><span id="Reply-153"><a href="#Reply-153"><span class="linenos">153</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply-154"><a href="#Reply-154"><span class="linenos">154</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span>
+</span><span id="Reply-155"><a href="#Reply-155"><span class="linenos">155</span></a>
+</span><span id="Reply-156"><a href="#Reply-156"><span class="linenos">156</span></a>    <span class="c1">#</span>
+</span><span id="Reply-157"><a href="#Reply-157"><span class="linenos">157</span></a>    <span class="c1"># Message</span>
+</span><span id="Reply-158"><a href="#Reply-158"><span class="linenos">158</span></a>    <span class="c1">#</span>
+</span><span id="Reply-159"><a href="#Reply-159"><span class="linenos">159</span></a>
+</span><span id="Reply-160"><a href="#Reply-160"><span class="linenos">160</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="Reply-161"><a href="#Reply-161"><span class="linenos">161</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply-162"><a href="#Reply-162"><span class="linenos">162</span></a><span class="sd">        Set the descriptive response message.</span>
+</span><span id="Reply-163"><a href="#Reply-163"><span class="linenos">163</span></a>
+</span><span id="Reply-164"><a href="#Reply-164"><span class="linenos">164</span></a><span class="sd">        Args:</span>
+</span><span id="Reply-165"><a href="#Reply-165"><span class="linenos">165</span></a><span class="sd">            message (str):</span>
+</span><span id="Reply-166"><a href="#Reply-166"><span class="linenos">166</span></a><span class="sd">                Nonempty response message.</span>
+</span><span id="Reply-167"><a href="#Reply-167"><span class="linenos">167</span></a>
+</span><span id="Reply-168"><a href="#Reply-168"><span class="linenos">168</span></a><span class="sd">        Raises:</span>
+</span><span id="Reply-169"><a href="#Reply-169"><span class="linenos">169</span></a><span class="sd">            ValueError:</span>
+</span><span id="Reply-170"><a href="#Reply-170"><span class="linenos">170</span></a><span class="sd">                If message is None or empty.</span>
+</span><span id="Reply-171"><a href="#Reply-171"><span class="linenos">171</span></a>
+</span><span id="Reply-172"><a href="#Reply-172"><span class="linenos">172</span></a><span class="sd">        Note:</span>
+</span><span id="Reply-173"><a href="#Reply-173"><span class="linenos">173</span></a><span class="sd">            The message must support the strip() operation.</span>
+</span><span id="Reply-174"><a href="#Reply-174"><span class="linenos">174</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply-175"><a href="#Reply-175"><span class="linenos">175</span></a>        <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Reply-176"><a href="#Reply-176"><span class="linenos">176</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;message may not be None&quot;</span><span class="p">)</span>
+</span><span id="Reply-177"><a href="#Reply-177"><span class="linenos">177</span></a>
+</span><span id="Reply-178"><a href="#Reply-178"><span class="linenos">178</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">message</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+</span><span id="Reply-179"><a href="#Reply-179"><span class="linenos">179</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;message may not be empty&quot;</span><span class="p">)</span>
+</span><span id="Reply-180"><a href="#Reply-180"><span class="linenos">180</span></a>
+</span><span id="Reply-181"><a href="#Reply-181"><span class="linenos">181</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span>
+</span><span id="Reply-182"><a href="#Reply-182"><span class="linenos">182</span></a>
+</span><span id="Reply-183"><a href="#Reply-183"><span class="linenos">183</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Reply-184"><a href="#Reply-184"><span class="linenos">184</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply-185"><a href="#Reply-185"><span class="linenos">185</span></a><span class="sd">        Return the descriptive response message.</span>
+</span><span id="Reply-186"><a href="#Reply-186"><span class="linenos">186</span></a>
+</span><span id="Reply-187"><a href="#Reply-187"><span class="linenos">187</span></a><span class="sd">        Returns:</span>
+</span><span id="Reply-188"><a href="#Reply-188"><span class="linenos">188</span></a><span class="sd">            str:</span>
+</span><span id="Reply-189"><a href="#Reply-189"><span class="linenos">189</span></a><span class="sd">                Current response message.</span>
+</span><span id="Reply-190"><a href="#Reply-190"><span class="linenos">190</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply-191"><a href="#Reply-191"><span class="linenos">191</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span>
+</span><span id="Reply-192"><a href="#Reply-192"><span class="linenos">192</span></a>
+</span><span id="Reply-193"><a href="#Reply-193"><span class="linenos">193</span></a>    <span class="c1">#</span>
+</span><span id="Reply-194"><a href="#Reply-194"><span class="linenos">194</span></a>    <span class="c1"># HTTP response code</span>
+</span><span id="Reply-195"><a href="#Reply-195"><span class="linenos">195</span></a>    <span class="c1">#</span>
+</span><span id="Reply-196"><a href="#Reply-196"><span class="linenos">196</span></a>
+</span><span id="Reply-197"><a href="#Reply-197"><span class="linenos">197</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_http_response_code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Reply-198"><a href="#Reply-198"><span class="linenos">198</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply-199"><a href="#Reply-199"><span class="linenos">199</span></a><span class="sd">        Return the response code associated with this Reply.</span>
+</span><span id="Reply-200"><a href="#Reply-200"><span class="linenos">200</span></a>
+</span><span id="Reply-201"><a href="#Reply-201"><span class="linenos">201</span></a><span class="sd">        Returns:</span>
+</span><span id="Reply-202"><a href="#Reply-202"><span class="linenos">202</span></a><span class="sd">            int:</span>
+</span><span id="Reply-203"><a href="#Reply-203"><span class="linenos">203</span></a><span class="sd">                Response code, defaulting to 200.</span>
+</span><span id="Reply-204"><a href="#Reply-204"><span class="linenos">204</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply-205"><a href="#Reply-205"><span class="linenos">205</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span>
+</span><span id="Reply-206"><a href="#Reply-206"><span class="linenos">206</span></a>
+</span><span id="Reply-207"><a href="#Reply-207"><span class="linenos">207</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_http_response_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+</span><span id="Reply-208"><a href="#Reply-208"><span class="linenos">208</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply-209"><a href="#Reply-209"><span class="linenos">209</span></a><span class="sd">        Set the response code associated with this Reply.</span>
+</span><span id="Reply-210"><a href="#Reply-210"><span class="linenos">210</span></a>
+</span><span id="Reply-211"><a href="#Reply-211"><span class="linenos">211</span></a><span class="sd">        Args:</span>
+</span><span id="Reply-212"><a href="#Reply-212"><span class="linenos">212</span></a><span class="sd">            code (int):</span>
+</span><span id="Reply-213"><a href="#Reply-213"><span class="linenos">213</span></a><span class="sd">                Integer response code.</span>
+</span><span id="Reply-214"><a href="#Reply-214"><span class="linenos">214</span></a>
+</span><span id="Reply-215"><a href="#Reply-215"><span class="linenos">215</span></a><span class="sd">        Raises:</span>
+</span><span id="Reply-216"><a href="#Reply-216"><span class="linenos">216</span></a><span class="sd">            TypeError:</span>
+</span><span id="Reply-217"><a href="#Reply-217"><span class="linenos">217</span></a><span class="sd">                If code is not an integer or is a boolean.</span>
 </span><span id="Reply-218"><a href="#Reply-218"><span class="linenos">218</span></a>
-</span><span id="Reply-219"><a href="#Reply-219"><span class="linenos">219</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span> <span class="o">=</span> <span class="n">code</span>
+</span><span id="Reply-219"><a href="#Reply-219"><span class="linenos">219</span></a><span class="sd">        Note:</span>
+</span><span id="Reply-220"><a href="#Reply-220"><span class="linenos">220</span></a><span class="sd">            The method does not validate whether the code</span>
+</span><span id="Reply-221"><a href="#Reply-221"><span class="linenos">221</span></a><span class="sd">            is a recognized HTTP status code.</span>
+</span><span id="Reply-222"><a href="#Reply-222"><span class="linenos">222</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply-223"><a href="#Reply-223"><span class="linenos">223</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="Reply-224"><a href="#Reply-224"><span class="linenos">224</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;code must be an integer&quot;</span><span class="p">)</span>
+</span><span id="Reply-225"><a href="#Reply-225"><span class="linenos">225</span></a>
+</span><span id="Reply-226"><a href="#Reply-226"><span class="linenos">226</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span> <span class="o">=</span> <span class="n">code</span>
 </span></pre></div>
 
 
@@ -598,20 +607,20 @@ response_code (int):
 
     </div>
     <a class="headerlink" href="#Reply.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.__init__-44"><a href="#Reply.__init__-44"><span class="linenos">44</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Reply.__init__-45"><a href="#Reply.__init__-45"><span class="linenos">45</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply.__init__-46"><a href="#Reply.__init__-46"><span class="linenos">46</span></a><span class="sd">        Initialize a Reply with default response values.</span>
-</span><span id="Reply.__init__-47"><a href="#Reply.__init__-47"><span class="linenos">47</span></a>
-</span><span id="Reply.__init__-48"><a href="#Reply.__init__-48"><span class="linenos">48</span></a><span class="sd">        Also initializes inherited Agent properties.</span>
-</span><span id="Reply.__init__-49"><a href="#Reply.__init__-49"><span class="linenos">49</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply.__init__-50"><a href="#Reply.__init__-50"><span class="linenos">50</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-</span><span id="Reply.__init__-51"><a href="#Reply.__init__-51"><span class="linenos">51</span></a>
-</span><span id="Reply.__init__-52"><a href="#Reply.__init__-52"><span class="linenos">52</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="Reply.__init__-53"><a href="#Reply.__init__-53"><span class="linenos">53</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="Reply.__init__-54"><a href="#Reply.__init__-54"><span class="linenos">54</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="Reply.__init__-55"><a href="#Reply.__init__-55"><span class="linenos">55</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;OK&quot;</span>
-</span><span id="Reply.__init__-56"><a href="#Reply.__init__-56"><span class="linenos">56</span></a>
-</span><span id="Reply.__init__-57"><a href="#Reply.__init__-57"><span class="linenos">57</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span> <span class="o">=</span> <span class="mi">200</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.__init__-51"><a href="#Reply.__init__-51"><span class="linenos">51</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Reply.__init__-52"><a href="#Reply.__init__-52"><span class="linenos">52</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply.__init__-53"><a href="#Reply.__init__-53"><span class="linenos">53</span></a><span class="sd">        Initialize a Reply with default response values.</span>
+</span><span id="Reply.__init__-54"><a href="#Reply.__init__-54"><span class="linenos">54</span></a>
+</span><span id="Reply.__init__-55"><a href="#Reply.__init__-55"><span class="linenos">55</span></a><span class="sd">        Also initializes inherited Agent properties.</span>
+</span><span id="Reply.__init__-56"><a href="#Reply.__init__-56"><span class="linenos">56</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply.__init__-57"><a href="#Reply.__init__-57"><span class="linenos">57</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span><span id="Reply.__init__-58"><a href="#Reply.__init__-58"><span class="linenos">58</span></a>
+</span><span id="Reply.__init__-59"><a href="#Reply.__init__-59"><span class="linenos">59</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="Reply.__init__-60"><a href="#Reply.__init__-60"><span class="linenos">60</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="Reply.__init__-61"><a href="#Reply.__init__-61"><span class="linenos">61</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="Reply.__init__-62"><a href="#Reply.__init__-62"><span class="linenos">62</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;OK&quot;</span>
+</span><span id="Reply.__init__-63"><a href="#Reply.__init__-63"><span class="linenos">63</span></a>
+</span><span id="Reply.__init__-64"><a href="#Reply.__init__-64"><span class="linenos">64</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span> <span class="o">=</span> <span class="mi">200</span>
 </span></pre></div>
 
 
@@ -688,15 +697,15 @@ response_code (int):
 
     </div>
     <a class="headerlink" href="#Reply.set_exception"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.set_exception-63"><a href="#Reply.set_exception-63"><span class="linenos">63</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">throwable</span><span class="p">):</span>
-</span><span id="Reply.set_exception-64"><a href="#Reply.set_exception-64"><span class="linenos">64</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply.set_exception-65"><a href="#Reply.set_exception-65"><span class="linenos">65</span></a><span class="sd">        Associate exception information with this Reply.</span>
-</span><span id="Reply.set_exception-66"><a href="#Reply.set_exception-66"><span class="linenos">66</span></a>
-</span><span id="Reply.set_exception-67"><a href="#Reply.set_exception-67"><span class="linenos">67</span></a><span class="sd">        Args:</span>
-</span><span id="Reply.set_exception-68"><a href="#Reply.set_exception-68"><span class="linenos">68</span></a><span class="sd">            throwable:</span>
-</span><span id="Reply.set_exception-69"><a href="#Reply.set_exception-69"><span class="linenos">69</span></a><span class="sd">                Exception or error information to store.</span>
-</span><span id="Reply.set_exception-70"><a href="#Reply.set_exception-70"><span class="linenos">70</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply.set_exception-71"><a href="#Reply.set_exception-71"><span class="linenos">71</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span> <span class="o">=</span> <span class="n">throwable</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.set_exception-70"><a href="#Reply.set_exception-70"><span class="linenos">70</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">throwable</span><span class="p">):</span>
+</span><span id="Reply.set_exception-71"><a href="#Reply.set_exception-71"><span class="linenos">71</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply.set_exception-72"><a href="#Reply.set_exception-72"><span class="linenos">72</span></a><span class="sd">        Associate exception information with this Reply.</span>
+</span><span id="Reply.set_exception-73"><a href="#Reply.set_exception-73"><span class="linenos">73</span></a>
+</span><span id="Reply.set_exception-74"><a href="#Reply.set_exception-74"><span class="linenos">74</span></a><span class="sd">        Args:</span>
+</span><span id="Reply.set_exception-75"><a href="#Reply.set_exception-75"><span class="linenos">75</span></a><span class="sd">            throwable:</span>
+</span><span id="Reply.set_exception-76"><a href="#Reply.set_exception-76"><span class="linenos">76</span></a><span class="sd">                Exception or error information to store.</span>
+</span><span id="Reply.set_exception-77"><a href="#Reply.set_exception-77"><span class="linenos">77</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply.set_exception-78"><a href="#Reply.set_exception-78"><span class="linenos">78</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span> <span class="o">=</span> <span class="n">throwable</span>
 </span></pre></div>
 
 
@@ -720,15 +729,15 @@ response_code (int):
 
     </div>
     <a class="headerlink" href="#Reply.get_exception"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.get_exception-73"><a href="#Reply.get_exception-73"><span class="linenos">73</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Reply.get_exception-74"><a href="#Reply.get_exception-74"><span class="linenos">74</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply.get_exception-75"><a href="#Reply.get_exception-75"><span class="linenos">75</span></a><span class="sd">        Return the exception information associated with this Reply.</span>
-</span><span id="Reply.get_exception-76"><a href="#Reply.get_exception-76"><span class="linenos">76</span></a>
-</span><span id="Reply.get_exception-77"><a href="#Reply.get_exception-77"><span class="linenos">77</span></a><span class="sd">        Returns:</span>
-</span><span id="Reply.get_exception-78"><a href="#Reply.get_exception-78"><span class="linenos">78</span></a><span class="sd">            object | None:</span>
-</span><span id="Reply.get_exception-79"><a href="#Reply.get_exception-79"><span class="linenos">79</span></a><span class="sd">                Stored exception information, or None if unset.</span>
-</span><span id="Reply.get_exception-80"><a href="#Reply.get_exception-80"><span class="linenos">80</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply.get_exception-81"><a href="#Reply.get_exception-81"><span class="linenos">81</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.get_exception-80"><a href="#Reply.get_exception-80"><span class="linenos">80</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_exception</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Reply.get_exception-81"><a href="#Reply.get_exception-81"><span class="linenos">81</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply.get_exception-82"><a href="#Reply.get_exception-82"><span class="linenos">82</span></a><span class="sd">        Return the exception information associated with this Reply.</span>
+</span><span id="Reply.get_exception-83"><a href="#Reply.get_exception-83"><span class="linenos">83</span></a>
+</span><span id="Reply.get_exception-84"><a href="#Reply.get_exception-84"><span class="linenos">84</span></a><span class="sd">        Returns:</span>
+</span><span id="Reply.get_exception-85"><a href="#Reply.get_exception-85"><span class="linenos">85</span></a><span class="sd">            object | None:</span>
+</span><span id="Reply.get_exception-86"><a href="#Reply.get_exception-86"><span class="linenos">86</span></a><span class="sd">                Stored exception information, or None if unset.</span>
+</span><span id="Reply.get_exception-87"><a href="#Reply.get_exception-87"><span class="linenos">87</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply.get_exception-88"><a href="#Reply.get_exception-88"><span class="linenos">88</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">throwable</span>
 </span></pre></div>
 
 
@@ -752,22 +761,22 @@ response_code (int):
 
     </div>
     <a class="headerlink" href="#Reply.set_success"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.set_success-87"><a href="#Reply.set_success-87"><span class="linenos"> 87</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_success</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">success</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="Reply.set_success-88"><a href="#Reply.set_success-88"><span class="linenos"> 88</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply.set_success-89"><a href="#Reply.set_success-89"><span class="linenos"> 89</span></a><span class="sd">        Set the success status of the operation.</span>
-</span><span id="Reply.set_success-90"><a href="#Reply.set_success-90"><span class="linenos"> 90</span></a>
-</span><span id="Reply.set_success-91"><a href="#Reply.set_success-91"><span class="linenos"> 91</span></a><span class="sd">        Args:</span>
-</span><span id="Reply.set_success-92"><a href="#Reply.set_success-92"><span class="linenos"> 92</span></a><span class="sd">            success (bool):</span>
-</span><span id="Reply.set_success-93"><a href="#Reply.set_success-93"><span class="linenos"> 93</span></a><span class="sd">                True if the operation succeeded, otherwise False.</span>
-</span><span id="Reply.set_success-94"><a href="#Reply.set_success-94"><span class="linenos"> 94</span></a>
-</span><span id="Reply.set_success-95"><a href="#Reply.set_success-95"><span class="linenos"> 95</span></a><span class="sd">        Raises:</span>
-</span><span id="Reply.set_success-96"><a href="#Reply.set_success-96"><span class="linenos"> 96</span></a><span class="sd">            TypeError:</span>
-</span><span id="Reply.set_success-97"><a href="#Reply.set_success-97"><span class="linenos"> 97</span></a><span class="sd">                If success is not a boolean.</span>
-</span><span id="Reply.set_success-98"><a href="#Reply.set_success-98"><span class="linenos"> 98</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply.set_success-99"><a href="#Reply.set_success-99"><span class="linenos"> 99</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="Reply.set_success-100"><a href="#Reply.set_success-100"><span class="linenos">100</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;success must be a boolean&quot;</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.set_success-94"><a href="#Reply.set_success-94"><span class="linenos"> 94</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_success</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">success</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="Reply.set_success-95"><a href="#Reply.set_success-95"><span class="linenos"> 95</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply.set_success-96"><a href="#Reply.set_success-96"><span class="linenos"> 96</span></a><span class="sd">        Set the success status of the operation.</span>
+</span><span id="Reply.set_success-97"><a href="#Reply.set_success-97"><span class="linenos"> 97</span></a>
+</span><span id="Reply.set_success-98"><a href="#Reply.set_success-98"><span class="linenos"> 98</span></a><span class="sd">        Args:</span>
+</span><span id="Reply.set_success-99"><a href="#Reply.set_success-99"><span class="linenos"> 99</span></a><span class="sd">            success (bool):</span>
+</span><span id="Reply.set_success-100"><a href="#Reply.set_success-100"><span class="linenos">100</span></a><span class="sd">                True if the operation succeeded, otherwise False.</span>
 </span><span id="Reply.set_success-101"><a href="#Reply.set_success-101"><span class="linenos">101</span></a>
-</span><span id="Reply.set_success-102"><a href="#Reply.set_success-102"><span class="linenos">102</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="n">success</span>
+</span><span id="Reply.set_success-102"><a href="#Reply.set_success-102"><span class="linenos">102</span></a><span class="sd">        Raises:</span>
+</span><span id="Reply.set_success-103"><a href="#Reply.set_success-103"><span class="linenos">103</span></a><span class="sd">            TypeError:</span>
+</span><span id="Reply.set_success-104"><a href="#Reply.set_success-104"><span class="linenos">104</span></a><span class="sd">                If success is not a boolean.</span>
+</span><span id="Reply.set_success-105"><a href="#Reply.set_success-105"><span class="linenos">105</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply.set_success-106"><a href="#Reply.set_success-106"><span class="linenos">106</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="Reply.set_success-107"><a href="#Reply.set_success-107"><span class="linenos">107</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;success must be a boolean&quot;</span><span class="p">)</span>
+</span><span id="Reply.set_success-108"><a href="#Reply.set_success-108"><span class="linenos">108</span></a>
+</span><span id="Reply.set_success-109"><a href="#Reply.set_success-109"><span class="linenos">109</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="n">success</span>
 </span></pre></div>
 
 
@@ -795,15 +804,15 @@ response_code (int):
 
     </div>
     <a class="headerlink" href="#Reply.is_success"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.is_success-104"><a href="#Reply.is_success-104"><span class="linenos">104</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Reply.is_success-105"><a href="#Reply.is_success-105"><span class="linenos">105</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply.is_success-106"><a href="#Reply.is_success-106"><span class="linenos">106</span></a><span class="sd">        Determine whether the operation succeeded.</span>
-</span><span id="Reply.is_success-107"><a href="#Reply.is_success-107"><span class="linenos">107</span></a>
-</span><span id="Reply.is_success-108"><a href="#Reply.is_success-108"><span class="linenos">108</span></a><span class="sd">        Returns:</span>
-</span><span id="Reply.is_success-109"><a href="#Reply.is_success-109"><span class="linenos">109</span></a><span class="sd">            bool:</span>
-</span><span id="Reply.is_success-110"><a href="#Reply.is_success-110"><span class="linenos">110</span></a><span class="sd">                True if successful, otherwise False.</span>
-</span><span id="Reply.is_success-111"><a href="#Reply.is_success-111"><span class="linenos">111</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply.is_success-112"><a href="#Reply.is_success-112"><span class="linenos">112</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">success</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.is_success-111"><a href="#Reply.is_success-111"><span class="linenos">111</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Reply.is_success-112"><a href="#Reply.is_success-112"><span class="linenos">112</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply.is_success-113"><a href="#Reply.is_success-113"><span class="linenos">113</span></a><span class="sd">        Determine whether the operation succeeded.</span>
+</span><span id="Reply.is_success-114"><a href="#Reply.is_success-114"><span class="linenos">114</span></a>
+</span><span id="Reply.is_success-115"><a href="#Reply.is_success-115"><span class="linenos">115</span></a><span class="sd">        Returns:</span>
+</span><span id="Reply.is_success-116"><a href="#Reply.is_success-116"><span class="linenos">116</span></a><span class="sd">            bool:</span>
+</span><span id="Reply.is_success-117"><a href="#Reply.is_success-117"><span class="linenos">117</span></a><span class="sd">                True if successful, otherwise False.</span>
+</span><span id="Reply.is_success-118"><a href="#Reply.is_success-118"><span class="linenos">118</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply.is_success-119"><a href="#Reply.is_success-119"><span class="linenos">119</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">success</span>
 </span></pre></div>
 
 
@@ -827,26 +836,26 @@ response_code (int):
 
     </div>
     <a class="headerlink" href="#Reply.set_last_reply"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.set_last_reply-118"><a href="#Reply.set_last_reply-118"><span class="linenos">118</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_last_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">last_reply</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="Reply.set_last_reply-119"><a href="#Reply.set_last_reply-119"><span class="linenos">119</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply.set_last_reply-120"><a href="#Reply.set_last_reply-120"><span class="linenos">120</span></a><span class="sd">        Indicate whether this is the final reply.</span>
-</span><span id="Reply.set_last_reply-121"><a href="#Reply.set_last_reply-121"><span class="linenos">121</span></a>
-</span><span id="Reply.set_last_reply-122"><a href="#Reply.set_last_reply-122"><span class="linenos">122</span></a><span class="sd">        When False, additional replies may follow.</span>
-</span><span id="Reply.set_last_reply-123"><a href="#Reply.set_last_reply-123"><span class="linenos">123</span></a><span class="sd">        When True, this Reply indicates completion of</span>
-</span><span id="Reply.set_last_reply-124"><a href="#Reply.set_last_reply-124"><span class="linenos">124</span></a><span class="sd">        the reply sequence.</span>
-</span><span id="Reply.set_last_reply-125"><a href="#Reply.set_last_reply-125"><span class="linenos">125</span></a>
-</span><span id="Reply.set_last_reply-126"><a href="#Reply.set_last_reply-126"><span class="linenos">126</span></a><span class="sd">        Args:</span>
-</span><span id="Reply.set_last_reply-127"><a href="#Reply.set_last_reply-127"><span class="linenos">127</span></a><span class="sd">            last_reply (bool):</span>
-</span><span id="Reply.set_last_reply-128"><a href="#Reply.set_last_reply-128"><span class="linenos">128</span></a><span class="sd">                True if this is the final reply.</span>
-</span><span id="Reply.set_last_reply-129"><a href="#Reply.set_last_reply-129"><span class="linenos">129</span></a>
-</span><span id="Reply.set_last_reply-130"><a href="#Reply.set_last_reply-130"><span class="linenos">130</span></a><span class="sd">        Raises:</span>
-</span><span id="Reply.set_last_reply-131"><a href="#Reply.set_last_reply-131"><span class="linenos">131</span></a><span class="sd">            TypeError:</span>
-</span><span id="Reply.set_last_reply-132"><a href="#Reply.set_last_reply-132"><span class="linenos">132</span></a><span class="sd">                If last_reply is not a boolean.</span>
-</span><span id="Reply.set_last_reply-133"><a href="#Reply.set_last_reply-133"><span class="linenos">133</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply.set_last_reply-134"><a href="#Reply.set_last_reply-134"><span class="linenos">134</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">last_reply</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="Reply.set_last_reply-135"><a href="#Reply.set_last_reply-135"><span class="linenos">135</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;last_reply must be a boolean&quot;</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.set_last_reply-125"><a href="#Reply.set_last_reply-125"><span class="linenos">125</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_last_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">last_reply</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="Reply.set_last_reply-126"><a href="#Reply.set_last_reply-126"><span class="linenos">126</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply.set_last_reply-127"><a href="#Reply.set_last_reply-127"><span class="linenos">127</span></a><span class="sd">        Indicate whether this is the final reply.</span>
+</span><span id="Reply.set_last_reply-128"><a href="#Reply.set_last_reply-128"><span class="linenos">128</span></a>
+</span><span id="Reply.set_last_reply-129"><a href="#Reply.set_last_reply-129"><span class="linenos">129</span></a><span class="sd">        When False, additional replies may follow.</span>
+</span><span id="Reply.set_last_reply-130"><a href="#Reply.set_last_reply-130"><span class="linenos">130</span></a><span class="sd">        When True, this Reply indicates completion of</span>
+</span><span id="Reply.set_last_reply-131"><a href="#Reply.set_last_reply-131"><span class="linenos">131</span></a><span class="sd">        the reply sequence.</span>
+</span><span id="Reply.set_last_reply-132"><a href="#Reply.set_last_reply-132"><span class="linenos">132</span></a>
+</span><span id="Reply.set_last_reply-133"><a href="#Reply.set_last_reply-133"><span class="linenos">133</span></a><span class="sd">        Args:</span>
+</span><span id="Reply.set_last_reply-134"><a href="#Reply.set_last_reply-134"><span class="linenos">134</span></a><span class="sd">            last_reply (bool):</span>
+</span><span id="Reply.set_last_reply-135"><a href="#Reply.set_last_reply-135"><span class="linenos">135</span></a><span class="sd">                True if this is the final reply.</span>
 </span><span id="Reply.set_last_reply-136"><a href="#Reply.set_last_reply-136"><span class="linenos">136</span></a>
-</span><span id="Reply.set_last_reply-137"><a href="#Reply.set_last_reply-137"><span class="linenos">137</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span> <span class="o">=</span> <span class="n">last_reply</span>
+</span><span id="Reply.set_last_reply-137"><a href="#Reply.set_last_reply-137"><span class="linenos">137</span></a><span class="sd">        Raises:</span>
+</span><span id="Reply.set_last_reply-138"><a href="#Reply.set_last_reply-138"><span class="linenos">138</span></a><span class="sd">            TypeError:</span>
+</span><span id="Reply.set_last_reply-139"><a href="#Reply.set_last_reply-139"><span class="linenos">139</span></a><span class="sd">                If last_reply is not a boolean.</span>
+</span><span id="Reply.set_last_reply-140"><a href="#Reply.set_last_reply-140"><span class="linenos">140</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply.set_last_reply-141"><a href="#Reply.set_last_reply-141"><span class="linenos">141</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">last_reply</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="Reply.set_last_reply-142"><a href="#Reply.set_last_reply-142"><span class="linenos">142</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;last_reply must be a boolean&quot;</span><span class="p">)</span>
+</span><span id="Reply.set_last_reply-143"><a href="#Reply.set_last_reply-143"><span class="linenos">143</span></a>
+</span><span id="Reply.set_last_reply-144"><a href="#Reply.set_last_reply-144"><span class="linenos">144</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span> <span class="o">=</span> <span class="n">last_reply</span>
 </span></pre></div>
 
 
@@ -878,15 +887,15 @@ the reply sequence.</p>
 
     </div>
     <a class="headerlink" href="#Reply.is_last_reply"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.is_last_reply-139"><a href="#Reply.is_last_reply-139"><span class="linenos">139</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_last_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Reply.is_last_reply-140"><a href="#Reply.is_last_reply-140"><span class="linenos">140</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply.is_last_reply-141"><a href="#Reply.is_last_reply-141"><span class="linenos">141</span></a><span class="sd">        Determine whether this is the final reply.</span>
-</span><span id="Reply.is_last_reply-142"><a href="#Reply.is_last_reply-142"><span class="linenos">142</span></a>
-</span><span id="Reply.is_last_reply-143"><a href="#Reply.is_last_reply-143"><span class="linenos">143</span></a><span class="sd">        Returns:</span>
-</span><span id="Reply.is_last_reply-144"><a href="#Reply.is_last_reply-144"><span class="linenos">144</span></a><span class="sd">            bool:</span>
-</span><span id="Reply.is_last_reply-145"><a href="#Reply.is_last_reply-145"><span class="linenos">145</span></a><span class="sd">                True if this is the final reply.</span>
-</span><span id="Reply.is_last_reply-146"><a href="#Reply.is_last_reply-146"><span class="linenos">146</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply.is_last_reply-147"><a href="#Reply.is_last_reply-147"><span class="linenos">147</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.is_last_reply-146"><a href="#Reply.is_last_reply-146"><span class="linenos">146</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_last_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Reply.is_last_reply-147"><a href="#Reply.is_last_reply-147"><span class="linenos">147</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply.is_last_reply-148"><a href="#Reply.is_last_reply-148"><span class="linenos">148</span></a><span class="sd">        Determine whether this is the final reply.</span>
+</span><span id="Reply.is_last_reply-149"><a href="#Reply.is_last_reply-149"><span class="linenos">149</span></a>
+</span><span id="Reply.is_last_reply-150"><a href="#Reply.is_last_reply-150"><span class="linenos">150</span></a><span class="sd">        Returns:</span>
+</span><span id="Reply.is_last_reply-151"><a href="#Reply.is_last_reply-151"><span class="linenos">151</span></a><span class="sd">            bool:</span>
+</span><span id="Reply.is_last_reply-152"><a href="#Reply.is_last_reply-152"><span class="linenos">152</span></a><span class="sd">                True if this is the final reply.</span>
+</span><span id="Reply.is_last_reply-153"><a href="#Reply.is_last_reply-153"><span class="linenos">153</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply.is_last_reply-154"><a href="#Reply.is_last_reply-154"><span class="linenos">154</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_reply</span>
 </span></pre></div>
 
 
@@ -910,28 +919,28 @@ the reply sequence.</p>
 
     </div>
     <a class="headerlink" href="#Reply.set_message"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.set_message-153"><a href="#Reply.set_message-153"><span class="linenos">153</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="Reply.set_message-154"><a href="#Reply.set_message-154"><span class="linenos">154</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply.set_message-155"><a href="#Reply.set_message-155"><span class="linenos">155</span></a><span class="sd">        Set the descriptive response message.</span>
-</span><span id="Reply.set_message-156"><a href="#Reply.set_message-156"><span class="linenos">156</span></a>
-</span><span id="Reply.set_message-157"><a href="#Reply.set_message-157"><span class="linenos">157</span></a><span class="sd">        Args:</span>
-</span><span id="Reply.set_message-158"><a href="#Reply.set_message-158"><span class="linenos">158</span></a><span class="sd">            message (str):</span>
-</span><span id="Reply.set_message-159"><a href="#Reply.set_message-159"><span class="linenos">159</span></a><span class="sd">                Nonempty response message.</span>
-</span><span id="Reply.set_message-160"><a href="#Reply.set_message-160"><span class="linenos">160</span></a>
-</span><span id="Reply.set_message-161"><a href="#Reply.set_message-161"><span class="linenos">161</span></a><span class="sd">        Raises:</span>
-</span><span id="Reply.set_message-162"><a href="#Reply.set_message-162"><span class="linenos">162</span></a><span class="sd">            ValueError:</span>
-</span><span id="Reply.set_message-163"><a href="#Reply.set_message-163"><span class="linenos">163</span></a><span class="sd">                If message is None or empty.</span>
-</span><span id="Reply.set_message-164"><a href="#Reply.set_message-164"><span class="linenos">164</span></a>
-</span><span id="Reply.set_message-165"><a href="#Reply.set_message-165"><span class="linenos">165</span></a><span class="sd">        Note:</span>
-</span><span id="Reply.set_message-166"><a href="#Reply.set_message-166"><span class="linenos">166</span></a><span class="sd">            The message must support the strip() operation.</span>
-</span><span id="Reply.set_message-167"><a href="#Reply.set_message-167"><span class="linenos">167</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply.set_message-168"><a href="#Reply.set_message-168"><span class="linenos">168</span></a>        <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Reply.set_message-169"><a href="#Reply.set_message-169"><span class="linenos">169</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;message may not be None&quot;</span><span class="p">)</span>
-</span><span id="Reply.set_message-170"><a href="#Reply.set_message-170"><span class="linenos">170</span></a>
-</span><span id="Reply.set_message-171"><a href="#Reply.set_message-171"><span class="linenos">171</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">message</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
-</span><span id="Reply.set_message-172"><a href="#Reply.set_message-172"><span class="linenos">172</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;message may not be empty&quot;</span><span class="p">)</span>
-</span><span id="Reply.set_message-173"><a href="#Reply.set_message-173"><span class="linenos">173</span></a>
-</span><span id="Reply.set_message-174"><a href="#Reply.set_message-174"><span class="linenos">174</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.set_message-160"><a href="#Reply.set_message-160"><span class="linenos">160</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="Reply.set_message-161"><a href="#Reply.set_message-161"><span class="linenos">161</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply.set_message-162"><a href="#Reply.set_message-162"><span class="linenos">162</span></a><span class="sd">        Set the descriptive response message.</span>
+</span><span id="Reply.set_message-163"><a href="#Reply.set_message-163"><span class="linenos">163</span></a>
+</span><span id="Reply.set_message-164"><a href="#Reply.set_message-164"><span class="linenos">164</span></a><span class="sd">        Args:</span>
+</span><span id="Reply.set_message-165"><a href="#Reply.set_message-165"><span class="linenos">165</span></a><span class="sd">            message (str):</span>
+</span><span id="Reply.set_message-166"><a href="#Reply.set_message-166"><span class="linenos">166</span></a><span class="sd">                Nonempty response message.</span>
+</span><span id="Reply.set_message-167"><a href="#Reply.set_message-167"><span class="linenos">167</span></a>
+</span><span id="Reply.set_message-168"><a href="#Reply.set_message-168"><span class="linenos">168</span></a><span class="sd">        Raises:</span>
+</span><span id="Reply.set_message-169"><a href="#Reply.set_message-169"><span class="linenos">169</span></a><span class="sd">            ValueError:</span>
+</span><span id="Reply.set_message-170"><a href="#Reply.set_message-170"><span class="linenos">170</span></a><span class="sd">                If message is None or empty.</span>
+</span><span id="Reply.set_message-171"><a href="#Reply.set_message-171"><span class="linenos">171</span></a>
+</span><span id="Reply.set_message-172"><a href="#Reply.set_message-172"><span class="linenos">172</span></a><span class="sd">        Note:</span>
+</span><span id="Reply.set_message-173"><a href="#Reply.set_message-173"><span class="linenos">173</span></a><span class="sd">            The message must support the strip() operation.</span>
+</span><span id="Reply.set_message-174"><a href="#Reply.set_message-174"><span class="linenos">174</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply.set_message-175"><a href="#Reply.set_message-175"><span class="linenos">175</span></a>        <span class="k">if</span> <span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Reply.set_message-176"><a href="#Reply.set_message-176"><span class="linenos">176</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;message may not be None&quot;</span><span class="p">)</span>
+</span><span id="Reply.set_message-177"><a href="#Reply.set_message-177"><span class="linenos">177</span></a>
+</span><span id="Reply.set_message-178"><a href="#Reply.set_message-178"><span class="linenos">178</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">message</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+</span><span id="Reply.set_message-179"><a href="#Reply.set_message-179"><span class="linenos">179</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;message may not be empty&quot;</span><span class="p">)</span>
+</span><span id="Reply.set_message-180"><a href="#Reply.set_message-180"><span class="linenos">180</span></a>
+</span><span id="Reply.set_message-181"><a href="#Reply.set_message-181"><span class="linenos">181</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span>
 </span></pre></div>
 
 
@@ -962,15 +971,15 @@ the reply sequence.</p>
 
     </div>
     <a class="headerlink" href="#Reply.get_message"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.get_message-176"><a href="#Reply.get_message-176"><span class="linenos">176</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Reply.get_message-177"><a href="#Reply.get_message-177"><span class="linenos">177</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply.get_message-178"><a href="#Reply.get_message-178"><span class="linenos">178</span></a><span class="sd">        Return the descriptive response message.</span>
-</span><span id="Reply.get_message-179"><a href="#Reply.get_message-179"><span class="linenos">179</span></a>
-</span><span id="Reply.get_message-180"><a href="#Reply.get_message-180"><span class="linenos">180</span></a><span class="sd">        Returns:</span>
-</span><span id="Reply.get_message-181"><a href="#Reply.get_message-181"><span class="linenos">181</span></a><span class="sd">            str:</span>
-</span><span id="Reply.get_message-182"><a href="#Reply.get_message-182"><span class="linenos">182</span></a><span class="sd">                Current response message.</span>
-</span><span id="Reply.get_message-183"><a href="#Reply.get_message-183"><span class="linenos">183</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply.get_message-184"><a href="#Reply.get_message-184"><span class="linenos">184</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.get_message-183"><a href="#Reply.get_message-183"><span class="linenos">183</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Reply.get_message-184"><a href="#Reply.get_message-184"><span class="linenos">184</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply.get_message-185"><a href="#Reply.get_message-185"><span class="linenos">185</span></a><span class="sd">        Return the descriptive response message.</span>
+</span><span id="Reply.get_message-186"><a href="#Reply.get_message-186"><span class="linenos">186</span></a>
+</span><span id="Reply.get_message-187"><a href="#Reply.get_message-187"><span class="linenos">187</span></a><span class="sd">        Returns:</span>
+</span><span id="Reply.get_message-188"><a href="#Reply.get_message-188"><span class="linenos">188</span></a><span class="sd">            str:</span>
+</span><span id="Reply.get_message-189"><a href="#Reply.get_message-189"><span class="linenos">189</span></a><span class="sd">                Current response message.</span>
+</span><span id="Reply.get_message-190"><a href="#Reply.get_message-190"><span class="linenos">190</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply.get_message-191"><a href="#Reply.get_message-191"><span class="linenos">191</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span>
 </span></pre></div>
 
 
@@ -994,15 +1003,15 @@ the reply sequence.</p>
 
     </div>
     <a class="headerlink" href="#Reply.get_http_response_code"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.get_http_response_code-190"><a href="#Reply.get_http_response_code-190"><span class="linenos">190</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_http_response_code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Reply.get_http_response_code-191"><a href="#Reply.get_http_response_code-191"><span class="linenos">191</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply.get_http_response_code-192"><a href="#Reply.get_http_response_code-192"><span class="linenos">192</span></a><span class="sd">        Return the response code associated with this Reply.</span>
-</span><span id="Reply.get_http_response_code-193"><a href="#Reply.get_http_response_code-193"><span class="linenos">193</span></a>
-</span><span id="Reply.get_http_response_code-194"><a href="#Reply.get_http_response_code-194"><span class="linenos">194</span></a><span class="sd">        Returns:</span>
-</span><span id="Reply.get_http_response_code-195"><a href="#Reply.get_http_response_code-195"><span class="linenos">195</span></a><span class="sd">            int:</span>
-</span><span id="Reply.get_http_response_code-196"><a href="#Reply.get_http_response_code-196"><span class="linenos">196</span></a><span class="sd">                Response code, defaulting to 200.</span>
-</span><span id="Reply.get_http_response_code-197"><a href="#Reply.get_http_response_code-197"><span class="linenos">197</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply.get_http_response_code-198"><a href="#Reply.get_http_response_code-198"><span class="linenos">198</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.get_http_response_code-197"><a href="#Reply.get_http_response_code-197"><span class="linenos">197</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_http_response_code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Reply.get_http_response_code-198"><a href="#Reply.get_http_response_code-198"><span class="linenos">198</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply.get_http_response_code-199"><a href="#Reply.get_http_response_code-199"><span class="linenos">199</span></a><span class="sd">        Return the response code associated with this Reply.</span>
+</span><span id="Reply.get_http_response_code-200"><a href="#Reply.get_http_response_code-200"><span class="linenos">200</span></a>
+</span><span id="Reply.get_http_response_code-201"><a href="#Reply.get_http_response_code-201"><span class="linenos">201</span></a><span class="sd">        Returns:</span>
+</span><span id="Reply.get_http_response_code-202"><a href="#Reply.get_http_response_code-202"><span class="linenos">202</span></a><span class="sd">            int:</span>
+</span><span id="Reply.get_http_response_code-203"><a href="#Reply.get_http_response_code-203"><span class="linenos">203</span></a><span class="sd">                Response code, defaulting to 200.</span>
+</span><span id="Reply.get_http_response_code-204"><a href="#Reply.get_http_response_code-204"><span class="linenos">204</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply.get_http_response_code-205"><a href="#Reply.get_http_response_code-205"><span class="linenos">205</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span>
 </span></pre></div>
 
 
@@ -1026,26 +1035,26 @@ the reply sequence.</p>
 
     </div>
     <a class="headerlink" href="#Reply.set_http_response_code"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.set_http_response_code-200"><a href="#Reply.set_http_response_code-200"><span class="linenos">200</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_http_response_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-</span><span id="Reply.set_http_response_code-201"><a href="#Reply.set_http_response_code-201"><span class="linenos">201</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Reply.set_http_response_code-202"><a href="#Reply.set_http_response_code-202"><span class="linenos">202</span></a><span class="sd">        Set the response code associated with this Reply.</span>
-</span><span id="Reply.set_http_response_code-203"><a href="#Reply.set_http_response_code-203"><span class="linenos">203</span></a>
-</span><span id="Reply.set_http_response_code-204"><a href="#Reply.set_http_response_code-204"><span class="linenos">204</span></a><span class="sd">        Args:</span>
-</span><span id="Reply.set_http_response_code-205"><a href="#Reply.set_http_response_code-205"><span class="linenos">205</span></a><span class="sd">            code (int):</span>
-</span><span id="Reply.set_http_response_code-206"><a href="#Reply.set_http_response_code-206"><span class="linenos">206</span></a><span class="sd">                Integer response code.</span>
-</span><span id="Reply.set_http_response_code-207"><a href="#Reply.set_http_response_code-207"><span class="linenos">207</span></a>
-</span><span id="Reply.set_http_response_code-208"><a href="#Reply.set_http_response_code-208"><span class="linenos">208</span></a><span class="sd">        Raises:</span>
-</span><span id="Reply.set_http_response_code-209"><a href="#Reply.set_http_response_code-209"><span class="linenos">209</span></a><span class="sd">            TypeError:</span>
-</span><span id="Reply.set_http_response_code-210"><a href="#Reply.set_http_response_code-210"><span class="linenos">210</span></a><span class="sd">                If code is not an integer or is a boolean.</span>
-</span><span id="Reply.set_http_response_code-211"><a href="#Reply.set_http_response_code-211"><span class="linenos">211</span></a>
-</span><span id="Reply.set_http_response_code-212"><a href="#Reply.set_http_response_code-212"><span class="linenos">212</span></a><span class="sd">        Note:</span>
-</span><span id="Reply.set_http_response_code-213"><a href="#Reply.set_http_response_code-213"><span class="linenos">213</span></a><span class="sd">            The method does not validate whether the code</span>
-</span><span id="Reply.set_http_response_code-214"><a href="#Reply.set_http_response_code-214"><span class="linenos">214</span></a><span class="sd">            is a recognized HTTP status code.</span>
-</span><span id="Reply.set_http_response_code-215"><a href="#Reply.set_http_response_code-215"><span class="linenos">215</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Reply.set_http_response_code-216"><a href="#Reply.set_http_response_code-216"><span class="linenos">216</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
-</span><span id="Reply.set_http_response_code-217"><a href="#Reply.set_http_response_code-217"><span class="linenos">217</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;code must be an integer&quot;</span><span class="p">)</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Reply.set_http_response_code-207"><a href="#Reply.set_http_response_code-207"><span class="linenos">207</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_http_response_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+</span><span id="Reply.set_http_response_code-208"><a href="#Reply.set_http_response_code-208"><span class="linenos">208</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Reply.set_http_response_code-209"><a href="#Reply.set_http_response_code-209"><span class="linenos">209</span></a><span class="sd">        Set the response code associated with this Reply.</span>
+</span><span id="Reply.set_http_response_code-210"><a href="#Reply.set_http_response_code-210"><span class="linenos">210</span></a>
+</span><span id="Reply.set_http_response_code-211"><a href="#Reply.set_http_response_code-211"><span class="linenos">211</span></a><span class="sd">        Args:</span>
+</span><span id="Reply.set_http_response_code-212"><a href="#Reply.set_http_response_code-212"><span class="linenos">212</span></a><span class="sd">            code (int):</span>
+</span><span id="Reply.set_http_response_code-213"><a href="#Reply.set_http_response_code-213"><span class="linenos">213</span></a><span class="sd">                Integer response code.</span>
+</span><span id="Reply.set_http_response_code-214"><a href="#Reply.set_http_response_code-214"><span class="linenos">214</span></a>
+</span><span id="Reply.set_http_response_code-215"><a href="#Reply.set_http_response_code-215"><span class="linenos">215</span></a><span class="sd">        Raises:</span>
+</span><span id="Reply.set_http_response_code-216"><a href="#Reply.set_http_response_code-216"><span class="linenos">216</span></a><span class="sd">            TypeError:</span>
+</span><span id="Reply.set_http_response_code-217"><a href="#Reply.set_http_response_code-217"><span class="linenos">217</span></a><span class="sd">                If code is not an integer or is a boolean.</span>
 </span><span id="Reply.set_http_response_code-218"><a href="#Reply.set_http_response_code-218"><span class="linenos">218</span></a>
-</span><span id="Reply.set_http_response_code-219"><a href="#Reply.set_http_response_code-219"><span class="linenos">219</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span> <span class="o">=</span> <span class="n">code</span>
+</span><span id="Reply.set_http_response_code-219"><a href="#Reply.set_http_response_code-219"><span class="linenos">219</span></a><span class="sd">        Note:</span>
+</span><span id="Reply.set_http_response_code-220"><a href="#Reply.set_http_response_code-220"><span class="linenos">220</span></a><span class="sd">            The method does not validate whether the code</span>
+</span><span id="Reply.set_http_response_code-221"><a href="#Reply.set_http_response_code-221"><span class="linenos">221</span></a><span class="sd">            is a recognized HTTP status code.</span>
+</span><span id="Reply.set_http_response_code-222"><a href="#Reply.set_http_response_code-222"><span class="linenos">222</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Reply.set_http_response_code-223"><a href="#Reply.set_http_response_code-223"><span class="linenos">223</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+</span><span id="Reply.set_http_response_code-224"><a href="#Reply.set_http_response_code-224"><span class="linenos">224</span></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;code must be an integer&quot;</span><span class="p">)</span>
+</span><span id="Reply.set_http_response_code-225"><a href="#Reply.set_http_response_code-225"><span class="linenos">225</span></a>
+</span><span id="Reply.set_http_response_code-226"><a href="#Reply.set_http_response_code-226"><span class="linenos">226</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">response_code</span> <span class="o">=</span> <span class="n">code</span>
 </span></pre></div>
 
 
